@@ -1,0 +1,39 @@
+## Overview  
+This model aggregates order activity per customer from the staging orders table, joins the aggregated metrics to the raw customer master, and outputs a customer‑level summary with nulls replaced by zeros for numeric fields.
+
+## Tables Involved  
+- **staging.stg_orders** – Staging table containing raw order transactions.  
+- **raw.customers** – Master table containing customer demographic information.
+
+## Columns Used  
+**staging.stg_orders**  
+- `staging.stg_orders.customer_id` – Identifier linking orders to customers.  
+- `staging.stg_orders.order_id` – Unique order identifier.  
+- `staging.stg_orders.net_amount` – Net monetary value of the order.  
+- `staging.stg_orders.order_date` – Date the order was placed.  
+- `staging.stg_orders.total_orders` – *Derived*: Count of distinct orders per customer.  
+- `staging.stg_orders.total_spent` – *Derived*: Sum of `net_amount` per customer.  
+- `staging.stg_orders.avg_order_value` – *Derived*: Average `net_amount` per customer.  
+- `staging.stg_orders.last_order_date` – *Derived*: Most recent `order_date` per customer.  
+
+**raw.customers**  
+- `raw.customers.customer_id` – Identifier for the customer.  
+- `raw.customers.first_name` – Customer’s first name.  
+- `raw.customers.last_name` – Customer’s last name.  
+- `raw.customers.region` – Geographic region of the customer.
+
+## Logic Explanation  
+1. **CTE `customer_orders`** – Aggregates the `staging.stg_orders` table by `customer_id`.  
+   - `COUNT(DISTINCT order_id)` → `total_orders`.  
+   - `SUM(net_amount)` → `total_spent`.  
+   - `AVG(net_amount)` → `avg_order_value`.  
+   - `MAX(order_date)` → `last_order_date`.  
+
+2. **CTE `joined_customers`** – Performs a left join between `raw.customers` (base table) and the aggregated `customer_orders` on `customer_id`.  
+   - All customers are retained; customers without orders receive `NULL` for the aggregated columns.  
+
+3. **Final SELECT** – Projects the joined result, applying `COALESCE` to replace `NULL` values in `total_orders`, `total_spent`, and `avg_order_value` with `0`.  
+   - The output is a flat customer summary table.
+
+## Grain of Data  
+The final result is at the **customer level**: one row per distinct `customer_id`.

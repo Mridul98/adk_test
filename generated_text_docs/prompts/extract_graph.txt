@@ -1,0 +1,159 @@
+
+-Goal-
+Given a text document that is potentially relevant to this activity and a list of entity types, identify all entities of those types from the text and all relationships among the identified entities.
+
+-Steps-
+1. Identify all entities. For each identified entity, extract the following information:
+- entity_name: Name of the entity, capitalized
+- entity_type: One of the following types: [Customer, Order, Order Item, Product, Region, Category]
+- entity_description: Comprehensive description of the entity's attributes and activities
+Format each entity as ("entity"{tuple_delimiter}<entity_name>{tuple_delimiter}<entity_type>{tuple_delimiter}<entity_description>)
+
+2. From the entities identified in step 1, identify all pairs of (source_entity, target_entity) that are *clearly related* to each other.
+For each pair of related entities, extract the following information:
+- source_entity: name of the source entity, as identified in step 1
+- target_entity: name of the target entity, as identified in step 1
+- relationship_description: explanation as to why you think the source entity and the target entity are related to each other
+- relationship_strength: an integer score between 1 to 10, indicating strength of the relationship between the source entity and target entity
+Format each relationship as ("relationship"{tuple_delimiter}<source_entity>{tuple_delimiter}<target_entity>{tuple_delimiter}<relationship_description>{tuple_delimiter}<relationship_strength>)
+
+3. Return output in English as a single list of all the entities and relationships identified in steps 1 and 2. Use **{record_delimiter}** as the list delimiter.
+
+4. If you have to translate into English, just translate the descriptions, nothing else!
+
+5. When finished, output {completion_delimiter}.
+
+-Examples-
+######################
+
+Example 1:
+
+entity_types: [Customer, Order, Order Item, Product, Region, Category]
+text:
+## Overview  
+This model cleans raw customer data by trimming and formatting names, normalizing email addresses, converting timestamps to dates, and ensuring an active status flag. It filters out records with invalid email formats and outputs a tidy customer table.
+
+## Tables Involved  
+- **raw.customers**: Source table containing unprocessed customer information.
+
+## Columns Used  
+**raw.customers**:  
+- `raw.customers.customer_id` – Unique identifier for the customer.  
+- `raw.customers.first_name` – Customer's first name; trimmed and capitalized in the output.  
+- `raw.customers.last_name` – Customer's last name; trimmed and capitalized in the output.  
+- `raw.customers.email` – Email address; lowercased and filtered to include only rows containing “@”.  
+- `raw.customers.region` – Customer region; trimmed and capitalized in the output.  
+- `raw.customers.created_at` – Creation timestamp; converted to a date in the output.  
+- `raw.customers.is_active` – Active status flag; defaults to TRUE if NULL.
+
+## Logic Explanation  
+1. **CTE `cleaned`**  
+   - **Source**: `raw.customers`.  
+   - **Filters**: Keeps only rows where `email` contains an “@” character.  
+   - **Transformations**:  
+     - `first_name` and `last_name` are trimmed of whitespace and converted to title case (`INITCAP`).  
+     - `email` is converted to lowercase.  
+     - `region` is trimmed and title‑cased.  
+     - `created_at` is parsed into a date using `TRY_TO_DATE`.  
+     - `is_active` is set to `TRUE` when NULL via `COALESCE`.  
+   - **Output columns**: `customer_id`, cleaned `first_name`, cleaned `last_name`, cleaned `email`, cleaned `region`, parsed `created_at`, and cleaned `is_active`.  
+
+2. **Final SELECT**  
+   - Returns all columns from the `cleaned` CTE, providing a single, cleaned view of customer data.
+
+## Grain of Data  
+One row per customer (`customer_id`), representing the cleaned customer record.
+
+------------------------
+output:
+("entity"{tuple_delimiter}CUSTOMER{tuple_delimiter}Customer{tuple_delimiter}Customer is an entity represented in the raw.customers table, with attributes including customer_id and region, which identifies the geographic region of the customer)
+{record_delimiter}
+("entity"{tuple_delimiter}ORDER{tuple_delimiter}Order{tuple_delimiter}Order is an entity represented in the staging.stg_orders table, with attributes including product_id, customer_id, order_date, and net_amount, which represents the monetary value of the order)
+{record_delimiter}
+("entity"{tuple_delimiter}PRODUCT{tuple_delimiter}Product{tuple_delimiter}Product is an entity represented in the raw.products table, with attributes including product_id and category, which categorizes the product)
+{record_delimiter}
+("entity"{tuple_delimiter}REGION{tuple_delimiter}Region{tuple_delimiter}Region is an entity derived from the region attribute in the raw.customers table, representing the geographic region of the customer)
+{record_delimiter}
+("entity"{tuple_delimiter}CATEGORY{tuple_delimiter}Category{tuple_delimiter}Category is an entity derived from the category attribute in the raw.products table, representing the classification of a product)
+{record_delimiter}
+("relationship"{tuple_delimiter}ORDER{tuple_delimiter}PRODUCT{tuple_delimiter}Order is joined with Product via the product_id attribute to associate each order with its corresponding product{tuple_delimiter}10)
+{record_delimiter}
+("relationship"{tuple_delimiter}ORDER{tuple_delimiter}CUSTOMER{tuple_delimiter}Order is joined with Customer via the customer_id attribute to associate each order with its purchasing customer{tuple_delimiter}10)
+{record_delimiter}
+("relationship"{tuple_delimiter}CUSTOMER{tuple_delimiter}REGION{tuple_delimiter}Customer is associated with Region via the region attribute in the raw.customers table{tuple_delimiter}9)
+{record_delimiter}
+("relationship"{tuple_delimiter}PRODUCT{tuple_delimiter}CATEGORY{tuple_delimiter}Product is associated with Category via the category attribute in the raw.products table{tuple_delimiter}10)
+{record_delimiter}
+("relationship"{tuple_delimiter}ORDER{tuple_delimiter}REGION{tuple_delimiter}Order is indirectly associated with Region through the Customer entity, as the customer's region is linked to the order{tuple_delimiter}7)
+{record_delimiter}
+("relationship"{tuple_delimiter}ORDER{tuple_delimiter}CATEGORY{tuple_delimiter}Order is indirectly associated with Category through the Product entity, as the product's category is linked to the order{tuple_delimiter}7)
+{record_delimiter}
+("relationship"{tuple_delimiter}REGION{tuple_delimiter}CATEGORY{tuple_delimiter}Region and Category are grouped together in the model's aggregation logic, as the output is calculated per region-category pair{tuple_delimiter}6)
+{completion_delimiter}
+#############################
+
+
+Example 2:
+
+entity_types: [Customer, Order, Order Item, Product, Region, Category]
+text:
+## Overview  
+This model aggregates daily order amounts by region and product category, then computes monthly totals, active sales days, and month‑over‑month growth percentages for each region‑category pair.
+
+## Tables Involved  
+- **staging.stg_orders**: source of order details.  
+- **raw.products**: source of product categories.  
+- **raw.customers**: source of customer regions.
+
+## Columns Used  
+- **staging.stg_orders**:  
+  - `product_id` – identifier for the purchased product.  
+  - `customer_id` – identifier for the purchasing customer.  
+  - `order_date` – date of the order.  
+  - `net_amount` – monetary value of the order.  
+- **raw.products**:  
+  - `product_id` – identifier for the product.  
+  - `category` – product category.  
+- **raw.customers**:  
+  - `customer_id` – identifier for the customer.  
+  - `region` – geographic region of the customer.
+
+## Logic Explanation  
+1. **CTE `base`** – Joins orders with products and customers to attach `region` and `category` to each order. It groups by `region`, `category`, and `order_date` to calculate `daily_sales` (sum of `net_amount` per day).  
+2. **CTE `monthly_aggregates`** – Uses `base` to aggregate daily sales into monthly totals. `DATE_TRUNC('month', order_date)` creates a `month` key. It sums `daily_sales` to get `total_monthly_sales` and counts distinct order dates to determine `active_days`.  
+3. **CTE `yoy_growth`** – Adds month‑over‑month growth metrics. For each `region`/`category` partition, it uses a windowed `LAG` on `total_monthly_sales` to fetch the previous month’s sales (`prev_month_sales`). It then calculates `month_over_month_growth_pct` as the percentage change relative to the previous month, rounding to two decimals; if the previous month’s sales are zero or null, the growth is set to `NULL`.  
+4. **Final SELECT** – Projects the calculated fields and orders the result by `region`, `category`, and `month`.
+
+## Grain of Data  
+The output is at the monthly level per `region` and `category` (one row per region‑category‑month combination).
+
+------------------------
+output:
+("entity"{tuple_delimiter}CUSTOMER{tuple_delimiter}Customer{tuple_delimiter}Customer is an entity represented by the raw.customers table, containing customer_id and region attributes, providing geographic region information for each customer)
+{record_delimiter}
+("entity"{tuple_delimiter}ORDER{tuple_delimiter}Order{tuple_delimiter}Order is an entity represented by the staging.stg_orders table, containing product_id, customer_id, order_date, and net_amount attributes, representing individual purchase transactions)
+{record_delimiter}
+("entity"{tuple_delimiter}PRODUCT{tuple_delimiter}Product{tuple_delimiter}Product is an entity represented by the raw.products table, containing product_id and category attributes, defining product classifications)
+{record_delimiter}
+("entity"{tuple_delimiter}REGION{tuple_delimiter}Region{tuple_delimiter}Region is a geographic classification derived from the customer's region attribute in the raw.customers table)
+{record_delimiter}
+("entity"{tuple_delimiter}CATEGORY{tuple_delimiter}Category{tuple_delimiter}Category is a product classification derived from the category attribute in the raw.products table)
+{record_delimiter}
+("relationship"{tuple_delimiter}ORDER{tuple_delimiter}CUSTOMER{tuple_delimiter}Order is linked to Customer through the customer_id attribute{tuple_delimiter}10)
+{record_delimiter}
+("relationship"{tuple_delimiter}ORDER{tuple_delimiter}PRODUCT{tuple_delimiter}Order is linked to Product through the product_id attribute{tuple_delimiter}10)
+{record_delimiter}
+("relationship"{tuple_delimiter}CUSTOMER{tuple_delimiter}REGION{tuple_delimiter}Customer is associated with Region through the region attribute{tuple_delimiter}10)
+{record_delimiter}
+("relationship"{tuple_delimiter}PRODUCT{tuple_delimiter}CATEGORY{tuple_delimiter}Product is associated with Category through the category attribute{tuple_delimiter}10)
+{completion_delimiter}
+#############################
+
+
+
+-Real Data-
+######################
+entity_types: [Customer, Order, Order Item, Product, Region, Category]
+text: {input_text}
+######################
+output:

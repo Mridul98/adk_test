@@ -1,0 +1,349 @@
+
+You are an expert **Data Engineering Community Architect**. You are skilled at **designing ETL workflows, data pipeline architectures, and data warehousing systems**, as well as **analyzing collaboration patterns and knowledge-sharing structures within technical communities**. You are adept at helping people with **mapping relationships between data engineering roles, tools, and processes to identify how communities of practice organize, collaborate, and innovate around data integration and transformation challenges**.
+
+# Goal
+Write a comprehensive assessment report of a community taking on the role of a ### **Analysis of Data Models and Relationships in the Customer-Order-Product Ecosystem**
+
+The provided SQL models form a cohesive data pipeline for analyzing customer behavior, product performance, and regional sales trends. Below is a structured breakdown of the models, their purposes, relationships, and key insights.
+
+---
+
+### **1. Core Entities and Tables**
+- **Raw Tables**:
+  - `raw.customers`: Customer demographic data (e.g., `customer_id`, `first_name`, `region`).
+  - `raw.orders`: Order metadata (e.g., `order_id`, `customer_id`, `order_date`, `order_status`).
+  - `raw.order_items`: Line-item details (e.g., `order_id`, `product_id`, `quantity`, `unit_price`, `discount`).
+  - `public.stg_products`: Product catalog (e.g., `product_id`, `product_name`, `category`, `brand`).
+  - `staging.stg_orders`: Staging table for order transactions (aggregated metrics like `total_orders`, `total_spent`).
+  - `staging.stg_customersAS`: Customer details (used in regional sales analysis).
+
+- **Derived Tables**:
+  - **Aggregated Metrics**: Calculated from raw/order data (e.g., `total_orders`, `total_spent`, `avg_order_value`).
+  - **Cleaned Data**: Normalized fields (e.g., `order_status` lowercased, `order_date` converted to date type).
+
+---
+
+### **2. Key Models and Their Purposes**
+
+#### **A. Order-Level Models**
+- **`order_line`**:
+  - **Purpose**: Clean and normalize raw order and order-item data.
+  - **Derived Columns**:
+    - `net_amount` = `(quantity * unit_price) - COALESCE(discount, 0)`.
+  - **Grain**: **Order-item level** (each row = 1 product line within an order).
+  - **Usage**: Base for all downstream aggregations (e.g., customer, product, regional sales).
+
+- **`customer_orders`**:
+  - **Purpose**: Aggregate order metrics per customer (e.g., total orders, total spent).
+  - **Derived Columns**:
+    - `total_orders` = `COUNT(DISTINCT order_id)`.
+    - `total_spent` = `SUM(net_amount)`.
+    - `avg_order_value` = `AVG(net_amount)`.
+    - `last_order_date` = `MAX(order_date)`.
+  - **Grain**: **Customer level** (1 row per customer).
+  - **Usage**: Intermediate step for `customer_master`.
+
+- **`product_orders`**:
+  - **Purpose**: Aggregate order metrics per product (e.g., total quantity sold, revenue).
+  - **Derived Columns**:
+    - `total_orders` = `COUNT(DISTINCT order_id)`.
+    - `total_quantity_sold` = `SUM(quantity)`.
+    - `total_revenue` = `SUM(net_amount)`.
+    - `avg_selling_price` = `AVG(unit_price)`.
+  - **Grain**: **Product level** (1 row per product).
+  - **Usage**: Intermediate step for `product_master`.
+
+---
+
+#### **B. Customer-Level Models**
+- **`customer_master`**:
+  - **Purpose**: Join customer demographics with aggregated order metrics.
+  - **Key Relationships**:
+    - Left join `raw.customers` with `customer_orders` on `customer_id`.
+  - **Derived Columns**:
+    - `COALESCE(total_orders, 0)`, `COALESCE(total_spent, 0)`, etc.
+  - **Grain**: **Customer level** (1 row per customer).
+  - **Usage**: Customer analytics (e.g., lifetime value, churn analysis).
+
+- **`customer_level_summary`**:
+  - **Purpose**: Similar to `customer_master`, but with a focus on summarizing metrics.
+  - **Key Relationships**:
+    - Aggregates `staging.stg_orders` by `customer_id`, then joins with `raw.customers`.
+  - **Usage**: Reporting and dashboards for customer insights.
+
+---
+
+#### **C. Product-Level Models**
+- **`product_master`**:
+  - **Purpose**: Join product metadata with aggregated order metrics.
+  - **Key Relationships**:
+    - Left join `public.stg_products` with `product_orders` on `product_id`.
+  - **Derived Columns**:
+    - Product metadata (e.g., `product_name`, `category`, `brand`) + sales metrics.
+  - **Grain**: **Product level** (1 row per product).
+  - **Usage**: Product performance analysis (e.g., best-selling items, revenue per category).
+
+- **`product_level_summary`**:
+  - **Purpose**: Similar to `product_master`, but with a focus on summarizing metrics.
+  - **Key Relationships**:
+    - Aggregates `staging.stg_orders` by `product_id`, then joins with `stg_products`.
+  - **Usage**: Product catalog analytics (e.g., inventory management, pricing strategies).
+
+---
+
+#### **D. Regional/Category-Level Models**
+- **`regional_sales`**:
+  - **Purpose**: Aggregate sales metrics by **region**, **product category**, and **month**.
+  - **Key Relationships**:
+    - Joins `stg_orders` with `stg_products` and `stg_customersAS` on `product_id` and `customer_id`.
+  - **Derived Columns**:
+    - `month` = `DATE_TRUNC('month', order_date)`.
+    - `total_sales` = `SUM(net_amount)`.
+    - `total_orders` = `COUNT(DISTINCT order_id)`.
+    - `unique_customers` = `COUNT(DISTINCT customer_id)`.
+  - **Grain**: **Monthly level** (1 row per region/category/month).
+  - **Usage**: Regional sales trends, category performance analysis.
+
+- **`monthly_sales_by_region_and_category`**:
+  - **Purpose**: Same as `regional_sales`, but explicitly named for clarity.
+  - **Usage**: Time-based reporting (e.g., QoQ, YoY comparisons).
+
+---
+
+### **3. Relationships Between Models**
+- **Hierarchical Flow**:
+  - **Raw Tables** → **Order-Line Model** → **Aggregated Models** (customer_orders, product_orders) → **Summary Models** (customer_master, product_master, regional_sales).
+- **Key Joins**:
+  - `order_line` → `customer_orders` (via `customer_id`).
+  - `order_line` → `product_orders` (via `product_id`).
+  - `customer_orders` → `customer_master` (via `customer_id`).
+  - `product_orders` → `product_master` (via `product_id`).
+  - `order_line` → `regional_sales` (via `customer_id`, `product_id`, and `order_date`).
+
+---
+
+### **4. Key Insights and Use Cases**
+- **Customer Analytics**:
+  - Identify high-value customers, churn patterns, and lifetime value.
+  - Example: Use `customer_master` to segment customers by `total_spent` or `last_order_date`.
+
+- **Product Performance**:
+  - Analyze sales trends, profitability, and category-specific metrics.
+  - Example: Use `product_master` to compare revenue across `category` or `brand`.
+
+- **Regional Sales Trends**:
+  - Monitor sales performance by region and time.
+  - Example: Use `regional_sales` to identify underperforming regions or categories.
+
+- **Data Integrity**:
+  - `COALESCE` ensures NULLs are replaced with zeros, preventing gaps in reporting (e.g., customers with no orders).
+
+---
+
+### **5. Recommendations**
+- **Optimization**:
+  - Materialize intermediate models (e.g., `customer_orders`, `product_orders`) as views or tables for faster querying.
+- **Scalability**:
+  - Partition `regional_sales` by `month` for efficient time-based queries.
+- **Data Governance**:
+  - Ensure consistency in `product_id` and `customer_id` across all tables to avoid join errors.
+
+---
+
+### **Summary**
+The models form a robust pipeline for analyzing customer, product, and regional performance. By leveraging aggregated metrics and joins with raw data, they enable actionable insights for marketing, sales, and operations teams. The hierarchical structure ensures flexibility for both granular (order-level) and high-level (regional) analysis.. The content of this report includes an overview of the community's key entities and relationships.
+
+# Report Structure
+The report should include the following sections:
+- TITLE: community's name that represents its key entities - title should be short but specific. When possible, include representative named entities in the title.
+- SUMMARY: An executive summary of the community's overall structure, how its entities are related to each other, and significant information associated with its entities.
+- REPORT RATING: The importance of each model can be assessed based on **business relevance, data completeness, integration with other systems, and strategic value**. Below is an evaluation of each model's importance, assuming the criteria are:  
+1. **Strategic Value** (e.g., supports key business decisions).  
+2. **Data Completeness** (e.g., handles nulls, ensures data quality).  
+3. **Integration** (e.g., feeds into downstream systems or reports).  
+4. **Usage Frequency** (e.g., used by multiple teams or stakeholders).  
+
+---
+
+### **1. Customer Summary**  
+- **Importance**: **High**  
+- **Reason**: Aggregates customer activity (orders, spending, last order date) and joins with raw customer data. Critical for **customer segmentation, marketing, and retention strategies**. Uses `COALESCE` to ensure completeness (e.g., zeros for missing orders).  
+- **Strategic Value**: High (supports customer-centric decisions).  
+- **Integration**: Likely used in dashboards, CRM, and loyalty programs.  
+
+---
+
+### **2. Product-Level Summary**  
+- **Importance**: **High**  
+- **Reason**: Aggregates sales metrics (orders, revenue, quantity sold) and enriches with product metadata (name, category, brand). Essential for **inventory management, product performance analysis, and pricing strategies**.  
+- **Strategic Value**: High (supports product lifecycle decisions).  
+- **Integration**: Feeds into product analytics, sales forecasting, and supply chain systems.  
+
+---
+
+### **3. Regional Sales by Category**  
+- **Importance**: **High**  
+- **Reason**: Aggregates sales by region, category, and month. Provides **geographic and product category insights** for market expansion, resource allocation, and regional performance tracking.  
+- **Strategic Value**: High (supports regional and category-specific strategies).  
+- **Integration**: Used in executive dashboards, sales planning, and market analysis.  
+
+---
+
+### **4. Order-Item Level**  
+- **Importance**: **Medium**  
+- **Reason**: Provides detailed order-line data (net amount, discounts, etc.). Useful for **operational analysis** (e.g., identifying discount trends, product profitability). However, less strategic than aggregated summaries.  
+- **Strategic Value**: Medium (supports operational insights).  
+- **Integration**: Feeds into transactional reporting and fraud detection systems.  
+
+---
+
+### **5. Customer Orders Aggregation**  
+- **Importance**: **High**  
+- **Reason**: Aggregates order metrics (total orders, total spent) per customer. A foundational model for **customer lifetime value (CLV) analysis, segmentation, and targeting**.  
+- **Strategic Value**: High (supports customer-centric KPIs).  
+- **Integration**: Used in marketing automation, sales pipelines, and customer success tools.  
+
+---
+
+### **6. Product Orders Aggregation**  
+- **Importance**: **High**  
+- **Reason**: Aggregates order metrics (quantity sold, revenue) per product. Critical for **product performance analysis, inventory planning, and sales forecasting**.  
+- **Strategic Value**: High (supports product and sales decisions).  
+- **Integration**: Feeds into product analytics, procurement, and sales planning.  
+
+---
+
+### **7. Cleaned Orders**  
+- **Importance**: **Medium**  
+- **Reason**: Cleans and joins order and order-item data, ensuring valid dates and normalized statuses. A **foundational model** for downstream aggregations but less strategic than summaries.  
+- **Strategic Value**: Medium (supports data quality for other models).  
+- **Integration**: Used in ETL pipelines and as a base for aggregations.  
+
+---
+
+### **8. Cleaned Customer Master**  
+- **Importance**: **High**  
+- **Reason**: Ensures customer data quality (e.g., normalized names, region). A **core model** for all customer-related analytics.  
+- **Strategic Value**: High (supports customer data consistency across systems).  
+- **Integration**: Feeds into CRM, marketing, and analytics platforms.  
+
+---
+
+### **9. Cleaned Order Items**  
+- **Importance**: **Medium**  
+- **Reason**: Provides cleaned order-item data (net amount, discounts). Useful for **operational reporting** but less strategic than aggregated summaries.  
+- **Strategic Value**: Medium (supports transactional insights).  
+- **Integration**: Feeds into financial reporting and sales analytics.  
+
+---
+
+### **10. Cleaned Products**  
+- **Importance**: **High**  
+- **Reason**: Ensures product metadata (name, category, brand) is consistent. A **foundational model** for product analytics and sales aggregations.  
+- **Strategic Value**: High (supports product catalog consistency).  
+- **Integration**: Feeds into product management, e-commerce platforms, and analytics.  
+
+---
+
+### **Key Takeaways**  
+- **High-Importance Models**:  
+  - **Customer Summary**, **Product-Level Summary**, **Regional Sales by Category**, **Customer Orders Aggregation**, **Product Orders Aggregation**, **Cleaned Customer Master**, **Cleaned Products**.  
+  - These models directly support **strategic decisions** and are **integrated into multiple downstream systems**.  
+
+- **Medium-Importance Models**:  
+  - **Order-Item Level**, **Cleaned Orders**, **Cleaned Order Items**.  
+  - These are **foundational but less strategic**, often used for **operational reporting** or as inputs for higher-level models.  
+
+- **Critical for Data Quality**:  
+  - All models involve **data cleaning** (e.g., handling nulls, normalizing fields), ensuring **data integrity** for analytics and reporting.  
+
+Let me know if you'd like to refine the criteria or prioritize models further!
+- RATING EXPLANATION: Give a single sentence explanation of the rating.
+- DETAILED FINDINGS: A list of 5-10 key insights about the community. Each insight should have a short summary followed by multiple paragraphs of explanatory text grounded according to the grounding rules below. Be comprehensive.
+
+Return output as a well-formed JSON-formatted string with the following format. Don't use any unnecessary escape sequences. The output should be a single JSON object that can be parsed by json.loads.
+    {{
+        "title": <report_title>,
+        "summary": <executive_summary>,
+        "rating": <impact_severity_rating>,
+        "rating_explanation": <rating_explanation>,
+        "findings": [
+            {{
+                "summary":<insight_1_summary>,
+                "explanation": <insight_1_explanation>
+            }},
+            {{
+                "summary":<insight_2_summary>,
+                "explanation": <insight_2_explanation>
+            }}
+        ]
+    }}
+
+# Grounding Rules
+Points supported by data should list their data references as follows:
+
+"This is an example sentence supported by multiple data references [Data: <dataset name> (record ids); <dataset name> (record ids)]."
+
+Do not list more than 5 record ids in a single reference. Instead, list the top 5 most relevant record ids and add "+more" to indicate that there are more.
+
+For example:
+"Person X is the owner of Company Y and subject to many allegations of wrongdoing [Data: Reports (1), Entities (5, 7); Relationships (23); Claims (7, 2, 34, 64, 46, +more)]."
+
+where 1, 5, 7, 23, 2, 34, 46, and 64 represent the id (not the index) of the relevant data record.
+
+Do not include information where the supporting evidence for it is not provided.
+Your answers should be in English.
+
+# Example Input
+-----------
+Text:
+
+Entities
+
+id,entity,description
+5,VERDANT OASIS PLAZA,Verdant Oasis Plaza is the location of the Unity March
+6,HARMONY ASSEMBLY,Harmony Assembly is an organization that is holding a march at Verdant Oasis Plaza
+
+Relationships
+
+id,source,target,description
+37,VERDANT OASIS PLAZA,UNITY MARCH,Verdant Oasis Plaza is the location of the Unity March
+38,VERDANT OASIS PLAZA,HARMONY ASSEMBLY,Harmony Assembly is holding a march at Verdant Oasis Plaza
+39,VERDANT OASIS PLAZA,UNITY MARCH,The Unity March is taking place at Verdant Oasis Plaza
+40,VERDANT OASIS PLAZA,TRIBUNE SPOTLIGHT,Tribune Spotlight is reporting on the Unity march taking place at Verdant Oasis Plaza
+41,VERDANT OASIS PLAZA,BAILEY ASADI,Bailey Asadi is speaking at Verdant Oasis Plaza about the march
+43,HARMONY ASSEMBLY,UNITY MARCH,Harmony Assembly is organizing the Unity March
+
+Output:
+{{
+    "title": "Verdant Oasis Plaza and Unity March",
+    "summary": "The community revolves around the Verdant Oasis Plaza, which is the location of the Unity March. The plaza has relationships with the Harmony Assembly, Unity March, and Tribune Spotlight, all of which are associated with the march event.",
+    "rating": 5.0,
+    "rating_explanation": "The impact severity rating is moderate due to the potential for unrest or conflict during the Unity March.",
+    "findings": [
+        {{
+            "summary": "Verdant Oasis Plaza as the central location",
+            "explanation": "Verdant Oasis Plaza is the central entity in this community, serving as the location for the Unity March. This plaza is the common link between all other entities, suggesting its significance in the community. The plaza's association with the march could potentially lead to issues such as public disorder or conflict, depending on the nature of the march and the reactions it provokes. [Data: Entities (5), Relationships (37, 38, 39, 40, 41,+more)]"
+        }},
+        {{
+            "summary": "Harmony Assembly's role in the community",
+            "explanation": "Harmony Assembly is another key entity in this community, being the organizer of the march at Verdant Oasis Plaza. The nature of Harmony Assembly and its march could be a potential source of threat, depending on their objectives and the reactions they provoke. The relationship between Harmony Assembly and the plaza is crucial in understanding the dynamics of this community. [Data: Entities(6), Relationships (38, 43)]"
+        }},
+        {{
+            "summary": "Unity March as a significant event",
+            "explanation": "The Unity March is a significant event taking place at Verdant Oasis Plaza. This event is a key factor in the community's dynamics and could be a potential source of threat, depending on the nature of the march and the reactions it provokes. The relationship between the march and the plaza is crucial in understanding the dynamics of this community. [Data: Relationships (39)]"
+        }},
+        {{
+            "summary": "Role of Tribune Spotlight",
+            "explanation": "Tribune Spotlight is reporting on the Unity March taking place in Verdant Oasis Plaza. This suggests that the event has attracted media attention, which could amplify its impact on the community. The role of Tribune Spotlight could be significant in shaping public perception of the event and the entities involved. [Data: Relationships (40)]"
+        }}
+    ]
+}}
+
+# Real Data
+
+Use the following text for your answer. Do not make anything up in your answer.
+
+Text:
+{input_text}
+Output:

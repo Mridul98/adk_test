@@ -1,0 +1,28 @@
+## Overview  
+This model cleans raw product data by standardizing text fields, converting price to a decimal type, and ensuring stock quantity is non‑null. The result is a tidy product table ready for downstream analytics.
+
+## Tables Involved  
+- `raw.products`: source table containing raw product information.
+
+## Columns Used  
+- `raw.products.product_id` – unique identifier for each product.  
+- `raw.products.product_name` – original product name; trimmed and title‑cased.  
+- `raw.products.category` – original category; trimmed and title‑cased.  
+- `raw.products.brand` – original brand; trimmed and converted to lower case.  
+- `raw.products.price` – original price string; converted to a decimal(10,2).  
+- `raw.products.stock_quantity` – original stock quantity; replaced nulls with 0.
+
+## Logic Explanation  
+1. **CTE `cleaned`**  
+   - **Source**: `raw.products`.  
+   - **Filters**: Excludes rows where `product_id` is null.  
+   - **Transformations**:  
+     - `product_name` and `category` are trimmed of whitespace and converted to title case using `INITCAP(TRIM(...))`.  
+     - `brand` is trimmed and converted to lower case.  
+     - `price` is converted from a string to a decimal(10,2) using `TRY_TO_DECIMAL`.  
+     - `stock_quantity` is replaced with 0 where null via `COALESCE`.  
+2. **Final SELECT**  
+   - Returns all columns from the `cleaned` CTE, preserving the cleaned values.
+
+## Grain of Data  
+One row per distinct `product_id`; the dataset is at the product level.

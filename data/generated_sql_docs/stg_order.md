@@ -1,0 +1,36 @@
+## Overview  
+This model cleans and normalizes order data by converting dates and statuses to standard formats, filtering out incomplete records, joining orders with their items, and calculating the net amount for each order line.
+
+## Tables Involved  
+- **raw.orders**: Stores customer orders with metadata such as order date and status.  
+- **raw.order_items**: Contains individual line items for each order, including product details and pricing.
+
+## Columns Used  
+- **raw.orders.order_id** – Unique identifier for each order.  
+- **raw.orders.customer_id** – Identifier for the customer who placed the order.  
+- **raw.orders.order_date** – Original order date string, converted to a date type.  
+- **raw.orders.order_status** – Original status string, trimmed and lower‑cased.  
+- **raw.order_items.order_id** – Foreign key linking to `raw.orders`.  
+- **raw.order_items.product_id** – Identifier for the product in the order line.  
+- **raw.order_items.quantity** – Quantity ordered for the product.  
+- **raw.order_items.unit_price** – Unit price of the product.  
+- **raw.order_items.discount** – Discount applied to the line item (may be NULL).  
+- **cleaned_orders.net_amount** – Calculated as `(quantity * unit_price) - COALESCE(discount, 0)`.
+
+## Logic Explanation  
+1. **CTE `cleaned_orders`**  
+   - **Source tables**: `raw.orders` (aliased as `o`) and `raw.order_items` (aliased as `oi`).  
+   - **Join**: Inner join on `o.order_id = oi.order_id`.  
+   - **Filters**:  
+     - `o.order_status IS NOT NULL` – removes orders without a status.  
+     - `TRY_TO_DATE(o.order_date) IS NOT NULL` – keeps only orders with a valid date.  
+   - **Transformations**:  
+     - `TRY_TO_DATE(o.order_date)` converts the date string to a date type.  
+     - `LOWER(TRIM(o.order_status))` normalizes the status text.  
+   - **Calculations**:  
+     - `net_amount` is computed per line item as `(quantity * unit_price) - COALESCE(discount, 0)`.  
+2. **Final SELECT**  
+   - Projects all columns from the `cleaned_orders` CTE, providing a cleaned, flattened view of order lines with calculated net amounts.
+
+## Grain of Data  
+The result set is at the **order‑item level**: each row represents a single product line within an order.
