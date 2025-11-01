@@ -1,1 +1,6 @@
 adk_venv/*
+generated_text_docs/transactions/
+*.db
+*.db.*
+*.log
+*.bin
