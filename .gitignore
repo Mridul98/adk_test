@@ -4,3 +4,6 @@ generated_text_docs/transactions/
 *.db.*
 *.log
 *.bin
+generated_text_docs/cache/
+generated_text_docs/logs/
+generated_text_docs/output/
