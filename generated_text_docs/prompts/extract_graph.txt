@@ -28,7 +28,7 @@ Format each relationship as ("relationship"{tuple_delimiter}<source_entity>{tupl
 
 Example 1:
 
-entity_types: [Customer, Order, Order Item, Product, Region, Category]
+entity_types: [Model, CTE, Source Table, Column, Function, Derived Column, Data Quality Rule, Business Concept, Data Grain]
 text:
 ## Overview  
 This model cleans raw customer data by trimming and formatting names, normalizing email addresses, converting timestamps to dates, and ensuring an active status flag. It filters out records with invalid email formats and outputs a tidy customer table.
@@ -66,36 +66,84 @@ One row per customer (`customer_id`), representing the cleaned customer record.
 
 ------------------------
 output:
-("entity"{tuple_delimiter}CUSTOMER{tuple_delimiter}Customer{tuple_delimiter}Customer is an entity represented in the raw.customers table, with attributes including customer_id and region, which identifies the geographic region of the customer)
+("entity"{tuple_delimiter}cleaned{tuple_delimiter}CTE{tuple_delimiter}Intermediate cleaned dataset derived from raw.customers by applying filtering and transformation logic.)
 {record_delimiter}
-("entity"{tuple_delimiter}ORDER{tuple_delimiter}Order{tuple_delimiter}Order is an entity represented in the staging.stg_orders table, with attributes including product_id, customer_id, order_date, and net_amount, which represents the monetary value of the order)
+("entity"{tuple_delimiter}raw.customers{tuple_delimiter}Source Table{tuple_delimiter}Table containing unprocessed customer information from the raw layer.)
 {record_delimiter}
-("entity"{tuple_delimiter}PRODUCT{tuple_delimiter}Product{tuple_delimiter}Product is an entity represented in the raw.products table, with attributes including product_id and category, which categorizes the product)
+("entity"{tuple_delimiter}customer_id{tuple_delimiter}Column{tuple_delimiter}Unique identifier for each customer.)
 {record_delimiter}
-("entity"{tuple_delimiter}REGION{tuple_delimiter}Region{tuple_delimiter}Region is an entity derived from the region attribute in the raw.customers table, representing the geographic region of the customer)
+("entity"{tuple_delimiter}first_name{tuple_delimiter}Column{tuple_delimiter}Customer’s first name; trimmed and capitalized in the output.)
 {record_delimiter}
-("entity"{tuple_delimiter}CATEGORY{tuple_delimiter}Category{tuple_delimiter}Category is an entity derived from the category attribute in the raw.products table, representing the classification of a product)
+("entity"{tuple_delimiter}last_name{tuple_delimiter}Column{tuple_delimiter}Customer’s last name; trimmed and capitalized in the output.)
 {record_delimiter}
-("relationship"{tuple_delimiter}ORDER{tuple_delimiter}PRODUCT{tuple_delimiter}Order is joined with Product via the product_id attribute to associate each order with its corresponding product{tuple_delimiter}10)
+("entity"{tuple_delimiter}email{tuple_delimiter}Column{tuple_delimiter}Customer email address; lowercased and validated to contain '@'.)
 {record_delimiter}
-("relationship"{tuple_delimiter}ORDER{tuple_delimiter}CUSTOMER{tuple_delimiter}Order is joined with Customer via the customer_id attribute to associate each order with its purchasing customer{tuple_delimiter}10)
+("entity"{tuple_delimiter}region{tuple_delimiter}Column{tuple_delimiter}Customer’s region; trimmed and capitalized.)
 {record_delimiter}
-("relationship"{tuple_delimiter}CUSTOMER{tuple_delimiter}REGION{tuple_delimiter}Customer is associated with Region via the region attribute in the raw.customers table{tuple_delimiter}9)
+("entity"{tuple_delimiter}created_at{tuple_delimiter}Column{tuple_delimiter}Creation timestamp parsed into date using TRY_TO_DATE.)
 {record_delimiter}
-("relationship"{tuple_delimiter}PRODUCT{tuple_delimiter}CATEGORY{tuple_delimiter}Product is associated with Category via the category attribute in the raw.products table{tuple_delimiter}10)
+("entity"{tuple_delimiter}is_active{tuple_delimiter}Column{tuple_delimiter}Boolean flag indicating active status; defaults to TRUE if NULL.)
 {record_delimiter}
-("relationship"{tuple_delimiter}ORDER{tuple_delimiter}REGION{tuple_delimiter}Order is indirectly associated with Region through the Customer entity, as the customer's region is linked to the order{tuple_delimiter}7)
+("entity"{tuple_delimiter}INITCAP{tuple_delimiter}Function{tuple_delimiter}SQL function that converts a string to title case.)
 {record_delimiter}
-("relationship"{tuple_delimiter}ORDER{tuple_delimiter}CATEGORY{tuple_delimiter}Order is indirectly associated with Category through the Product entity, as the product's category is linked to the order{tuple_delimiter}7)
+("entity"{tuple_delimiter}COALESCE{tuple_delimiter}Function{tuple_delimiter}SQL function used to replace NULLs with specified default values.)
 {record_delimiter}
-("relationship"{tuple_delimiter}REGION{tuple_delimiter}CATEGORY{tuple_delimiter}Region and Category are grouped together in the model's aggregation logic, as the output is calculated per region-category pair{tuple_delimiter}6)
+("entity"{tuple_delimiter}TRY_TO_DATE{tuple_delimiter}Function{tuple_delimiter}SQL function that attempts to safely parse a value into a date.)
+{record_delimiter}
+("entity"{tuple_delimiter}LOWER{tuple_delimiter}Function{tuple_delimiter}SQL function that converts strings to lowercase.)
+{record_delimiter}
+("entity"{tuple_delimiter}TRIM{tuple_delimiter}Function{tuple_delimiter}SQL function that removes leading and trailing whitespace.)
+{record_delimiter}
+("entity"{tuple_delimiter}Email must contain '@'{tuple_delimiter}Data Quality Rule{tuple_delimiter}Validation rule ensuring valid email formats.)
+{record_delimiter}
+("entity"{tuple_delimiter}Customer{tuple_delimiter}Business Concept{tuple_delimiter}Represents an individual customer in the system.)
+{record_delimiter}
+("entity"{tuple_delimiter}Region{tuple_delimiter}Business Concept{tuple_delimiter}Geographical area associated with the customer.)
+{record_delimiter}
+("entity"{tuple_delimiter}Active Status{tuple_delimiter}Business Concept{tuple_delimiter}Represents whether a customer is currently active.)
+{record_delimiter}
+("entity"{tuple_delimiter}One row per customer{tuple_delimiter}Data Grain{tuple_delimiter}Defines that each row represents one unique customer record.)
+{record_delimiter}
+("entity"{tuple_delimiter}cleaned_customer_model{tuple_delimiter}Model{tuple_delimiter}Final dbt model providing a cleaned, standardized customer dataset.)
+{record_delimiter}
+("relationship"{tuple_delimiter}cleaned_customer_model{tuple_delimiter}raw.customers{tuple_delimiter}Model depends on raw.customer table as input source.{tuple_delimiter}9)
+{record_delimiter}
+("relationship"{tuple_delimiter}cleaned_customer_model{tuple_delimiter}cleaned{tuple_delimiter}Model is produced from the cleaned CTE.{tuple_delimiter}10)
+{record_delimiter}
+("relationship"{tuple_delimiter}cleaned{tuple_delimiter}raw.customers{tuple_delimiter}CTE derives data from the raw customer table.{tuple_delimiter}10)
+{record_delimiter}
+("relationship"{tuple_delimiter}cleaned{tuple_delimiter}email{tuple_delimiter}CTE filters out invalid email addresses.{tuple_delimiter}8)
+{record_delimiter}
+("relationship"{tuple_delimiter}email{tuple_delimiter}Email must contain '@'{tuple_delimiter}Email column enforces a data quality rule for validation.{tuple_delimiter}9)
+{record_delimiter}
+("relationship"{tuple_delimiter}cleaned{tuple_delimiter}INITCAP{tuple_delimiter}CTE applies INITCAP for name and region formatting.{tuple_delimiter}7)
+{record_delimiter}
+("relationship"{tuple_delimiter}cleaned{tuple_delimiter}COALESCE{tuple_delimiter}CTE uses COALESCE to handle NULL is_active values.{tuple_delimiter}7)
+{record_delimiter}
+("relationship"{tuple_delimiter}cleaned{tuple_delimiter}TRY_TO_DATE{tuple_delimiter}CTE applies TRY_TO_DATE to parse created_at into date.{tuple_delimiter}7)
+{record_delimiter}
+("relationship"{tuple_delimiter}cleaned{tuple_delimiter}LOWER{tuple_delimiter}CTE applies LOWER function to normalize email addresses.{tuple_delimiter}7)
+{record_delimiter}
+("relationship"{tuple_delimiter}cleaned{tuple_delimiter}TRIM{tuple_delimiter}CTE applies TRIM to remove extra whitespace in text fields.{tuple_delimiter}7)
+{record_delimiter}
+("relationship"{tuple_delimiter}first_name{tuple_delimiter}Customer{tuple_delimiter}Column represents customer’s first name attribute.{tuple_delimiter}8)
+{record_delimiter}
+("relationship"{tuple_delimiter}last_name{tuple_delimiter}Customer{tuple_delimiter}Column represents customer’s last name attribute.{tuple_delimiter}8)
+{record_delimiter}
+("relationship"{tuple_delimiter}region{tuple_delimiter}Region{tuple_delimiter}Column corresponds to customer’s region attribute.{tuple_delimiter}8)
+{record_delimiter}
+("relationship"{tuple_delimiter}is_active{tuple_delimiter}Active Status{tuple_delimiter}Column represents customer’s activity state.{tuple_delimiter}8)
+{record_delimiter}
+("relationship"{tuple_delimiter}customer_id{tuple_delimiter}Customer{tuple_delimiter}Column uniquely identifies each customer record.{tuple_delimiter}9)
+{record_delimiter}
+("relationship"{tuple_delimiter}cleaned_customer_model{tuple_delimiter}One row per customer{tuple_delimiter}Defines the data grain of the model.{tuple_delimiter}10)
 {completion_delimiter}
 #############################
 
 
 Example 2:
 
-entity_types: [Customer, Order, Order Item, Product, Region, Category]
+entity_types: [Model, CTE, Source Table, Column, Derived Column, Function, Business Concept, Data Grain]
 text:
 ## Overview  
 This model aggregates daily order amounts by region and product category, then computes monthly totals, active sales days, and month‑over‑month growth percentages for each region‑category pair.
@@ -129,23 +177,111 @@ The output is at the monthly level per `region` and `category` (one row per regi
 
 ------------------------
 output:
-("entity"{tuple_delimiter}CUSTOMER{tuple_delimiter}Customer{tuple_delimiter}Customer is an entity represented by the raw.customers table, containing customer_id and region attributes, providing geographic region information for each customer)
+("entity"{tuple_delimiter}base{tuple_delimiter}CTE{tuple_delimiter}Joins orders with products and customers to attach region and category; computes daily_sales per day.)
 {record_delimiter}
-("entity"{tuple_delimiter}ORDER{tuple_delimiter}Order{tuple_delimiter}Order is an entity represented by the staging.stg_orders table, containing product_id, customer_id, order_date, and net_amount attributes, representing individual purchase transactions)
+("entity"{tuple_delimiter}monthly_aggregates{tuple_delimiter}CTE{tuple_delimiter}Aggregates daily sales from base into monthly totals and counts active sales days.)
 {record_delimiter}
-("entity"{tuple_delimiter}PRODUCT{tuple_delimiter}Product{tuple_delimiter}Product is an entity represented by the raw.products table, containing product_id and category attributes, defining product classifications)
+("entity"{tuple_delimiter}yoy_growth{tuple_delimiter}CTE{tuple_delimiter}Calculates month-over-month growth percentages for each region-category pair.)
 {record_delimiter}
-("entity"{tuple_delimiter}REGION{tuple_delimiter}Region{tuple_delimiter}Region is a geographic classification derived from the customer's region attribute in the raw.customers table)
+("entity"{tuple_delimiter}staging.stg_orders{tuple_delimiter}Source Table{tuple_delimiter}Source table containing order details including product_id, customer_id, order_date, and net_amount.)
 {record_delimiter}
-("entity"{tuple_delimiter}CATEGORY{tuple_delimiter}Category{tuple_delimiter}Category is a product classification derived from the category attribute in the raw.products table)
+("entity"{tuple_delimiter}raw.products{tuple_delimiter}Source Table{tuple_delimiter}Source table containing product categories and product identifiers.)
 {record_delimiter}
-("relationship"{tuple_delimiter}ORDER{tuple_delimiter}CUSTOMER{tuple_delimiter}Order is linked to Customer through the customer_id attribute{tuple_delimiter}10)
+("entity"{tuple_delimiter}raw.customers{tuple_delimiter}Source Table{tuple_delimiter}Source table containing customer regions and identifiers.)
 {record_delimiter}
-("relationship"{tuple_delimiter}ORDER{tuple_delimiter}PRODUCT{tuple_delimiter}Order is linked to Product through the product_id attribute{tuple_delimiter}10)
+("entity"{tuple_delimiter}product_id{tuple_delimiter}Column{tuple_delimiter}Identifier for the purchased product, present in orders and products tables.)
 {record_delimiter}
-("relationship"{tuple_delimiter}CUSTOMER{tuple_delimiter}REGION{tuple_delimiter}Customer is associated with Region through the region attribute{tuple_delimiter}10)
+("entity"{tuple_delimiter}customer_id{tuple_delimiter}Column{tuple_delimiter}Identifier for the customer, present in orders and customers tables.)
 {record_delimiter}
-("relationship"{tuple_delimiter}PRODUCT{tuple_delimiter}CATEGORY{tuple_delimiter}Product is associated with Category through the category attribute{tuple_delimiter}10)
+("entity"{tuple_delimiter}order_date{tuple_delimiter}Column{tuple_delimiter}Date of the order.)
+{record_delimiter}
+("entity"{tuple_delimiter}net_amount{tuple_delimiter}Column{tuple_delimiter}Monetary value of the order.)
+{record_delimiter}
+("entity"{tuple_delimiter}category{tuple_delimiter}Column{tuple_delimiter}Product category from the products table.)
+{record_delimiter}
+("entity"{tuple_delimiter}region{tuple_delimiter}Column{tuple_delimiter}Geographic region of the customer.)
+{record_delimiter}
+("entity"{tuple_delimiter}daily_sales{tuple_delimiter}Derived Column{tuple_delimiter}Sum of net_amount per day per region-category in the base CTE.)
+{record_delimiter}
+("entity"{tuple_delimiter}month{tuple_delimiter}Derived Column{tuple_delimiter}Truncated month derived from order_date for monthly aggregation.)
+{record_delimiter}
+("entity"{tuple_delimiter}total_monthly_sales{tuple_delimiter}Derived Column{tuple_delimiter}Sum of daily_sales per month per region-category.)
+{record_delimiter}
+("entity"{tuple_delimiter}active_days{tuple_delimiter}Derived Column{tuple_delimiter}Count of distinct order_date per month per region-category.)
+{record_delimiter}
+("entity"{tuple_delimiter}prev_month_sales{tuple_delimiter}Derived Column{tuple_delimiter}Previous month’s total monthly sales used for growth calculation.)
+{record_delimiter}
+("entity"{tuple_delimiter}month_over_month_growth_pct{tuple_delimiter}Derived Column{tuple_delimiter}Percentage growth of total_monthly_sales relative to previous month, rounded to 2 decimals.)
+{record_delimiter}
+("entity"{tuple_delimiter}monthly_region_category_model{tuple_delimiter}Model{tuple_delimiter}Final model providing monthly aggregated sales and growth metrics by region and category.)
+{record_delimiter}
+("entity"{tuple_delimiter}LAG{tuple_delimiter}Function{tuple_delimiter}Window function used to fetch previous month’s sales for growth calculation.)
+{record_delimiter}
+("entity"{tuple_delimiter}DATE_TRUNC{tuple_delimiter}Function{tuple_delimiter}SQL function to truncate order_date to month granularity.)
+{record_delimiter}
+("entity"{tuple_delimiter}SUM{tuple_delimiter}Function{tuple_delimiter}SQL aggregation function to compute totals.)
+{record_delimiter}
+("entity"{tuple_delimiter}COUNT_DISTINCT{tuple_delimiter}Function{tuple_delimiter}SQL aggregation function to count unique dates for active_days.)
+{record_delimiter}
+("entity"{tuple_delimiter}ROUND{tuple_delimiter}Function{tuple_delimiter}SQL function to round growth percentages to two decimals.)
+{record_delimiter}
+("entity"{tuple_delimiter}One row per region-category-month{tuple_delimiter}Data Grain{tuple_delimiter}Each row represents a unique combination of region, category, and month.)
+{record_delimiter}
+("relationship"{tuple_delimiter}monthly_region_category_model{tuple_delimiter}base{tuple_delimiter}Model depends on base CTE as input.{tuple_delimiter}10)
+{record_delimiter}
+("relationship"{tuple_delimiter}monthly_region_category_model{tuple_delimiter}monthly_aggregates{tuple_delimiter}Model depends on monthly_aggregates CTE.{tuple_delimiter}10)
+{record_delimiter}
+("relationship"{tuple_delimiter}monthly_region_category_model{tuple_delimiter}yoy_growth{tuple_delimiter}Model depends on yoy_growth CTE.{tuple_delimiter}10)
+{record_delimiter}
+("relationship"{tuple_delimiter}base{tuple_delimiter}staging.stg_orders{tuple_delimiter}Base CTE uses staging.stg_orders as source table.{tuple_delimiter}9)
+{record_delimiter}
+("relationship"{tuple_delimiter}base{tuple_delimiter}raw.products{tuple_delimiter}Base CTE joins with raw.products to attach category.{tuple_delimiter}9)
+{record_delimiter}
+("relationship"{tuple_delimiter}base{tuple_delimiter}raw.customers{tuple_delimiter}Base CTE joins with raw.customers to attach region.{tuple_delimiter}9)
+{record_delimiter}
+("relationship"{tuple_delimiter}base{tuple_delimiter}product_id{tuple_delimiter}Uses product_id to join orders and products.{tuple_delimiter}8)
+{record_delimiter}
+("relationship"{tuple_delimiter}base{tuple_delimiter}customer_id{tuple_delimiter}Uses customer_id to join orders and customers.{tuple_delimiter}8)
+{record_delimiter}
+("relationship"{tuple_delimiter}base{tuple_delimiter}order_date{tuple_delimiter}Aggregates orders by order_date.{tuple_delimiter}8)
+{record_delimiter}
+("relationship"{tuple_delimiter}base{tuple_delimiter}net_amount{tuple_delimiter}Computes daily_sales as sum of net_amount.{tuple_delimiter}9)
+{record_delimiter}
+("relationship"{tuple_delimiter}base{tuple_delimiter}daily_sales{tuple_delimiter}Derived daily sales value.{tuple_delimiter}10)
+{record_delimiter}
+("relationship"{tuple_delimiter}monthly_aggregates{tuple_delimiter}base{tuple_delimiter}Uses base CTE to compute monthly totals.{tuple_delimiter}10)
+{record_delimiter}
+("relationship"{tuple_delimiter}monthly_aggregates{tuple_delimiter}month{tuple_delimiter}Uses DATE_TRUNC to generate month key.{tuple_delimiter}8)
+{record_delimiter}
+("relationship"{tuple_delimiter}monthly_aggregates{tuple_delimiter}total_monthly_sales{tuple_delimiter}Aggregates daily_sales into monthly totals.{tuple_delimiter}10)
+{record_delimiter}
+("relationship"{tuple_delimiter}monthly_aggregates{tuple_delimiter}active_days{tuple_delimiter}Counts distinct order_date per month-category.{tuple_delimiter}10)
+{record_delimiter}
+("relationship"{tuple_delimiter}yoy_growth{tuple_delimiter}monthly_aggregates{tuple_delimiter}Uses monthly_aggregates CTE for calculations.{tuple_delimiter}10)
+{record_delimiter}
+("relationship"{tuple_delimiter}yoy_growth{tuple_delimiter}prev_month_sales{tuple_delimiter}Uses LAG function to get previous month sales.{tuple_delimiter}9)
+{record_delimiter}
+("relationship"{tuple_delimiter}yoy_growth{tuple_delimiter}month_over_month_growth_pct{tuple_delimiter}Computes month-over-month growth percentage.{tuple_delimiter}10)
+{record_delimiter}
+("relationship"{tuple_delimiter}prev_month_sales{tuple_delimiter}LAG{tuple_delimiter}Derived column uses LAG window function.{tuple_delimiter}9)
+{record_delimiter}
+("relationship"{tuple_delimiter}month{tuple_delimiter}DATE_TRUNC{tuple_delimiter}Derived column uses DATE_TRUNC function.{tuple_delimiter}8)
+{record_delimiter}
+("relationship"{tuple_delimiter}total_monthly_sales{tuple_delimiter}SUM{tuple_delimiter}Derived column uses SUM aggregation.{tuple_delimiter}9)
+{record_delimiter}
+("relationship"{tuple_delimiter}active_days{tuple_delimiter}COUNT_DISTINCT{tuple_delimiter}Derived column uses COUNT DISTINCT aggregation.{tuple_delimiter}9)
+{record_delimiter}
+("relationship"{tuple_delimiter}month_over_month_growth_pct{tuple_delimiter}ROUND{tuple_delimiter}Derived column uses ROUND function.{tuple_delimiter}9)
+{record_delimiter}
+("relationship"{tuple_delimiter}product_id{tuple_delimiter}Product{tuple_delimiter}Column represents product identifier in business context.{tuple_delimiter}8)
+{record_delimiter}
+("relationship"{tuple_delimiter}customer_id{tuple_delimiter}Customer{tuple_delimiter}Column represents customer identifier in business context.{tuple_delimiter}8)
+{record_delimiter}
+("relationship"{tuple_delimiter}region{tuple_delimiter}Region{tuple_delimiter}Column represents customer region in business context.{tuple_delimiter}8)
+{record_delimiter}
+("relationship"{tuple_delimiter}category{tuple_delimiter}Category{tuple_delimiter}Column represents product category in business context.{tuple_delimiter}8)
+{record_delimiter}
+("relationship"{tuple_delimiter}monthly_region_category_model{tuple_delimiter}One row per region-category-month{tuple_delimiter}Defines the data grain of the model.{tuple_delimiter}10)
 {completion_delimiter}
 #############################
 
@@ -153,7 +289,7 @@ output:
 
 -Real Data-
 ######################
-entity_types: [Customer, Order, Order Item, Product, Region, Category]
+entity_types: [Model, CTE, Source Table, Column, Derived Column, Function, Business Concept, Data Grain]
 text: {input_text}
 ######################
 output:
