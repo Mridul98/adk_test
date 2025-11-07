@@ -6,4 +6,4 @@ generated_text_docs/transactions/
 *.bin
 generated_text_docs/cache/*
 generated_text_docs/logs/*
-generated_text_docs/output/*
+generated_text_docs/output/lanacedb/*
