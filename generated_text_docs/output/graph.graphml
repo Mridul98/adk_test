@@ -1,44 +1,259 @@
 <graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
   <key id="d0" for="edge" attr.name="weight" attr.type="double" />
   <graph edgedefault="undirected">
-    <node id="CUSTOMER" />
-    <node id="ORDER" />
-    <node id="REGION" />
+    <node id="PRODUCT_MONTHLY" />
+    <node id="PRODUCT_MONTHLY_SALES_MODEL" />
+    <node id="STAGING.STG_ORDERS" />
+    <node id="STAGING.STG_PRODUCTS" />
+    <node id="PRODUCT_ID" />
+    <node id="ORDER_DATE" />
+    <node id="NET_AMOUNT" />
+    <node id="TOTAL_SALES" />
+    <node id="GROWTH" />
+    <node id="PREV_MONTH_SALES" />
+    <node id="GROWTH_PCT" />
     <node id="PRODUCT" />
+    <node id="PRODUCT_NAME" />
     <node id="CATEGORY" />
-    <node id="ORDER ITEM" />
-    <edge source="CUSTOMER" target="ORDER">
-      <data key="d0">70.0</data>
+    <node id="MONTH" />
+    <node id="DATE_TRUNC" />
+    <node id="SUM" />
+    <node id="LAG" />
+    <node id="ROUND" />
+    <node id="ONE ROW PER PRODUCT-MONTH" />
+    <node id="BASE" />
+    <node id="CUSTOMER_SEGMENT_METRICS_MODEL" />
+    <node id="INTERMEDIATE.INT_CUSTOMER_METRICSAS" />
+    <node id="STAGING.STG_CUSTOMERS" />
+    <node id="CUSTOMER_ID" />
+    <node id="TOTAL_SPENT" />
+    <node id="CUSTOMER_SEGMENT" />
+    <node id="AVG_ORDER_VALUE" />
+    <node id="CUSTOMER_COUNT" />
+    <node id="AVG_LTV" />
+    <node id="AVG_ORDERS" />
+    <node id="ONE ROW PER REGION-CUSTOMER_SEGMENT" />
+    <node id="REGION" />
+    <node id="CUSTOMER SEGMENT" />
+    <node id="COUNT" />
+    <node id="AVG" />
+    <node id="CLEANED" />
+    <node id="CLEANED_CUSTOMER_MODEL" />
+    <node id="RAW.CUSTOMERS" />
+    <node id="FIRST_NAME" />
+    <node id="LAST_NAME" />
+    <node id="EMAIL" />
+    <node id="CREATED_AT" />
+    <node id="IS_ACTIVE" />
+    <node id="INITCAP" />
+    <node id="LOWER" />
+    <node id="TRY_TO_DATE" />
+    <node id="COALESCE" />
+    <node id="TRANSFORMATION" />
+    <node id="CUSTOMER" />
+    <node id="DATE" />
+    <node id="STATUS" />
+    <node id="ONE ROW PER CUSTOMER" />
+    <edge source="PRODUCT_MONTHLY" target="PRODUCT_MONTHLY_SALES_MODEL">
+      <data key="d0">10.0</data>
     </edge>
-    <edge source="CUSTOMER" target="REGION">
-      <data key="d0">43.0</data>
+    <edge source="PRODUCT_MONTHLY" target="STAGING.STG_ORDERS">
+      <data key="d0">9.0</data>
     </edge>
-    <edge source="CUSTOMER" target="ORDER ITEM">
-      <data key="d0">1.0</data>
+    <edge source="PRODUCT_MONTHLY" target="STAGING.STG_PRODUCTS">
+      <data key="d0">9.0</data>
     </edge>
-    <edge source="CUSTOMER" target="CATEGORY">
-      <data key="d0">1.0</data>
-    </edge>
-    <edge source="ORDER" target="PRODUCT">
-      <data key="d0">21.0</data>
-    </edge>
-    <edge source="ORDER" target="REGION">
-      <data key="d0">16.0</data>
-    </edge>
-    <edge source="ORDER" target="CATEGORY">
-      <data key="d0">14.0</data>
-    </edge>
-    <edge source="ORDER" target="ORDER ITEM">
-      <data key="d0">20.0</data>
-    </edge>
-    <edge source="REGION" target="CATEGORY">
-      <data key="d0">2.0</data>
-    </edge>
-    <edge source="PRODUCT" target="CATEGORY">
-      <data key="d0">16.0</data>
-    </edge>
-    <edge source="PRODUCT" target="ORDER ITEM">
+    <edge source="PRODUCT_MONTHLY" target="PRODUCT_ID">
       <data key="d0">8.0</data>
+    </edge>
+    <edge source="PRODUCT_MONTHLY" target="ORDER_DATE">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="PRODUCT_MONTHLY" target="NET_AMOUNT">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="PRODUCT_MONTHLY" target="TOTAL_SALES">
+      <data key="d0">10.0</data>
+    </edge>
+    <edge source="PRODUCT_MONTHLY" target="GROWTH">
+      <data key="d0">10.0</data>
+    </edge>
+    <edge source="PRODUCT_MONTHLY_SALES_MODEL" target="GROWTH">
+      <data key="d0">10.0</data>
+    </edge>
+    <edge source="PRODUCT_MONTHLY_SALES_MODEL" target="ONE ROW PER PRODUCT-MONTH">
+      <data key="d0">10.0</data>
+    </edge>
+    <edge source="PRODUCT_ID" target="PRODUCT">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="TOTAL_SALES" target="SUM">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="GROWTH" target="PREV_MONTH_SALES">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="GROWTH" target="GROWTH_PCT">
+      <data key="d0">10.0</data>
+    </edge>
+    <edge source="PREV_MONTH_SALES" target="LAG">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="GROWTH_PCT" target="ROUND">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="PRODUCT" target="PRODUCT_NAME">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="CATEGORY" target="CATEGORY">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="MONTH" target="DATE_TRUNC">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="ROUND" target="AVG_LTV">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="ROUND" target="AVG_ORDERS">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="BASE" target="CUSTOMER_SEGMENT_METRICS_MODEL">
+      <data key="d0">10.0</data>
+    </edge>
+    <edge source="BASE" target="INTERMEDIATE.INT_CUSTOMER_METRICSAS">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="BASE" target="STAGING.STG_CUSTOMERS">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="BASE" target="CUSTOMER_ID">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="BASE" target="TOTAL_SPENT">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="BASE" target="CUSTOMER_SEGMENT">
+      <data key="d0">10.0</data>
+    </edge>
+    <edge source="BASE" target="AVG_ORDER_VALUE">
+      <data key="d0">7.0</data>
+    </edge>
+    <edge source="CUSTOMER_SEGMENT_METRICS_MODEL" target="CUSTOMER_COUNT">
+      <data key="d0">10.0</data>
+    </edge>
+    <edge source="CUSTOMER_SEGMENT_METRICS_MODEL" target="AVG_LTV">
+      <data key="d0">10.0</data>
+    </edge>
+    <edge source="CUSTOMER_SEGMENT_METRICS_MODEL" target="AVG_ORDERS">
+      <data key="d0">10.0</data>
+    </edge>
+    <edge source="CUSTOMER_SEGMENT_METRICS_MODEL" target="ONE ROW PER REGION-CUSTOMER_SEGMENT">
+      <data key="d0">1.0</data>
+    </edge>
+    <edge source="CUSTOMER_SEGMENT_METRICS_MODEL" target="AVG_ORDER_VALUE">
+      <data key="d0">7.0</data>
+    </edge>
+    <edge source="INTERMEDIATE.INT_CUSTOMER_METRICSAS" target="AVG_ORDER_VALUE">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="CUSTOMER_ID" target="CUSTOMER">
+      <data key="d0">10.0</data>
+    </edge>
+    <edge source="CUSTOMER_SEGMENT" target="CUSTOMER SEGMENT">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="CUSTOMER_COUNT" target="COUNT">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="AVG_LTV" target="AVG">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="AVG_ORDERS" target="AVG">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="REGION" target="REGION">
+      <data key="d0">26.0</data>
+    </edge>
+    <edge source="REGION" target="CLEANED">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="REGION" target="CUSTOMER">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="CLEANED" target="CLEANED_CUSTOMER_MODEL">
+      <data key="d0">10.0</data>
+    </edge>
+    <edge source="CLEANED" target="RAW.CUSTOMERS">
+      <data key="d0">10.0</data>
+    </edge>
+    <edge source="CLEANED" target="FIRST_NAME">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="CLEANED" target="LAST_NAME">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="CLEANED" target="EMAIL">
+      <data key="d0">10.0</data>
+    </edge>
+    <edge source="CLEANED" target="CREATED_AT">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="CLEANED" target="IS_ACTIVE">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="CLEANED" target="INITCAP">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="CLEANED" target="LOWER">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="CLEANED" target="TRY_TO_DATE">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="CLEANED" target="COALESCE">
+      <data key="d0">1.0</data>
+    </edge>
+    <edge source="CLEANED" target="TRANSFORMATION">
+      <data key="d0">10.0</data>
+    </edge>
+    <edge source="CLEANED_CUSTOMER_MODEL" target="ONE ROW PER CUSTOMER">
+      <data key="d0">10.0</data>
+    </edge>
+    <edge source="FIRST_NAME" target="CUSTOMER">
+      <data key="d0">17.0</data>
+    </edge>
+    <edge source="LAST_NAME" target="CUSTOMER">
+      <data key="d0">17.0</data>
+    </edge>
+    <edge source="EMAIL" target="EMAIL">
+      <data key="d0">18.0</data>
+    </edge>
+    <edge source="EMAIL" target="CUSTOMER">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="CREATED_AT" target="DATE">
+      <data key="d0">18.0</data>
+    </edge>
+    <edge source="CREATED_AT" target="CUSTOMER">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="IS_ACTIVE" target="STATUS">
+      <data key="d0">18.0</data>
+    </edge>
+    <edge source="IS_ACTIVE" target="CUSTOMER">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="INITCAP" target="TRANSFORMATION">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="LOWER" target="TRANSFORMATION">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="TRY_TO_DATE" target="TRANSFORMATION">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="COALESCE" target="TRANSFORMATION">
+      <data key="d0">9.0</data>
     </edge>
   </graph>
 </graphml>
