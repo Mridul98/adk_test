@@ -1,9 +1,10 @@
 adk_venv/*
 generated_text_docs/transactions/
-*.db
-*.db.*
-*.log
-*.bin
-generated_text_docs/cache/*
-generated_text_docs/logs/*
-generated_text_docs/output/lanacedb/*
+**/*.db
+**/*.db.*
+**/*.log
+**/*.bin
+generated_text_docs/cache/**
+generated_text_docs/logs/**
+generated_text_docs/output/lanacedb/**
+**/node_modules/**
