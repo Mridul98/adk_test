@@ -1,11 +1,10 @@
-import datetime
+import uvicorn
 import litellm
-from zoneinfo import ZoneInfo
-from google.adk.agents import Agent
 from google.adk.agents import LlmAgent
 from google.adk.models.lite_llm import LiteLlm
-from typing import Optional
-from pydantic import BaseModel, Field
+from fastapi import FastAPI 
+from ag_ui_adk import ADKAgent, add_adk_fastapi_endpoint
+
 
 
 litellm._turn_on_debug()
@@ -46,6 +45,22 @@ root_agent = LlmAgent(
        "4. Logic Explanation: Present step-wise; if CTEs, describe flow in order. Also generate a short description of the cte in 1-2 sentences.\n"
        "5. Grain of Data: Specify the granularity of the data returned.\n"
        "Adhere strictly to this format."),
-    include_contents="none",
-    output_key="weatherresult"
+    output_key="sql_documentation"
 )
+
+adk_agent_sample = ADKAgent(
+    adk_agent=root_agent,
+    app_name="sql_documentation_generator_agent",
+    user_id="test_user",
+    session_timeout_seconds=3600,
+    use_in_memory_services=True
+)
+
+app = FastAPI(title="SQL Documentation Generator Agent API")
+
+add_adk_fastapi_endpoint(app, adk_agent_sample, path="/")
+
+
+if __name__ == "__main__":
+
+    uvicorn.run(app, host="localhost", port=8000)
