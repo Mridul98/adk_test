@@ -3,3 +3,4 @@ litellm
 ag_ui_adk
 uvicorn 
 fastapi
+graphrag
