@@ -1,0 +1,43 @@
+## Table Name: REPORTING_DEV.DBT_MAHMUDNABI_gtm_analytics.marketing_qualified_leads_unpivot
+
+## Overview  
+This model transforms marketing qualified lead records by unpivoting multiple date columns into a single date field per stage, enriches each record with status labels, color codes, and various date‑derived attributes, filters for recent, non‑null dates, and orders the results by lead name and status.
+
+## Tables Involved  
+- **REPORTING_DEV.DBT_MAHMUDNABI_gtm_analytics.marketing_qualified_leads**: source table containing lead information and stage dates.
+
+## Columns Used  
+**REPORTING_DEV.DBT_MAHMUDNABI_gtm_analytics.marketing_qualified_leads**  
+- `date_status_qualified` – original date when the lead became a marketing qualified lead.  
+- `date_status_spl` – original date when the lead entered the SPL stage.  
+- `date_entered_stage_sql` – original date when the lead entered the SQL stage.  
+- `date_entered_stage_accepted` – original date when the lead entered the Accepted stage.  
+- `date_entered_stage_discovery` – original date when the lead entered the Discovery stage.  
+- `qualified_lead_name` – name of the lead (used for ordering).  
+- *Other columns are selected via `SELECT *` but are not inferable from the provided SQL.*
+
+## Logic Explanation  
+1. **CTE `unpivotted_data`** – Unpivots the five stage‑date columns into two columns:  
+   - `date_status` (the date value)  
+   - `date_stage_type` (the original column name).  
+   This produces one row per lead per stage date.  
+
+2. **Main SELECT** – For each row from the CTE:  
+   - Copies all original columns (`SELECT *`).  
+   - Derives `lead_status` by mapping `date_stage_type` to a human‑readable status label.  
+   - Derives `lead_status_colour_format` by mapping `date_stage_type` to a hex color code.  
+   - Formats `date_status` into:  
+     - `date_status_year_quarter` (e.g., “2024 Q1”)  
+     - `date_status_year_month` (e.g., “2024-01”)  
+     - `date_status_month` (two‑digit month).  
+   - Calculates `date_status_week_of_quarter` as the week number within the quarter.  
+
+3. **Filtering** – Keeps only rows where:  
+   - `date_status` is not null.  
+   - `date_status` is after October 1, 2023.  
+   - `lead_status` is not null (ensures a valid stage mapping).  
+
+4. **Ordering** – Results are sorted by `qualified_lead_name` and then by `lead_status`.
+
+## Grain of Data  
+The output is at the **lead‑stage‑date** level: each row represents a single lead at a specific stage date (up to five rows per original lead record).

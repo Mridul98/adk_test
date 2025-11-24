@@ -1,0 +1,38 @@
+## Table Name: REPORTING_DEV.DBT_MAHMUDNABI_gtm_analytics.user_role_snapshot
+
+## Overview  
+This query retrieves a complete snapshot of user role records from the `sfdc_user_role_snapshot` table, including metadata for change tracking and access permissions.
+
+## Tables Involved  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_user_role_snapshot`: Snapshot of Salesforce user role data with change‑detection fields.
+
+## Columns Used  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_user_role_snapshot.ID` - Unique identifier for the role snapshot.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_user_role_snapshot.NAME` - Name of the user role.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_user_role_snapshot.PARENT_ROLE_ID` - Identifier of the parent role.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_user_role_snapshot.ROLLUP_DESCRIPTION` - Description of the rollup hierarchy.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_user_role_snapshot.OPPORTUNITY_ACCESS_FOR_ACCOUNT_OWNER` - Access level for opportunities granted to account owners.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_user_role_snapshot.CASE_ACCESS_FOR_ACCOUNT_OWNER` - Access level for cases granted to account owners.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_user_role_snapshot.CONTACT_ACCESS_FOR_ACCOUNT_OWNER` - Access level for contacts granted to account owners.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_user_role_snapshot.FORECAST_USER_ID` - Identifier of the forecast user.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_user_role_snapshot.MAY_FORECAST_MANAGER_SHARE` - Flag indicating if forecast manager share is allowed.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_user_role_snapshot.LAST_MODIFIED_DATE` - Timestamp of the last modification.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_user_role_snapshot.LAST_MODIFIED_BY_ID` - Identifier of the user who performed the last modification.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_user_role_snapshot.SYSTEM_MODSTAMP` - System modification stamp.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_user_role_snapshot.DEVELOPER_NAME` - Name of the developer associated with the record.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_user_role_snapshot.PORTAL_ACCOUNT_ID` - Identifier of the portal account.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_user_role_snapshot.PORTAL_TYPE` - Type of portal.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_user_role_snapshot.PORTAL_ROLE` - Role within the portal.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_user_role_snapshot.PORTAL_ACCOUNT_OWNER_ID` - Identifier of the portal account owner.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_user_role_snapshot._FIVETRAN_DELETED` - Flag indicating if the record is marked deleted.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_user_role_snapshot._FIVETRAN_SYNCED` - Flag indicating if the record has been synced.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_user_role_snapshot.DBT_SCD_ID` - Slowly changing dimension identifier.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_user_role_snapshot.DBT_UPDATED_AT` - Timestamp of the last DBT update.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_user_role_snapshot.DBT_VALID_FROM` - Start of the validity period.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_user_role_snapshot.DBT_VALID_TO` - End of the validity period.
+
+## Logic Explanation  
+The query performs a straightforward `SELECT *` from the `sfdc_user_role_snapshot` table, retrieving all columns without any filtering, joins, or aggregations. It simply returns the current state of each role snapshot record, including metadata for change tracking and access permissions.
+
+## Grain of Data  
+The result set is at the individual role snapshot record level; each row represents a single snapshot of a user role.

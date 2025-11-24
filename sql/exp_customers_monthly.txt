@@ -1,0 +1,35 @@
+## Table Name: REPORTING_DEV.DBT_MAHMUDNABI_gtm_analytics.exp_customers_monthly
+
+## Overview  
+This model aggregates monthly counts of customers, experiments, and user logins from experiment metrics and GA activity to provide a high‑level view of experiment lifecycle and user engagement.
+
+## Tables Involved  
+- **REPORTING_DEV.DBT_MAHMUDNABI_opti_application.experiment_metrics** – source of experiment lifecycle data.  
+- **REPORTING_DEV.DBT_MAHMUDNABI_experiment_benchmark.gae_activity** – source of user login events.
+
+## Columns Used  
+
+**REPORTING_DEV.DBT_MAHMUDNABI_opti_application.experiment_metrics**  
+- `experiment_creation_timestamp` – timestamp when an experiment was created.  
+- `experiment_start_time_impressions_reached` – timestamp when an experiment started reaching impressions.  
+- `experiment_concluded_time` – timestamp when an experiment concluded.  
+- `customer_id` – identifier of the customer associated with the experiment.  
+- `experiment_id` – unique identifier of the experiment.  
+- `year_month` (derived) – `TO_VARCHAR(<timestamp>, 'YYYY-MM')` used to group data by month.  
+
+**REPORTING_DEV.DBT_MAHMUDNABI_experiment_benchmark.gae_activity**  
+- `created_gae` – timestamp of the GA event.  
+- `email` – email address of the user who performed the event.  
+- `event` – type of GA event (filtered for `'signin'`).  
+- `year_month` (derived) – `TO_VARCHAR(created_gae, 'YYYY-MM')` used to group logins by month.
+
+## Logic Explanation  
+1. **subq1** – Combines three distinct sets of rows (creation, start, and conclusion timestamps) for each customer, converting each timestamp to a `year_month` string. The `UNION DISTINCT` removes duplicate rows across the three sources. It then groups by `year_month` and counts distinct `customer_id` values, producing the monthly count of unique customers involved in any experiment event.  
+2. **subq2** – Groups experiment metrics by `year_month` derived from `experiment_creation_timestamp` and counts distinct `experiment_id` values, yielding the number of experiments created each month.  
+3. **subq3** – Groups by `year_month` derived from `experiment_start_time_impressions_reached` and counts distinct `experiment_id` values, giving the number of experiments started each month.  
+4. **subq4** – Filters GA activity for `event = 'signin'`, groups by `year_month` derived from `created_gae`, and counts `email` occurrences to count user logins per month.  
+5. **t5** – Groups by `year_month` derived from `experiment_concluded_time` and counts distinct `experiment_id` values, providing the number of experiments concluded each month.  
+6. The final `SELECT` left‑joins all five subqueries on `year_month`, ensuring that months with missing data in any subquery still appear with `NULL` values. The result is ordered by `year_month` descending.
+
+## Grain of Data  
+Monthly aggregated counts per month (one row per month).

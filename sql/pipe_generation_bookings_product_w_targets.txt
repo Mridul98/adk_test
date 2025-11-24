@@ -1,0 +1,45 @@
+## Table Name: REPORTING_DEV.DBT_MAHMUDNABI_gtm_analytics.pipe_generation_bookings_product_w_targets
+
+## Overview  
+This model aggregates pipe generation and booking data, aligns it with manual target definitions, counts occurrences per target, and calculates proportional target metrics for each record.
+
+## Tables Involved  
+- `REPORTING_DEV.DBT_MAHMUDNABI_gtm_analytics.pipe_generation_bookings_product`: source data for pipe generations and bookings.  
+- `REPORTING_DEV.DBT_MAHMUDNABI_gtm_analytics.pipe_generation_bookings_targets_manual`: manual target definitions for pipe generation, bookings, and MQLs.
+
+## Columns Used  
+**REPORTING_DEV.DBT_MAHMUDNABI_gtm_analytics.pipe_generation_bookings_product:**  
+- `unique_id` – unique identifier for the record.  
+- `discovery_date_quarter` – quarter of the discovery date.  
+- `close_date_quarter` – quarter of the close date.  
+- `region` – business region.  
+- `territory` – sales territory.  
+- `segment` – market segment.  
+- `customer_type` – type of customer.  
+- `opportunity_source_category` – category of the opportunity source.  
+- `product_group` – product grouping.  
+- `concat_product_pipe_gen_targets` – derived key for pipe‑generation targets.  
+- `concat_product_bookings_targets` – derived key for booking targets.  
+
+**REPORTING_DEV.DBT_MAHMUDNABI_gtm_analytics.pipe_generation_bookings_targets_manual:**  
+- `concat_product_targets` – key used to match manual targets.  
+- `pipe_generation` – target pipe generation value.  
+- `bookings` – target bookings value.  
+- `mqls` – target MQL value.  
+
+**Derived CTEs (counts_pipe_gen, counts_bookings):**  
+- `count_of_pipe_gens` – count of pipe generation records per target.  
+- `count_of_bookings` – count of booking records per target.
+
+## Logic Explanation  
+1. **pipe_generation_bookings_product CTE** – selects all columns from the source table and creates two concatenated keys (`concat_product_pipe_gen_targets` and `concat_product_bookings_targets`) by combining quarter, region, a normalized territory value, segment, customer type, opportunity source category, and product group.  
+2. **counts_pipe_gen CTE** – left‑joins the product CTE to the manual targets table on the pipe‑generation key, counts `unique_id` per target, and groups by the target key.  
+3. **counts_bookings CTE** – similar to counts_pipe_gen but uses the booking key to count bookings per target.  
+4. **joined_targets CTE** – joins the product CTE to the manual targets table twice (once for pipe generation, once for bookings) on their respective keys. It also joins the counts CTEs to attach the counts. Default values are supplied with `COALESCE` when a target or count is missing.  
+5. **Final SELECT** – returns all columns from the joined CTE and calculates proportional metrics:  
+   - `target_pipe_generation_proportional` = `target_pipe_generation_overall` / `count_of_pipe_gens`  
+   - `target_bookings_proportional` = `target_bookings_overall` / `count_of_bookings`  
+   - `target_mqls_proportional` = `target_mqls_overall` / `count_of_pipe_gens`.
+
+## Grain of Data  
+The result set is at the individual record level of `pipe_generation_bookings_product` (one row per `unique_id`).

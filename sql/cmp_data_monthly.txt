@@ -1,0 +1,57 @@
+## Table Name: REPORTING_DEV.DBT_MAHMUDNABI_gtm_analytics.cmp_data_monthly
+
+## Overview  
+This query aggregates monthly operational metrics for each master customer, combining data from tasks, work requests, campaigns, active users, and time‑on‑site. The result provides a consolidated view of tasks started, work requests, campaigns started, active users, and time spent on site for each customer per month.
+
+## Tables Involved  
+- `REPORTING_DEV.DBT_MAHMUDNABI_welcome.tasks`: Task records.  
+- `REPORTING_DEV.DBT_MAHMUDNABI_welcome.organizations`: Organization metadata.  
+- `REPORTING_DEV.DBT_MAHMUDNABI_welcome.monthly_work_requests`: Monthly work‑request counts.  
+- `REPORTING_DEV.DBT_MAHMUDNABI_welcome.campaigns`: Campaign records.  
+- `REPORTING_DEV.DBT_MAHMUDNABI_welcome.monthly_active_user`: Monthly active user counts.  
+- `REPORTING_DEV.DBT_MAHMUDNABI_welcome.weekly_time_on_site`: Weekly time‑on‑site metrics.
+
+## Columns Used  
+- `REPORTING_DEV.DBT_MAHMUDNABI_welcome.tasks`:  
+  - `_id` – task identifier (used in COUNT).  
+  - `startdate` – task start date (used for filtering, grouping, and month extraction).  
+  - `organization` – foreign key to organizations (`_id`).  
+
+- `REPORTING_DEV.DBT_MAHMUDNABI_welcome.organizations`:  
+  - `_id` – organization identifier (joined with tasks, campaigns).  
+  - `ssoid` – SSO identifier (joined with work requests, active users, time‑on‑site).  
+  - `master_customer_id` – customer identifier (used for grouping and final output).  
+  - `state` – organization state (filtered for 'production').  
+
+- `REPORTING_DEV.DBT_MAHMUDNABI_welcome.monthly_work_requests`:  
+  - `month` – month of the work request (used for filtering, grouping, and month extraction).  
+  - `work_request_count` – count of work requests (summed).  
+  - `sso_id` – SSO identifier (joined with organizations).  
+
+- `REPORTING_DEV.DBT_MAHMUDNABI_welcome.campaigns`:  
+  - `_id` – campaign identifier (used in COUNT).  
+  - `startdate` – campaign start date (used for filtering, grouping, and month extraction).  
+  - `organization` – foreign key to organizations (`_id`).  
+
+- `REPORTING_DEV.DBT_MAHMUDNABI_welcome.monthly_active_user`:  
+  - `month` – month of the active user data (used for filtering, grouping, and month extraction).  
+  - `sso_id` – SSO identifier (joined with organizations).  
+  - `user_role` – role of the user (grouped but not aggregated).  
+  - `unique_active_user_count` – count of unique active users (summed).  
+
+- `REPORTING_DEV.DBT_MAHMUDNABI_welcome.weekly_time_on_site`:  
+  - `week` – week of the time‑on‑site data (used for filtering, grouping, and month extraction).  
+  - `duration_in_minutes` – minutes spent on site (summed and divided by 60).  
+  - `organization_sso_id` – SSO identifier (joined with organizations).  
+
+## Logic Explanation  
+1. **tasks_sub** – Aggregates the number of tasks started per month (`yyyy-mm`) and per master customer. Filters to years ≥ 2020, dates up to the current date, and production organizations.  
+2. **workreq_sub** – Aggregates the total work request count per month and master customer. Similar date and state filters.  
+3. **campaigns_sub** – Counts campaigns started per month and master customer with the same filters.  
+4. **active_users** – Sums unique active users per month, SSO, and role. No organization filter at this stage.  
+5. **activeusers_sub** – Joins the active user totals with organizations to map SSO to master customer, filters to production organizations, and aggregates per month and master customer.  
+6. **timeonsite_sub** – Sums time spent on site (converted to hours) per week, then groups by month and master customer, applying the same date and state filters.  
+7. **Final SELECT** – Performs a series of full outer joins across all six sub‑queries on month and master customer, using `COALESCE` to handle missing values from any source. Each metric column is replaced with `0` when null. The result is limited to 500 rows.
+
+## Grain of Data  
+The final output is aggregated at the **month (year‑month)** and **master_customer_id** level. Each row represents a unique combination of month and customer, with summed metrics for that period.

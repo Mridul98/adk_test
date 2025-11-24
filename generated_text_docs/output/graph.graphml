@@ -1,0 +1,3353 @@
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <key id="d0" for="edge" attr.name="weight" attr.type="double" />
+  <graph edgedefault="undirected">
+    <node id="RECENT_CURRENCY_RATES" />
+    <node id="OPPORTUNITY_RSAC_MONTHLY_SNAPSHOT" />
+    <node id="TRANSFORM_DEV.DBT_MAHMUDNABI_OPTI_SALESFORCE.STG_OPTI_SALESFORCE_CURRENCY_TYPE" />
+    <node id="CURRENCY TYPE" />
+    <node id="SKUS_REPORT" />
+    <node id="REPORTING_DEV.DBT_MAHMUDNABI_SKU_MANAGEMENT.SKUS_MASTER_REPORT" />
+    <node id="IS DELETED" />
+    <node id="VALID TO" />
+    <node id="SKU MANAGEMENT" />
+    <node id="IS_DELETED" />
+    <node id="VALID_TO" />
+    <node id="OPPORTUNITY_PRODUCT_SNAPSHOTS" />
+    <node id="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.OPPORTUNITY_LINE_ITEM_SNAPSHOT" />
+    <node id="TRANSFORM_DEV.DBT_MAHMUDNABI_SNAPSHOTS.SFDC_SBQQ_QUOTE_LINE_SNAPSHOT" />
+    <node id="TRANSFORM_DEV.DBT_MAHMUDNABI_SNAPSHOTS.SFDC_SUBSCRIPTION_SNAPSHOT" />
+    <node id="OPPORTUNITY_ID" />
+    <node id="PRODUCT_2_ID" />
+    <node id="DBT_VALID_FROM" />
+    <node id="TOTAL_PRICE" />
+    <node id="CURRENCY_ISO_CODE" />
+    <node id="SBQQ_NET_PRICE_C" />
+    <node id="CPI_ADJUSTMENTS_C" />
+    <node id="ORIGINAL_PRICE_RENEWAL_C" />
+    <node id="OPPORTUNITY LINE ITEM SNAPSHOT" />
+    <node id="SFDC SBQQ QUOTE LINE SNAPSHOT" />
+    <node id="SFDC SUBSCRIPTION SNAPSHOT" />
+    <node id="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.OPPORTUNITY_SNAPSHOT" />
+    <node id="ISO_CODE" />
+    <node id="CURRENCY" />
+    <node id="CONVERSION_RATE_TO_USD" />
+    <node id="PRODUCT GROUP" />
+    <node id="PRODUCT SOLUTION" />
+    <node id="PRODUCT ID" />
+    <node id="PRODUCT" />
+    <node id="PRODUCT CODE (SKU)" />
+    <node id="SKU" />
+    <node id="OPPORTUNITY" />
+    <node id="SNAPSHOT_DATE" />
+    <node id="SUBSCRIPTION_TERM_CALCULATED_C" />
+    <node id="ANNUAL_PRICE" />
+    <node id="EXCLUDE_FROM_1_ST_YEAR_MRR_C" />
+    <node id="ID" />
+    <node id="ORIGINAL_ANNUAL_PRICE_RENEWAL" />
+    <node id="STAGE_NAME" />
+    <node id="CLOSE_DATE" />
+    <node id="RECURRING_SOFTWARE_AMOUNT_CHANGE_C" />
+    <node id="LEGACY_RENEWAL_OPPORTUNITY_NEW_C" />
+    <node id="CUSTOM_FORECAST_C" />
+    <node id="PRODUCT_RSAC_CALC_SNAPSHOT_USD" />
+    <node id="RSAC" />
+    <node id="RSAC CALCULATION" />
+    <node id="PRODUCT_ID" />
+    <node id="PRODUCT_CODE_SKU" />
+    <node id="MONTHLY SNAPSHOT" />
+    <node id="CURRENCY CONVERSION" />
+    <node id="SKU MASTER DATA" />
+    <node id="OPPORTUNITY LINE ITEM" />
+    <node id="QUOTE LINE" />
+    <node id="SUBSCRIPTION" />
+    <node id="OPPORTUNITY SNAPSHOT" />
+    <node id="REVENUE METRICS" />
+    <node id="ANNUAL PRICE" />
+    <node id="ANNUAL PRICE INCREASE" />
+    <node id="ORIGINAL ANNUAL PRICE RENEWAL" />
+    <node id="PRODUCT RSAC CALCULATION USD" />
+    <node id="OPPORTUNITY SNAPSHOT TABLE" />
+    <node id="ONE ROW PER MONTH PER OPPORTUNITY PRODUCT" />
+    <node id="ONE ROW PER MONTH PER OPPORTUNITY" />
+    <node id="OPPORTUNITY_MONTHLY_SNAPSHOT_USD" />
+    <node id="OPPORTUNITY_SNAPSHOT" />
+    <node id="GENERATED_MONTHS" />
+    <node id="ANNUAL_PRICE_INCREASE" />
+    <node id="DELETED LINE ITEMS" />
+    <node id="EXPERT SERVICES" />
+    <node id="EDUCATION" />
+    <node id="PRODUCT_CODE" />
+    <node id="MONTH" />
+    <node id="RENEWAL AMOUNTS" />
+    <node id="HISTORICAL SUBSCRIPTION AMOUNTS" />
+    <node id="POSITIVE RECURRING SOFTWARE AMOUNT CHANGE" />
+    <node id="LEGACY RENEWAL" />
+    <node id="FORECAST NOT OMITTED" />
+    <node id="CLOSE DATE" />
+    <node id="USD CONVERSION RATE" />
+    <node id="SOLUTION INFORMATION" />
+    <node id="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.OPPORTUNITY_LINE_ITEM_ANALYTICS_SNAPSHOT" />
+    <node id="TRANSFORM_DEV.DBT_MAHMUDNABI_SNAPSHOTS.SFDC_OPPORTUNITY_LINE_ITEM_ANALYTICS_SNAPSHOT" />
+    <node id="SALESFORCE SNAPSHOT" />
+    <node id="REPORTING" />
+    <node id="ANALYTICS" />
+    <node id="OPPORTUNITY_LINE_ID" />
+    <node id="OPPORTUNITY_PRODUCT_NAME" />
+    <node id="QUANTITY" />
+    <node id="UNIT_PRICE" />
+    <node id="LIST_PRICE" />
+    <node id="DISCOUNT" />
+    <node id="MRR" />
+    <node id="ARR" />
+    <node id="CREATED_AT" />
+    <node id="UPDATED_AT" />
+    <node id="SBQQ_RENEWED_SUBSCRIPTION" />
+    <node id="SBQQ_NET_PRICE" />
+    <node id="OPP_PRODUCT_RSAC" />
+    <node id="PRODUCT_NAME" />
+    <node id="PRODUCT_SOLUTION" />
+    <node id="PRODUCT_CATEGORY" />
+    <node id="PRODUCT_GROUP" />
+    <node id="FAMILY" />
+    <node id="LOB" />
+    <node id="LOB_SUBCATEGORY" />
+    <node id="PRODUCT_LINE" />
+    <node id="PRODUCT_NEW" />
+    <node id="PRODUCT_SOLUTION_NEW" />
+    <node id="PRODUCT_LINE_NEW" />
+    <node id="PRODUCT_GROUP_NEW" />
+    <node id="TEMP_PRODUCT_GROUP_LI" />
+    <node id="TEMP_PRODUCT_SOLUTION_LI" />
+    <node id="INCLUDED_IN_ARR" />
+    <node id="NEW_LINE_OF_BUSINESS" />
+    <node id="PRODUCT_FAMILY" />
+    <node id="OPP_PRODUCT_RSAC_CONVERTED" />
+    <node id="PRODUCT_FAMILY_SUMMARIZE" />
+    <node id="DBT_SCD_ID" />
+    <node id="DBT_UPDATED_AT" />
+    <node id="DBT_VALID_TO" />
+    <node id="SNAPSHOT" />
+    <node id="SALES OPPORTUNITY LINE ITEM" />
+    <node id="SALES ANALYTICS" />
+    <node id="SALES DATA" />
+    <node id="PRODUCT CATEGORY" />
+    <node id="LINE OF BUSINESS" />
+    <node id="LINE OF BUSINESS SUBCATEGORY" />
+    <node id="PRODUCT LINE" />
+    <node id="ANNUAL RECURRING REVENUE (ARR)" />
+    <node id="SFDC_OPPORTUNITY_LINE_ITEM_ANALYTICS_SNAPSHOT" />
+    <node id="INDIVIDUAL OPPORTUNITY LINE ITEM ANALYTICS RECORDS" />
+    <node id="TRANSFORM_DEV.DBT_MAHMUDNABI_SNAPSHOTS.SFDC_OPPORTUNITY_LINE_ITEM_SNAPSHOT" />
+    <node id="PRICEBOOK_ENTRY_ID" />
+    <node id="PRICEBOOK ENTRY" />
+    <node id="DYNAMICS_ID_C" />
+    <node id="LEGACY_DEVELOPMENT_PERIOD_C" />
+    <node id="LEGACY_DEV_PERIOD_C" />
+    <node id="LEGACY_TERMS_C" />
+    <node id="LEGACY_SERVICE_START_DATE_C" />
+    <node id="PRODUCT_OF_INTEREST_C" />
+    <node id="MRR_C" />
+    <node id="ARR_C" />
+    <node id="DEVELOPMENT_PHASE_MONTHS_C" />
+    <node id="DEV_PERIOD_RATE_ADJUSTMENT_C" />
+    <node id="SBAA_APPROVAL_STATUS_C" />
+    <node id="BUNDLE_REFERENCE_NUMBER_C" />
+    <node id="QUANTITY_REF_C" />
+    <node id="QUANTITY_THIS_QUOTE_C" />
+    <node id="DISCRETIONARY_DISCOUNT_C" />
+    <node id="CELIGO_SFNSIO_CONTRACT_ITEM_ID_C" />
+    <node id="CELIGO_SFNSIO_CONTRACT_TERM_C" />
+    <node id="CELIGO_SFNSIO_END_DATE_C" />
+    <node id="CELIGO_SFNSIO_LIST_RATE_C" />
+    <node id="CELIGO_SFNSIO_NET_SUITE_LINE_ID_C" />
+    <node id="CELIGO_SFNSIO_START_DATE_C" />
+    <node id="CELIGO_AT_BILLING_MODE_C" />
+    <node id="CELIGO_AT_CHARGE_FREQUENCY_C" />
+    <node id="CELIGO_AT_LINE_TYPE_C" />
+    <node id="CELIGO_AT_NET_SUITE_ITEM_TYPE_C" />
+    <node id="CELIGO_AT_REPEAT_EVERY_C" />
+    <node id="CELIGO_AT_START_DATE_C" />
+    <node id="CELIGO_AT_STATUS_C" />
+    <node id="CUSTOMER_UNIT_PRICE_C" />
+    <node id="IS_SLA_PRODUCT_C" />
+    <node id="DYNAMICS ID" />
+    <node id="LEGACY DEVELOPMENT PERIOD" />
+    <node id="LEGACY TERMS" />
+    <node id="LEGACY SERVICE START DATE" />
+    <node id="PRODUCT OF INTEREST" />
+    <node id="MONTHLY RECURRING REVENUE" />
+    <node id="ANNUAL RECURRING REVENUE" />
+    <node id="CALCULATED SUBSCRIPTION TERM" />
+    <node id="DEVELOPMENT PHASE MONTHS" />
+    <node id="DEV PERIOD RATE ADJUSTMENT" />
+    <node id="SBAA APPROVAL STATUS" />
+    <node id="BUNDLE REFERENCE NUMBER" />
+    <node id="QUANTITY REFERENCE" />
+    <node id="QUANTITY IN THIS QUOTE" />
+    <node id="DISCRETIONARY DISCOUNT" />
+    <node id="CELIGO CONTRACT ITEM ID" />
+    <node id="CELIGO CONTRACT TERM" />
+    <node id="CELIGO END DATE" />
+    <node id="CELIGO LIST RATE" />
+    <node id="CELIGO NETSUITE LINE ID" />
+    <node id="CELIGO START DATE" />
+    <node id="CELIGO BILLING MODE" />
+    <node id="CELIGO CHARGE FREQUENCY" />
+    <node id="CELIGO LINE TYPE" />
+    <node id="CELIGO NETSUITE ITEM TYPE" />
+    <node id="CELIGO REPEAT INTERVAL" />
+    <node id="CELIGO STATUS" />
+    <node id="CUSTOMER UNIT PRICE" />
+    <node id="SLA PRODUCT" />
+    <node id="SINGLE OPPORTUNITY LINE ITEM SNAPSHOT" />
+    <node id="SFDC_OPPORTUNITY_LINE_ITEM_SNAPSHOT" />
+    <node id="MIGRATION_ID_C" />
+    <node id="MIGRATION ID" />
+    <node id="SUBSCRIPTION_C" />
+    <node id="HISTORICAL_CURRENT_SUBSCRIPTION_SOFTWARE_C" />
+    <node id="HISTORICAL SUBSCRIPTION SOFTWARE" />
+    <node id="OPPORTUNITY_BILLING_CYCLE_STATUS_C" />
+    <node id="BILLING CYCLE STATUS" />
+    <node id="OPPORTUNITY BILLING CYCLE STATUS" />
+    <node id="PRORATE_BY_C" />
+    <node id="PRORATE BY" />
+    <node id="PRICE_PLAN_TYPE_C" />
+    <node id="PRICE PLAN" />
+    <node id="PRICE PLAN TYPE" />
+    <node id="PRODUCT_REGION_C" />
+    <node id="PRODUCT REGION" />
+    <node id="_FIVETRAN_SYNCED" />
+    <node id="FIVETRAN SYNC STATUS" />
+    <node id="WL_MIGRATION_ID_C" />
+    <node id="WL MIGRATION ID" />
+    <node id="EXCLUSION FROM MRR" />
+    <node id="EXCLUSION FROM 1ST YEAR MRR" />
+    <node id="_FIVETRAN_DELETED" />
+    <node id="FIVETRAN DELETION STATUS" />
+    <node id="TOTAL_USAGE_VOLUME_C" />
+    <node id="USAGE VOLUME" />
+    <node id="TOTAL USAGE VOLUME" />
+    <node id="NETSUITE_PRODUCT_FAMILY_C" />
+    <node id="NETSUITE PRODUCT FAMILY" />
+    <node id="PRODUCT_CATEGORY_C" />
+    <node id="NET_SUITE_PRICE_C" />
+    <node id="NETSUITE PRICE" />
+    <node id="RSACAT_CLOSED_DATE_C" />
+    <node id="RSACAT CLOSED DATE" />
+    <node id="RECURRING SOFTWARE AMOUNT CHANGE" />
+    <node id="CHANGE DATA CAPTURE" />
+    <node id="CURRENT TABLE" />
+    <node id="PRODUCT_REGION_SET_C" />
+    <node id="PRODUCT REGION SET" />
+    <node id="PROVISIONING_LANGUAGE_C" />
+    <node id="PROVISIONING LANGUAGE" />
+    <node id="KANTATA_TRIGGER_C" />
+    <node id="KANTATA TRIGGER" />
+    <node id="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPE_GENERATION_BOOKINGS_TARGETS_MANUAL" />
+    <node id="TRANSFORM_DEV.DBT_MAHMUDNABI_SHARE_POINT.STG_SHARE_POINT_PIPE_GEN_BOOKINGS_TARGETS_MANUAL" />
+    <node id="JOINED_TABLE" />
+    <node id="PRODUCT-SOLUTION / PRODUCT-GROUP / TERRITORY / REGION / SEGMENT / CUSTOMER-TYPE / YEAR / QUARTER" />
+    <node id="SALES TERRITORY" />
+    <node id="GEOGRAPHIC REGION" />
+    <node id="DATA SOURCE" />
+    <node id="MARKET SEGMENT" />
+    <node id="CUSTOMER TYPE" />
+    <node id="FISCAL YEAR" />
+    <node id="QUARTER" />
+    <node id="BOOKINGS" />
+    <node id="PIPELINE GENERATION" />
+    <node id="MQLS" />
+    <node id="CONCAT_TARGETS" />
+    <node id="CONCAT_PRODUCT_TARGETS" />
+    <node id="UNPIVOTED_BOOKINGS" />
+    <node id="UNPIVOTED_PIPE_GENERATION" />
+    <node id="UNPIVOTED_MQLS" />
+    <node id="DATE_QUARTER" />
+    <node id="UNPIVOT" />
+    <node id="DATE_YEAR_QUARTER" />
+    <node id="INNER JOIN" />
+    <node id="NORMALIZED PRODUCT GROUP" />
+    <node id="TERRITORY" />
+    <node id="REGION" />
+    <node id="SOURCE" />
+    <node id="SEGMENT" />
+    <node id="CUSTOMER_TYPE" />
+    <node id="DATE_YEAR" />
+    <node id="Q1_BOOKINGS" />
+    <node id="SUM" />
+    <node id="QUARTERLY PERFORMANCE" />
+    <node id="Q1_PIPE_GENERATION" />
+    <node id="Q1_MQLS" />
+    <node id="YEAR-QUARTER" />
+    <node id="TRANSFORM_DEV.DBT_MAHMUDNABI_SNAPSHOTS.SFDC_OPPORTUNITY_PRODUCT_SNAPSHOT" />
+    <node id="OPPORTUNITY PRODUCT SNAPSHOT" />
+    <node id="SFDC_OPPORTUNITY_PRODUCT_SNAPSHOT" />
+    <node id="OPPORTUNITY PRODUCT" />
+    <node id="PRODUCT SOLUTION LINE ITEM" />
+    <node id="ARR INCLUSION" />
+    <node id="NETSUITE_PRODUCT_FAMILY" />
+    <node id="PRODUCT FAMILY" />
+    <node id="SLOWLY CHANGING DIMENSION" />
+    <node id="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPE_GENERATION_BOOKINGS_PRODUCT" />
+    <node id="STG_OPTI_SALESFORCE_OPPORTUNITY_LINE" />
+    <node id="SKUS_MASTER_REPORT" />
+    <node id="STG_OPTI_SALESFORCE_PRODUCTS" />
+    <node id="PIPELINE_PRODUCT_GROUP_CATEGORIES" />
+    <node id="STG_OPTI_SALESFORCE_QUOTE_LINE" />
+    <node id="STG_OPTI_SALESFORCE_SUBSCRIPTION" />
+    <node id="STG_OPTI_SALESFORCE_CURRENCY_TYPE" />
+    <node id="PIPE_GENERATION_BOOKINGS_OPPORTUNITY" />
+    <node id="PER-LINE-ITEM SNAPSHOT" />
+    <node id="REVENUE" />
+    <node id="PRODUCT_GROUP_ID" />
+    <node id="PRODUCT_CATEGORY_ID" />
+    <node id="SKU_NAME" />
+    <node id="PRODUCT_SEARCH_GROUPS" />
+    <node id="PRODUCT_GROUP_CATEGORY" />
+    <node id="QUOTE_LINE_ID" />
+    <node id="RENEWED_SUBSCRIPTION" />
+    <node id="NET_UNIT_PRICE" />
+    <node id="CPI_ADJUSTMENTS" />
+    <node id="ORIGINAL_PRICE_RENEWAL" />
+    <node id="MCID" />
+    <node id="CAMPAIGN" />
+    <node id="ACCOUNT_NAME" />
+    <node id="ACCOUNT" />
+    <node id="ICP_ACCOUNT" />
+    <node id="ICP_ACCOUNT_OR_NOT" />
+    <node id="PRIMARY_CSM" />
+    <node id="PRIMARY_ACCOUNT_EXECUTIVE" />
+    <node id="TARGETED_PLAYS" />
+    <node id="PRIMARY_CONTACT_ID" />
+    <node id="PRIMARY_CONTACT_NAME" />
+    <node id="PRIMARY_CONTACT_PERSONA" />
+    <node id="NUMBER_OF_EMPLOYEES" />
+    <node id="MARKETING_EMPLOYEES_COUNTS" />
+    <node id="ACCOUNT_TYPE" />
+    <node id="SUB_INDUSTRY" />
+    <node id="INDUSTRY" />
+    <node id="OPPORTUNITY_ID_LINK" />
+    <node id="OPPORTUNITY_NAME" />
+    <node id="ACCOUNT_ID" />
+    <node id="CLOSE_DATE_YEAR" />
+    <node id="CLOSE_DATE_QUARTER" />
+    <node id="CLOSE_DATE_WEEK_OF_QUARTER" />
+    <node id="CLOSE_DATE_WEEK" />
+    <node id="DISCOVERY_DATE" />
+    <node id="STG_OPTI_SALESFORCE_OPPORTUNITY_LINE.ID" />
+    <node id="STG_OPTI_SALESFORCE_QUOTE_LINE.QUOTE_LINE_ID" />
+    <node id="STG_OPTI_SALESFORCE_OPPORTUNITY_LINE.PRODUCT_ID" />
+    <node id="SKUS_MASTER_REPORT.PRODUCT_GROUP" />
+    <node id="STG_OPTI_SALESFORCE_PRODUCTS.ID" />
+    <node id="STG_OPTI_SALESFORCE_PRODUCTS.PRODUCT_SOLUTION" />
+    <node id="STG_OPTI_SALESFORCE_PRODUCTS.PRODUCT_LINE" />
+    <node id="STG_OPTI_SALESFORCE_PRODUCTS.PRODUCT_GROUP_ID" />
+    <node id="STG_OPTI_SALESFORCE_PRODUCTS.PRODUCT_CATEGORY_ID" />
+    <node id="STG_OPTI_SALESFORCE_PRODUCTS.PRODUCT_CODE" />
+    <node id="STG_OPTI_SALESFORCE_PRODUCTS.PRODUCT_SEARCH_GROUPS" />
+    <node id="PIPELINE_PRODUCT_GROUP_CATEGORIES.PRODUCT_GROUP_CATEGORY" />
+    <node id="PIPE_GENERATION_BOOKINGS_OPPORTUNITY.ACCOUNT_NAME" />
+    <node id="PIPE_GENERATION_BOOKINGS_OPPORTUNITY.ICP_ACCOUNT" />
+    <node id="PIPE_GENERATION_BOOKINGS_OPPORTUNITY.ICP_ACCOUNT_OR_NOT" />
+    <node id="PIPE_GENERATION_BOOKINGS_OPPORTUNITY.PRIMARY_CSM" />
+    <node id="PIPE_GENERATION_BOOKINGS_OPPORTUNITY.PRIMARY_ACCOUNT_EXECUTIVE" />
+    <node id="PIPE_GENERATION_BOOKINGS_OPPORTUNITY.PRIMARY_CONTACT_ID" />
+    <node id="PIPE_GENERATION_BOOKINGS_OPPORTUNITY.PRIMARY_CONTACT_NAME" />
+    <node id="PIPE_GENERATION_BOOKINGS_OPPORTUNITY.PRIMARY_CONTACT_PERSONA" />
+    <node id="PIPE_GENERATION_BOOKINGS_OPPORTUNITY.NUMBER_OF_EMPLOYEES" />
+    <node id="PIPE_GENERATION_BOOKINGS_OPPORTUNITY.MARKETING_EMPLOYEES_COUNTS" />
+    <node id="PIPE_GENERATION_BOOKINGS_OPPORTUNITY.ACCOUNT_TYPE" />
+    <node id="PIPE_GENERATION_BOOKINGS_OPPORTUNITY.SUB_INDUSTRY" />
+    <node id="PIPE_GENERATION_BOOKINGS_OPPORTUNITY.INDUSTRY" />
+    <node id="PIPE_GENERATION_BOOKINGS_OPPORTUNITY.ACCOUNT_ID" />
+    <node id="PIPE_GENERATION_BOOKINGS_OPPORTUNITY.CUSTOMER_TYPE" />
+    <node id="PIPE_GENERATION_BOOKINGS_OPPORTUNITY.MCID" />
+    <node id="STG_OPTI_SALESFORCE_OPPORTUNITY_LINE.ANNUAL_PRICE" />
+    <node id="STG_OPTI_SALESFORCE_QUOTE_LINE.NET_UNIT_PRICE" />
+    <node id="STG_OPTI_SALESFORCE_CURRENCY_TYPE.ISO_CODE" />
+    <node id="STG_OPTI_SALESFORCE_CURRENCY_TYPE.CONVERSION_RATE_TO_USD" />
+    <node id="STG_OPTI_SALESFORCE_QUOTE_LINE.RENEWED_SUBSCRIPTION" />
+    <node id="STG_OPTI_SALESFORCE_SUBSCRIPTION.CPI_ADJUSTMENTS" />
+    <node id="STG_OPTI_SALESFORCE_SUBSCRIPTION.ORIGINAL_PRICE_RENEWAL" />
+    <node id="STG_OPTI_SALESFORCE_OPPORTUNITY_LINE.OPPORTUNITY_ID" />
+    <node id="PIPE_GENERATION_BOOKINGS_OPPORTUNITY.TARGETED_PLAYS" />
+    <node id="PIPE_GENERATION_BOOKINGS_OPPORTUNITY.OPPORTUNITY_ID" />
+    <node id="PIPE_GENERATION_BOOKINGS_OPPORTUNITY.OPPORTUNITY_ID_LINK" />
+    <node id="PIPE_GENERATION_BOOKINGS_OPPORTUNITY.OPPORTUNITY_NAME" />
+    <node id="PIPE_GENERATION_BOOKINGS_OPPORTUNITY.STAGE_NAME" />
+    <node id="PIPE_GENERATION_BOOKINGS_OPPORTUNITY.CLOSE_DATE" />
+    <node id="PIPE_GENERATION_BOOKINGS_OPPORTUNITY.CLOSE_DATE_YEAR" />
+    <node id="PIPE_GENERATION_BOOKINGS_OPPORTUNITY.CLOSE_DATE_QUARTER" />
+    <node id="PIPE_GENERATION_BOOKINGS_OPPORTUNITY.CLOSE_DATE_WEEK_OF_QUARTER" />
+    <node id="PIPE_GENERATION_BOOKINGS_OPPORTUNITY.CLOSE_DATE_WEEK" />
+    <node id="PIPE_GENERATION_BOOKINGS_OPPORTUNITY.DISCOVERY_DATE" />
+    <node id="SKUS_MASTER_REPORT.PRODUCT_CODE_SKU" />
+    <node id="STG_OPTI_SALESFORCE_PRODUCTS.SKU_NAME" />
+    <node id="OPPORTUNITY_LINE" />
+    <node id="FINAL MODEL" />
+    <node id="EXCLUDE_FROM_1ST_YEAR_MRR" />
+    <node id="SUBSCRIPTION_TERM" />
+    <node id="QUOTE_LINE" />
+    <node id="QUALIFY ROW_NUMBER()" />
+    <node id="JOINED_TABLES" />
+    <node id="PRODUCT_MASTER" />
+    <node id="SKU_DATA" />
+    <node id="QUOTE_LINE_SOURCE" />
+    <node id="SUBSCRIPTION_METRICS" />
+    <node id="CPI_ADJUSTMENT" />
+    <node id="CONVERTED_RATES" />
+    <node id="OPPORTUNITY_PRODUCT_RSAC" />
+    <node id="ICP_LABEL" />
+    <node id="GOOGLE_OPTIMIZE" />
+    <node id="SINGLE_OR_MULTI_PRODUCT_OPPORTUNITY" />
+    <node id="OPT_EXPCOL_EXCLUSION" />
+    <node id="HISTORICAL_RATE" />
+    <node id="LATEST_RATE" />
+    <node id="OPPORTUNITY_PRODUCT_RSAC_CONVERTED_DYNAMIC" />
+    <node id="OPPORTUNITY_PRODUCT_RSAC_CONVERTED" />
+    <node id="CUSTOMER" />
+    <node id="EXCLUDE_FROM_SALES_PIPELINE" />
+    <node id="SALES PIPELINE" />
+    <node id="OPPORTUNITY_RSAC" />
+    <node id="BOOKING_VALUE" />
+    <node id="ONE ROW PER OPPORTUNITY LINE ITEM" />
+    <node id="TARGET_MQLS_PROPORTIONAL" />
+    <node id="PROPORTIONAL METRIC" />
+    <node id="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPE_GENERATION_BOOKINGS_TARGETS" />
+    <node id="PIPE_GEN" />
+    <node id="JOINED_TARGETS" />
+    <node id="PIPE_GEN_GOAL" />
+    <node id="BOOKINGS_GOAL" />
+    <node id="QUARTERLY TARGETS" />
+    <node id="CONSOLIDATED TARGET VIEW" />
+    <node id="PIPE GENERATION" />
+    <node id="QUARTERLY" />
+    <node id="PIPE_GENERATION" />
+    <node id="LEGACY_CUSTOMER_TYPE_CCVR" />
+    <node id="METRIC_VALUE" />
+    <node id="SUPER_REGION" />
+    <node id="TERRITORY_VP" />
+    <node id="TERRITORY_SVP" />
+    <node id="TRANSFORM_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.STG_GTM_ANALYTICS_TARGETS_DOLLARS" />
+    <node id="STG_GTM_ANALYTICS_TARGETS_DOLLARS" />
+    <node id="BUSINESS_TYPE" />
+    <node id="ROW_NUMBER" />
+    <node id="TRANSFORM_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPELINE_TERRITORY_LEADS" />
+    <node id="TRANSFORM_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPELINE_TERRITORY_HIERARCHIES" />
+    <node id="PIPELINE_TERRITORY_LEADS" />
+    <node id="PIPELINE_TERRITORY_HIERARCHIES" />
+    <node id="NEW CUSTOMER" />
+    <node id="EXISTING CUSTOMER" />
+    <node id="EMEA" />
+    <node id="TERRITORY_NAME" />
+    <node id="PIPELINE_GENERATION_MODEL" />
+    <node id="PIPELINE_TARGETS_WITH_GOALS" />
+    <node id="PIPELINE_TARGETS_WITH_GOALS_AND_TERRITORY" />
+    <node id="PIPELINE_TARGETS_WITH_GOALS_AND_TERRITORY_AND_LEADS" />
+    <node id="PIPELINE_TARGETS_WITH_GOALS_AND_TERRITORY_AND_LEADS_AND_SKUS" />
+    <node id="BOOKING_GOALS" />
+    <node id="PIPELINE_GENERATION" />
+    <node id="ONE ROW PER UNIQUE COMBINATION OF LEGACY_CUSTOMER_TYPE_CCVR, PRODUCT_GROUP, DATE_QUARTER, SEGMENT, SOURCE, TERRITORY, AND SUPER_REGION" />
+    <node id="MAP" />
+    <node id="CONCAT" />
+    <node id="LEFT JOIN" />
+    <node id="EMEA-DACH" />
+    <node id="BOOKING_GOAL" />
+    <node id="TERRITORY_HIERARCHY" />
+    <node id="TERRITORY_LEADS" />
+    <node id="PRODUCT_TARGETS" />
+    <node id="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.OPPORTUNITY_ANALYTICS_SNAPSHOT" />
+    <node id="TRANSFORM_DEV.DBT_MAHMUDNABI_SNAPSHOTS.SFDC_OPPORTUNITY_ANALYTICS_SNAPSHOT" />
+    <node id="SALES PIPELINE ANALYSIS" />
+    <node id="FINANCIAL REPORTING" />
+    <node id="SALESFORCE" />
+    <node id="DATE_ENTERED_PROPOSAL" />
+    <node id="SALES STAGE" />
+    <node id="TRANSFORM_DEV.DBT_MAHNABI_SNAPSHOTS.SFDC_OPPORTUNITY_ANALYTICS_SNAPSHOT" />
+    <node id="ONE ROW PER OPPORTUNITY SNAPSHOT" />
+    <node id="DATE_ENTERED_SAL" />
+    <node id="DATE_ENTERED_SQL" />
+    <node id="DATE_ENTERED_DISCOVERY" />
+    <node id="DATE_ENTERED_PROOF_OF_VALUE" />
+    <node id="DATE_ENTERED_CONTRACTS" />
+    <node id="DATE_ENTERED_CLOSED_WON" />
+    <node id="DATE_ENTERED_CLOSED_WON_FINANCE" />
+    <node id="DATE_ENTERED_PROSPECTING" />
+    <node id="CLOSE_WON_YEAR" />
+    <node id="TERRITORY_ID" />
+    <node id="BILLING_COUNTRY" />
+    <node id="ANNUAL_REVENUE" />
+    <node id="ACCOUNT_INDUSTRY" />
+    <node id="VERTICAL" />
+    <node id="ICP_SOLUTION" />
+    <node id="IDEAL CUSTOMER PROFILE (ICP)" />
+    <node id="ABM_ACCOUNT" />
+    <node id="EMPLOYEE_COUNT" />
+    <node id="PRIMARY_ACCOUNT_EXECUTIVE_ID" />
+    <node id="ICP_TRUE_FALSE" />
+    <node id="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.OPPORTUNITY_RSAC_QUARTERLY" />
+    <node id="CLOSED_OPPORTUNITIES" />
+    <node id="OPEN_OPPORTUNITIES" />
+    <node id="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.OPPORTUNITY_RSAC_MONTHLY_SNAPSHOT" />
+    <node id="OPPORTUNITY-BY-QUARTER-BY-PRODUCT" />
+    <node id="SNAPSHOT_QUARTER" />
+    <node id="SNAPSHOT_YEAR" />
+    <node id="CLOSED OPPORTUNITY" />
+    <node id="DISCOVERY" />
+    <node id="PROOF OF VALUE" />
+    <node id="PROPOSAL" />
+    <node id="CONTRACTS" />
+    <node id="CLOSED STAGE" />
+    <node id="OPEN OPPORTUNITY" />
+    <node id="OPEN STAGE" />
+    <node id="OPPORTUNITY-PRODUCT COMBINATION" />
+    <node id="CLOSED" />
+    <node id="OPEN" />
+    <node id="SNAPSHOT_YEAR_QUARTER" />
+    <node id="YEAR" />
+    <node id="HASH" />
+    <node id="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPE_GENERATION_BOOKINGS_OPPORTUNITY" />
+    <node id="OPPORTUNITY CENTRIC VIEW" />
+    <node id="STG_OPTI_SALESFORCE_USERS" />
+    <node id="NAME" />
+    <node id="STG_OPTI_SALESFORCE_USER_ROLE" />
+    <node id="STG_OPTI_SALESFORCE_CONTACT" />
+    <node id="PERSONA_C" />
+    <node id="STG_OPTI_SALESFORCE_ACCOUNT" />
+    <node id="STG_OPTI_SALESFORCE_PARTNERS" />
+    <node id="PARTNER_TYPE" />
+    <node id="PARTNER_ROLE" />
+    <node id="STG_OPTI_SALESFORCE_TERRITORY" />
+    <node id="STG_OPTI_SALESFORCE_OPPORTUNITY" />
+    <node id="TYPE" />
+    <node id="LEAD_SOURCE" />
+    <node id="OPPORTUNITY_SOURCE_C" />
+    <node id="CAMPAIGN_ID" />
+    <node id="TRANSFORM_DEV.DBT_MAHMUDNABI_OPTI_SALESFORCE.STG_OPTI_SALESFORCE_CAMPAIGN" />
+    <node id="OWNER_ID" />
+    <node id="OWNER" />
+    <node id="OPPORTUNITY TYPE" />
+    <node id="TRANSFORM_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPELINE_OPPORTUNITY_TYPE_CATEGORY" />
+    <node id="OPPORTUNITY SOURCE" />
+    <node id="TRANSFORM_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPELINE_OPPORTUNITY_SOURCE_CATEGORY" />
+    <node id="LEAD SOURCE" />
+    <node id="GENERATED_BY_C" />
+    <node id="USER" />
+    <node id="DATE_ENTERED_STAGE_DISCOVERY" />
+    <node id="STAGE" />
+    <node id="DATE_ENTERED_STAGE_CLOSED_WON" />
+    <node id="DATE_ENTERED_STAGE_CLOSED_WON_FINANCE" />
+    <node id="DATE_ENTERED_STAGE_CLOSED_LOST" />
+    <node id="DATE_ENTERED_STAGE_SAL_C" />
+    <node id="DATE_ENTERED_STAGE_SQL_C" />
+    <node id="DATE_ENTERED_STAGE_ACCEPTED" />
+    <node id="DATE_ENTERED_STAGE_PROOF_OF_VALUE" />
+    <node id="DATE_ENTERED_STAGE_PROPOSAL" />
+    <node id="DATE_ENTERED_STAGE_CONTRACTS" />
+    <node id="DATE_ENTERED_STAGE_PROSPECTING" />
+    <node id="HISTORICAL_CURRENT_CONTRACT_SOFTWARE_C" />
+    <node id="CONTRACT AMOUNT" />
+    <node id="RECURRING_SOFTWARE_AMOUNT_NEW_ROLLUP_C" />
+    <node id="CURRENT_CONTRACT_SOFTWARE_NEW_C" />
+    <node id="PRICE_INCREASE_SOFTWARE" />
+    <node id="PRIMARY_COMPETITOR_C" />
+    <node id="COMPETITOR" />
+    <node id="RENEWAL" />
+    <node id="FORECAST" />
+    <node id="PIPELINE_INFLUENCE" />
+    <node id="PIPELINE INFLUENCE" />
+    <node id="ACCOUNT_CATEGORIZATION" />
+    <node id="ACCOUNT CATEGORIZATION" />
+    <node id="OUTBOUND_GENERATED" />
+    <node id="ANCHOR_PRODUCTS" />
+    <node id="MEETING_BOOKED_VIA" />
+    <node id="SUB_TERRITORY" />
+    <node id="IS_FIVETRAN_DELETED" />
+    <node id="CAMPAIGN_NAME" />
+    <node id="OPPORTUNITY_TYPE" />
+    <node id="OPPORTUNITY_TYPE_CATEGORY" />
+    <node id="OPPORTUNITY_SOURCE" />
+    <node id="OPPORTUNITY_SOURCE_CATEGORY" />
+    <node id="OPPORTUNITY_SOURCE_CATEGORY_GROUPING" />
+    <node id="SUB_REGION" />
+    <node id="TERRITORY HIERARCHY" />
+    <node id="SUB_TERRITORY_NAME" />
+    <node id="TERRITORY LEAD" />
+    <node id="SF_USERS" />
+    <node id="SF_CONTACT" />
+    <node id="PARTNERS" />
+    <node id="PRIMARY_COMPETITOR" />
+    <node id="TRANSFORM_DEV.DBT_MAHMUDNABI_OPTI_SALESFORCE.STG_OPTI_SALESFORCE_TERRITORY" />
+    <node id="TRANSFORM_DEV.DBT_MAHMUDNABI_OPTI_SALESFORCE.STG_OPTI_SALESFORCE_USERS" />
+    <node id="TRANSFORM_DEV.DBT_MAHMUDNABI_OPTI_SALESFORCE.STG_OPTI_SALESFORCE_CONTACT" />
+    <node id="TRANSFORM_DEV.DBT_MAHMUDNABI_OPTI_SALESFORCE.STG_OPTI_SALESFORCE_ACCOUNT" />
+    <node id="TRANSFORM_DEV.DBT_MAHMUDNABI_OPTI_SALESFORCE.STG_OPTI_SALESFORCE_OPPORTUNITY" />
+    <node id="TRANSFORM_DEV.DBT_MAHMUDNABI_OPTI_SALESFORCE.STG_OPTI_SALESFORCE_PARTNERS" />
+    <node id="OPPORTUNITY-LEVEL SNAPSHOT" />
+    <node id="ONE ROW PER OPPORTUNITY" />
+    <node id="TRANSFORM_DEV.DBT_MAHMUDNABI_OPTI_SALESFORCE.STG_OPTI_SALESFORCE_USER_ROLE" />
+    <node id="ROLE_NAME" />
+    <node id="PARTNER_ACCOUNT_NAMES" />
+    <node id="PARTNER_TYPES" />
+    <node id="PARTNER_ROLES" />
+    <node id="CLOSE_DATE_MONTH" />
+    <node id="OPP_RSAC" />
+    <node id="CASE" />
+    <node id="PERSONA" />
+    <node id="LEAD SOURCE TYPE" />
+    <node id="USER ROLE" />
+    <node id="ICP ACCOUNT" />
+    <node id="ACCOUNT TYPE" />
+    <node id="ACCOUNT EXECUTIVE" />
+    <node id="CUSTOMER SUCCESS MANAGER" />
+    <node id="CONTACT" />
+    <node id="PARTNER" />
+    <node id="STAGE NAME" />
+    <node id="OPPORTUNITY_LEVEL_SNAPSHOT" />
+    <node id="TRANSFORM_DEV.DBT_MAHMUDNABI_OPTI_SALESFORCE.STG_OPTI_SALESFORCE_USER" />
+    <node id="TRANSFORM_DEV.DBT_MAHMUDNABI_OPTI_SALESFORCE.STG_OPTI_SALESFORCE_PARTNER" />
+    <node id="COMPETITOR_ACCOUNT_INFORMATION" />
+    <edge source="RECENT_CURRENCY_RATES" target="OPPORTUNITY_RSAC_MONTHLY_SNAPSHOT">
+      <data key="d0">10.0</data>
+    </edge>
+    <edge source="RECENT_CURRENCY_RATES" target="TRANSFORM_DEV.DBT_MAHMUDNABI_OPTI_SALESFORCE.STG_OPTI_SALESFORCE_CURRENCY_TYPE">
+      <data key="d0">45.0</data>
+    </edge>
+    <edge source="RECENT_CURRENCY_RATES" target="CURRENCY TYPE">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="RECENT_CURRENCY_RATES" target="OPPORTUNITY_MONTHLY_SNAPSHOT_USD">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="RECENT_CURRENCY_RATES" target="OPPORTUNITY_SNAPSHOT">
+      <data key="d0">18.0</data>
+    </edge>
+    <edge source="RECENT_CURRENCY_RATES" target="FINAL MODEL">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="RECENT_CURRENCY_RATES" target="CONVERTED_RATES">
+      <data key="d0">18.0</data>
+    </edge>
+    <edge source="RECENT_CURRENCY_RATES" target="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPE_GENERATION_BOOKINGS_OPPORTUNITY">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="RECENT_CURRENCY_RATES" target="ISO_CODE">
+      <data key="d0">32.0</data>
+    </edge>
+    <edge source="RECENT_CURRENCY_RATES" target="CONVERSION_RATE_TO_USD">
+      <data key="d0">32.0</data>
+    </edge>
+    <edge source="RECENT_CURRENCY_RATES" target="OPPORTUNITY_LEVEL_SNAPSHOT">
+      <data key="d0">18.0</data>
+    </edge>
+    <edge source="OPPORTUNITY_RSAC_MONTHLY_SNAPSHOT" target="SKUS_REPORT">
+      <data key="d0">10.0</data>
+    </edge>
+    <edge source="OPPORTUNITY_RSAC_MONTHLY_SNAPSHOT" target="OPPORTUNITY_PRODUCT_SNAPSHOTS">
+      <data key="d0">10.0</data>
+    </edge>
+    <edge source="OPPORTUNITY_RSAC_MONTHLY_SNAPSHOT" target="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.OPPORTUNITY_SNAPSHOT">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="OPPORTUNITY_RSAC_MONTHLY_SNAPSHOT" target="PRODUCT GROUP">
+      <data key="d0">7.0</data>
+    </edge>
+    <edge source="OPPORTUNITY_RSAC_MONTHLY_SNAPSHOT" target="PRODUCT SOLUTION">
+      <data key="d0">7.0</data>
+    </edge>
+    <edge source="OPPORTUNITY_RSAC_MONTHLY_SNAPSHOT" target="IS_DELETED">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="OPPORTUNITY_RSAC_MONTHLY_SNAPSHOT" target="ID">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="OPPORTUNITY_RSAC_MONTHLY_SNAPSHOT" target="STAGE_NAME">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="OPPORTUNITY_RSAC_MONTHLY_SNAPSHOT" target="CLOSE_DATE">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="OPPORTUNITY_RSAC_MONTHLY_SNAPSHOT" target="RECURRING_SOFTWARE_AMOUNT_CHANGE_C">
+      <data key="d0">18.0</data>
+    </edge>
+    <edge source="OPPORTUNITY_RSAC_MONTHLY_SNAPSHOT" target="LEGACY_RENEWAL_OPPORTUNITY_NEW_C">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="OPPORTUNITY_RSAC_MONTHLY_SNAPSHOT" target="CUSTOM_FORECAST_C">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="OPPORTUNITY_RSAC_MONTHLY_SNAPSHOT" target="MONTHLY SNAPSHOT">
+      <data key="d0">1.0</data>
+    </edge>
+    <edge source="OPPORTUNITY_RSAC_MONTHLY_SNAPSHOT" target="CURRENCY CONVERSION">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="OPPORTUNITY_RSAC_MONTHLY_SNAPSHOT" target="SKU MASTER DATA">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="OPPORTUNITY_RSAC_MONTHLY_SNAPSHOT" target="OPPORTUNITY LINE ITEM">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="OPPORTUNITY_RSAC_MONTHLY_SNAPSHOT" target="QUOTE LINE">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="OPPORTUNITY_RSAC_MONTHLY_SNAPSHOT" target="SUBSCRIPTION">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="OPPORTUNITY_RSAC_MONTHLY_SNAPSHOT" target="OPPORTUNITY SNAPSHOT">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="OPPORTUNITY_RSAC_MONTHLY_SNAPSHOT" target="REVENUE METRICS">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="OPPORTUNITY_RSAC_MONTHLY_SNAPSHOT" target="RSAC CALCULATION">
+      <data key="d0">10.0</data>
+    </edge>
+    <edge source="OPPORTUNITY_RSAC_MONTHLY_SNAPSHOT" target="ANNUAL PRICE">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="OPPORTUNITY_RSAC_MONTHLY_SNAPSHOT" target="ANNUAL PRICE INCREASE">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="OPPORTUNITY_RSAC_MONTHLY_SNAPSHOT" target="ORIGINAL ANNUAL PRICE RENEWAL">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="OPPORTUNITY_RSAC_MONTHLY_SNAPSHOT" target="PRODUCT RSAC CALCULATION USD">
+      <data key="d0">10.0</data>
+    </edge>
+    <edge source="OPPORTUNITY_RSAC_MONTHLY_SNAPSHOT" target="OPPORTUNITY SNAPSHOT TABLE">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="OPPORTUNITY_RSAC_MONTHLY_SNAPSHOT" target="ONE ROW PER MONTH PER OPPORTUNITY PRODUCT">
+      <data key="d0">10.0</data>
+    </edge>
+    <edge source="OPPORTUNITY_RSAC_MONTHLY_SNAPSHOT" target="ONE ROW PER MONTH PER OPPORTUNITY">
+      <data key="d0">1.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_OPTI_SALESFORCE.STG_OPTI_SALESFORCE_CURRENCY_TYPE" target="CURRENCY_ISO_CODE">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_OPTI_SALESFORCE.STG_OPTI_SALESFORCE_CURRENCY_TYPE" target="ISO_CODE">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_OPTI_SALESFORCE.STG_OPTI_SALESFORCE_CURRENCY_TYPE" target="CONVERSION_RATE_TO_USD">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_OPTI_SALESFORCE.STG_OPTI_SALESFORCE_CURRENCY_TYPE" target="CURRENCY">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_OPTI_SALESFORCE.STG_OPTI_SALESFORCE_CURRENCY_TYPE" target="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPE_GENERATION_BOOKINGS_OPPORTUNITY">
+      <data key="d0">25.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_OPTI_SALESFORCE.STG_OPTI_SALESFORCE_CURRENCY_TYPE" target="CURRENCY TYPE">
+      <data key="d0">20.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_OPTI_SALESFORCE.STG_OPTI_SALESFORCE_CURRENCY_TYPE" target="OPPORTUNITY_LEVEL_SNAPSHOT">
+      <data key="d0">36.0</data>
+    </edge>
+    <edge source="CURRENCY TYPE" target="TRANSFORM_DEV.DBT_MAHMUDNABI_OPTI_SALESFORCE.STG_OPTI_SALESFORCE_OPPORTUNITY">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="SKUS_REPORT" target="REPORTING_DEV.DBT_MAHMUDNABI_SKU_MANAGEMENT.SKUS_MASTER_REPORT">
+      <data key="d0">19.0</data>
+    </edge>
+    <edge source="SKUS_REPORT" target="IS DELETED">
+      <data key="d0">29.0</data>
+    </edge>
+    <edge source="SKUS_REPORT" target="VALID TO">
+      <data key="d0">29.0</data>
+    </edge>
+    <edge source="SKUS_REPORT" target="SKU MANAGEMENT">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="SKUS_REPORT" target="IS_DELETED">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="SKUS_REPORT" target="VALID_TO">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="SKUS_REPORT" target="OPPORTUNITY_MONTHLY_SNAPSHOT_USD">
+      <data key="d0">14.0</data>
+    </edge>
+    <edge source="SKUS_REPORT" target="FINAL MODEL">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="SKUS_REPORT" target="PRODUCT_CODE_SKU">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="SKUS_REPORT" target="QUALIFY ROW_NUMBER()">
+      <data key="d0">18.0</data>
+    </edge>
+    <edge source="SKUS_REPORT" target="JOINED_TABLES">
+      <data key="d0">18.0</data>
+    </edge>
+    <edge source="SKUS_REPORT" target="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPE_GENERATION_BOOKINGS_TARGETS">
+      <data key="d0">18.0</data>
+    </edge>
+    <edge source="SKUS_REPORT" target="PRODUCT GROUP">
+      <data key="d0">32.0</data>
+    </edge>
+    <edge source="SKUS_REPORT" target="PRODUCT SOLUTION">
+      <data key="d0">32.0</data>
+    </edge>
+    <edge source="SKUS_REPORT" target="ROW_NUMBER">
+      <data key="d0">32.0</data>
+    </edge>
+    <edge source="SKUS_REPORT" target="SKUS_MASTER_REPORT">
+      <data key="d0">20.0</data>
+    </edge>
+    <edge source="SKUS_REPORT" target="PRODUCT_GROUP">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="SKUS_REPORT" target="PIPELINE_GENERATION_MODEL">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="SKUS_REPORT" target="PIPELINE_TARGETS_WITH_GOALS_AND_TERRITORY_AND_LEADS_AND_SKUS">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="SKUS_REPORT" target="PRODUCT_SOLUTION">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="IS DELETED" target="SKUS_MASTER_REPORT">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="VALID TO" target="SKUS_MASTER_REPORT">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="IS_DELETED" target="OPPORTUNITY_PRODUCT_SNAPSHOTS">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="IS_DELETED" target="TRANSFORM_DEV.DBT_MAHMUDNABI_SNAPSHOTS.SFDC_OPPORTUNITY_LINE_ITEM_ANALYTICS_SNAPSHOT">
+      <data key="d0">10.0</data>
+    </edge>
+    <edge source="IS_DELETED" target="OPPORTUNITY">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="OPPORTUNITY_PRODUCT_SNAPSHOTS" target="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.OPPORTUNITY_LINE_ITEM_SNAPSHOT">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="OPPORTUNITY_PRODUCT_SNAPSHOTS" target="TRANSFORM_DEV.DBT_MAHMUDNABI_SNAPSHOTS.SFDC_SBQQ_QUOTE_LINE_SNAPSHOT">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="OPPORTUNITY_PRODUCT_SNAPSHOTS" target="TRANSFORM_DEV.DBT_MAHMUDNABI_SNAPSHOTS.SFDC_SUBSCRIPTION_SNAPSHOT">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="OPPORTUNITY_PRODUCT_SNAPSHOTS" target="OPPORTUNITY_ID">
+      <data key="d0">66.0</data>
+    </edge>
+    <edge source="OPPORTUNITY_PRODUCT_SNAPSHOTS" target="PRODUCT_2_ID">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="OPPORTUNITY_PRODUCT_SNAPSHOTS" target="DBT_VALID_FROM">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="OPPORTUNITY_PRODUCT_SNAPSHOTS" target="TOTAL_PRICE">
+      <data key="d0">18.0</data>
+    </edge>
+    <edge source="OPPORTUNITY_PRODUCT_SNAPSHOTS" target="CURRENCY_ISO_CODE">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="OPPORTUNITY_PRODUCT_SNAPSHOTS" target="SBQQ_NET_PRICE_C">
+      <data key="d0">18.0</data>
+    </edge>
+    <edge source="OPPORTUNITY_PRODUCT_SNAPSHOTS" target="CPI_ADJUSTMENTS_C">
+      <data key="d0">18.0</data>
+    </edge>
+    <edge source="OPPORTUNITY_PRODUCT_SNAPSHOTS" target="ORIGINAL_PRICE_RENEWAL_C">
+      <data key="d0">18.0</data>
+    </edge>
+    <edge source="OPPORTUNITY_PRODUCT_SNAPSHOTS" target="OPPORTUNITY LINE ITEM SNAPSHOT">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="OPPORTUNITY_PRODUCT_SNAPSHOTS" target="SFDC SBQQ QUOTE LINE SNAPSHOT">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="OPPORTUNITY_PRODUCT_SNAPSHOTS" target="SFDC SUBSCRIPTION SNAPSHOT">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="OPPORTUNITY_PRODUCT_SNAPSHOTS" target="OPPORTUNITY_MONTHLY_SNAPSHOT_USD">
+      <data key="d0">18.0</data>
+    </edge>
+    <edge source="OPPORTUNITY_PRODUCT_SNAPSHOTS" target="GENERATED_MONTHS">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="OPPORTUNITY_PRODUCT_SNAPSHOTS" target="SNAPSHOT_DATE">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="OPPORTUNITY_PRODUCT_SNAPSHOTS" target="ANNUAL_PRICE">
+      <data key="d0">40.0</data>
+    </edge>
+    <edge source="OPPORTUNITY_PRODUCT_SNAPSHOTS" target="ANNUAL_PRICE_INCREASE">
+      <data key="d0">40.0</data>
+    </edge>
+    <edge source="OPPORTUNITY_PRODUCT_SNAPSHOTS" target="ORIGINAL_ANNUAL_PRICE_RENEWAL">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="OPPORTUNITY_PRODUCT_SNAPSHOTS" target="DELETED LINE ITEMS">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="OPPORTUNITY_PRODUCT_SNAPSHOTS" target="EXPERT SERVICES">
+      <data key="d0">14.0</data>
+    </edge>
+    <edge source="OPPORTUNITY_PRODUCT_SNAPSHOTS" target="EDUCATION">
+      <data key="d0">14.0</data>
+    </edge>
+    <edge source="OPPORTUNITY_PRODUCT_SNAPSHOTS" target="PRODUCT_CODE">
+      <data key="d0">74.0</data>
+    </edge>
+    <edge source="OPPORTUNITY_PRODUCT_SNAPSHOTS" target="MONTH">
+      <data key="d0">50.0</data>
+    </edge>
+    <edge source="OPPORTUNITY_PRODUCT_SNAPSHOTS" target="RENEWAL AMOUNTS">
+      <data key="d0">24.0</data>
+    </edge>
+    <edge source="OPPORTUNITY_PRODUCT_SNAPSHOTS" target="PRODUCT_RSAC_CALC_SNAPSHOT_USD">
+      <data key="d0">30.0</data>
+    </edge>
+    <edge source="OPPORTUNITY_PRODUCT_SNAPSHOTS" target="HISTORICAL SUBSCRIPTION AMOUNTS">
+      <data key="d0">24.0</data>
+    </edge>
+    <edge source="OPPORTUNITY_PRODUCT_SNAPSHOTS" target="PRODUCT GROUP">
+      <data key="d0">21.0</data>
+    </edge>
+    <edge source="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.OPPORTUNITY_LINE_ITEM_SNAPSHOT" target="TRANSFORM_DEV.DBT_MAHMUDNABI_SNAPSHOTS.SFDC_OPPORTUNITY_LINE_ITEM_SNAPSHOT">
+      <data key="d0">10.0</data>
+    </edge>
+    <edge source="OPPORTUNITY_ID" target="OPPORTUNITY">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="OPPORTUNITY_ID" target="OPPORTUNITY_SNAPSHOT">
+      <data key="d0">50.0</data>
+    </edge>
+    <edge source="OPPORTUNITY_ID" target="OPPORTUNITY_MONTHLY_SNAPSHOT_USD">
+      <data key="d0">45.0</data>
+    </edge>
+    <edge source="OPPORTUNITY_ID" target="FINAL MODEL">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="OPPORTUNITY_ID" target="OPPORTUNITY-PRODUCT COMBINATION">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="OPPORTUNITY_ID" target="CLOSED OPPORTUNITY">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="OPPORTUNITY_ID" target="OPEN OPPORTUNITY">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="OPPORTUNITY_ID" target="CLOSED STAGE">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="OPPORTUNITY_ID" target="OPEN STAGE">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="OPPORTUNITY_ID" target="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPE_GENERATION_BOOKINGS_OPPORTUNITY">
+      <data key="d0">20.0</data>
+    </edge>
+    <edge source="OPPORTUNITY_ID" target="JOINED_TABLES">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="DBT_VALID_FROM" target="SNAPSHOT_DATE">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="DBT_VALID_FROM" target="TRANSFORM_DEV.DBT_MAHMUDNABI_SNAPSHOTS.SFDC_OPPORTUNITY_LINE_ITEM_ANALYTICS_SNAPSHOT">
+      <data key="d0">10.0</data>
+    </edge>
+    <edge source="DBT_VALID_FROM" target="CURRENT TABLE">
+      <data key="d0">30.0</data>
+    </edge>
+    <edge source="DBT_VALID_FROM" target="OPPORTUNITY PRODUCT SNAPSHOT">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="TOTAL_PRICE" target="OPPORTUNITY LINE ITEM">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="CURRENCY_ISO_CODE" target="CURRENCY CONVERSION">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="CURRENCY_ISO_CODE" target="CURRENCY">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="ORIGINAL_PRICE_RENEWAL_C" target="ORIGINAL_ANNUAL_PRICE_RENEWAL">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="ISO_CODE" target="CURRENCY">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="ISO_CODE" target="CURRENCY CONVERSION">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="CURRENCY" target="CONVERSION_RATE_TO_USD">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="CURRENCY" target="OPPORTUNITY_LEVEL_SNAPSHOT">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="CONVERSION_RATE_TO_USD" target="CURRENCY CONVERSION">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="PRODUCT GROUP" target="PRODUCT_GROUP">
+      <data key="d0">17.0</data>
+    </edge>
+    <edge source="PRODUCT GROUP" target="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPE_GENERATION_BOOKINGS_TARGETS_MANUAL">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="PRODUCT GROUP" target="PRODUCT_GROUP_NEW">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="PRODUCT GROUP" target="TEMP_PRODUCT_GROUP_LI">
+      <data key="d0">7.0</data>
+    </edge>
+    <edge source="PRODUCT GROUP" target="SKUS_MASTER_REPORT">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="PRODUCT SOLUTION" target="PRODUCT_SOLUTION">
+      <data key="d0">17.0</data>
+    </edge>
+    <edge source="PRODUCT SOLUTION" target="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPE_GENERATION_BOOKINGS_TARGETS_MANUAL">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="PRODUCT SOLUTION" target="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPE_GENERATION_BOOKINGS_TARGETS">
+      <data key="d0">25.0</data>
+    </edge>
+    <edge source="PRODUCT SOLUTION" target="SKUS_MASTER_REPORT">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="PRODUCT ID" target="PRODUCT">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="PRODUCT" target="PRODUCT_ID">
+      <data key="d0">18.0</data>
+    </edge>
+    <edge source="PRODUCT" target="PRODUCT_NAME">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="PRODUCT" target="PRODUCT_CODE">
+      <data key="d0">17.0</data>
+    </edge>
+    <edge source="PRODUCT" target="PRODUCT_CATEGORY">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="PRODUCT" target="PRODUCT_GROUP">
+      <data key="d0">25.0</data>
+    </edge>
+    <edge source="PRODUCT" target="FAMILY">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="PRODUCT" target="PRODUCT_LINE">
+      <data key="d0">17.0</data>
+    </edge>
+    <edge source="PRODUCT" target="PRODUCT_FAMILY">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="PRODUCT" target="PRODUCT_FAMILY_SUMMARIZE">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="PRODUCT" target="PRODUCT_SOLUTION">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="PRODUCT" target="PRODUCT_GROUP_ID">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="PRODUCT" target="PRODUCT_CATEGORY_ID">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="PRODUCT" target="PRODUCT_SEARCH_GROUPS">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="PRODUCT" target="PRODUCT_GROUP_CATEGORY">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="PRODUCT" target="STG_OPTI_SALESFORCE_OPPORTUNITY_LINE.PRODUCT_ID">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="PRODUCT" target="SKUS_MASTER_REPORT.PRODUCT_GROUP">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="PRODUCT" target="STG_OPTI_SALESFORCE_PRODUCTS.ID">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="PRODUCT" target="STG_OPTI_SALESFORCE_PRODUCTS.PRODUCT_SOLUTION">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="PRODUCT" target="STG_OPTI_SALESFORCE_PRODUCTS.PRODUCT_LINE">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="PRODUCT" target="STG_OPTI_SALESFORCE_PRODUCTS.PRODUCT_GROUP_ID">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="PRODUCT" target="STG_OPTI_SALESFORCE_PRODUCTS.PRODUCT_CATEGORY_ID">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="PRODUCT" target="STG_OPTI_SALESFORCE_PRODUCTS.PRODUCT_CODE">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="PRODUCT" target="STG_OPTI_SALESFORCE_PRODUCTS.PRODUCT_SEARCH_GROUPS">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="PRODUCT" target="PIPELINE_PRODUCT_GROUP_CATEGORIES.PRODUCT_GROUP_CATEGORY">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="PRODUCT" target="FINAL MODEL">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="PRODUCT" target="PRODUCT_MASTER">
+      <data key="d0">18.0</data>
+    </edge>
+    <edge source="PRODUCT" target="SKU_DATA">
+      <data key="d0">18.0</data>
+    </edge>
+    <edge source="PRODUCT" target="JOINED_TABLES">
+      <data key="d0">18.0</data>
+    </edge>
+    <edge source="PRODUCT CODE (SKU)" target="SKU">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="SKU" target="PRODUCT_CODE_SKU">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="SKU" target="SKU_NAME">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="SKU" target="SKUS_MASTER_REPORT.PRODUCT_CODE_SKU">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="SKU" target="STG_OPTI_SALESFORCE_PRODUCTS.SKU_NAME">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="OPPORTUNITY" target="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.OPPORTUNITY_LINE_ITEM_ANALYTICS_SNAPSHOT">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="OPPORTUNITY" target="STAGE_NAME">
+      <data key="d0">40.0</data>
+    </edge>
+    <edge source="OPPORTUNITY" target="CLOSE_DATE">
+      <data key="d0">40.0</data>
+    </edge>
+    <edge source="OPPORTUNITY" target="SFDC_OPPORTUNITY_LINE_ITEM_ANALYTICS_SNAPSHOT">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="OPPORTUNITY" target="TARGETED_PLAYS">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="OPPORTUNITY" target="OPPORTUNITY_ID_LINK">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="OPPORTUNITY" target="OPPORTUNITY_NAME">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="OPPORTUNITY" target="CLOSE_DATE_YEAR">
+      <data key="d0">34.0</data>
+    </edge>
+    <edge source="OPPORTUNITY" target="CLOSE_DATE_QUARTER">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="OPPORTUNITY" target="CLOSE_DATE_WEEK_OF_QUARTER">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="OPPORTUNITY" target="CLOSE_DATE_WEEK">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="OPPORTUNITY" target="DISCOVERY_DATE">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="OPPORTUNITY" target="STG_OPTI_SALESFORCE_OPPORTUNITY_LINE.OPPORTUNITY_ID">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="OPPORTUNITY" target="PIPE_GENERATION_BOOKINGS_OPPORTUNITY.TARGETED_PLAYS">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="OPPORTUNITY" target="PIPE_GENERATION_BOOKINGS_OPPORTUNITY.OPPORTUNITY_ID">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="OPPORTUNITY" target="PIPE_GENERATION_BOOKINGS_OPPORTUNITY.OPPORTUNITY_ID_LINK">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="OPPORTUNITY" target="PIPE_GENERATION_BOOKINGS_OPPORTUNITY.OPPORTUNITY_NAME">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="OPPORTUNITY" target="PIPE_GENERATION_BOOKINGS_OPPORTUNITY.STAGE_NAME">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="OPPORTUNITY" target="PIPE_GENERATION_BOOKINGS_OPPORTUNITY.CLOSE_DATE">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="OPPORTUNITY" target="PIPE_GENERATION_BOOKINGS_OPPORTUNITY.CLOSE_DATE_YEAR">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="OPPORTUNITY" target="PIPE_GENERATION_BOOKINGS_OPPORTUNITY.CLOSE_DATE_QUARTER">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="OPPORTUNITY" target="PIPE_GENERATION_BOOKINGS_OPPORTUNITY.CLOSE_DATE_WEEK_OF_QUARTER">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="OPPORTUNITY" target="PIPE_GENERATION_BOOKINGS_OPPORTUNITY.CLOSE_DATE_WEEK">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="OPPORTUNITY" target="PIPE_GENERATION_BOOKINGS_OPPORTUNITY.DISCOVERY_DATE">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="OPPORTUNITY" target="TRANSFORM_DEV.DBT_MAHNABI_SNAPSHOTS.SFDC_OPPORTUNITY_ANALYTICS_SNAPSHOT">
+      <data key="d0">18.0</data>
+    </edge>
+    <edge source="OPPORTUNITY" target="NAME">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="OPPORTUNITY" target="OUTBOUND_GENERATED">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="OPPORTUNITY" target="ANCHOR_PRODUCTS">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="OPPORTUNITY" target="MEETING_BOOKED_VIA">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="OPPORTUNITY" target="IS_FIVETRAN_DELETED">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="OPPORTUNITY" target="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPE_GENERATION_BOOKINGS_OPPORTUNITY">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="OPPORTUNITY" target="TRANSFORM_DEV.DBT_MAHMUDNABI_OPTI_SALESFORCE.STG_OPTI_SALESFORCE_OPPORTUNITY">
+      <data key="d0">20.0</data>
+    </edge>
+    <edge source="OPPORTUNITY" target="CLOSE_DATE_MONTH">
+      <data key="d0">34.0</data>
+    </edge>
+    <edge source="OPPORTUNITY" target="OPP_RSAC">
+      <data key="d0">38.0</data>
+    </edge>
+    <edge source="OPPORTUNITY" target="CASE">
+      <data key="d0">32.0</data>
+    </edge>
+    <edge source="OPPORTUNITY" target="TRANSFORM_DEV.DBT_MAHMUDNABI_OPTI_SALESFORCE.STG_OPTI_SALESFORCE_PARTNERS">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="OPPORTUNITY" target="OPPORTUNITY_LEVEL_SNAPSHOT">
+      <data key="d0">40.0</data>
+    </edge>
+    <edge source="SNAPSHOT_DATE" target="OPPORTUNITY_SNAPSHOT">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="SNAPSHOT_DATE" target="OPPORTUNITY_MONTHLY_SNAPSHOT_USD">
+      <data key="d0">45.0</data>
+    </edge>
+    <edge source="SNAPSHOT_DATE" target="CLOSED_OPPORTUNITIES">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="SNAPSHOT_DATE" target="OPEN_OPPORTUNITIES">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="SUBSCRIPTION_TERM_CALCULATED_C" target="ANNUAL_PRICE">
+      <data key="d0">18.0</data>
+    </edge>
+    <edge source="SUBSCRIPTION_TERM_CALCULATED_C" target="TRANSFORM_DEV.DBT_MAHMUDNABI_SNAPSHOTS.SFDC_OPPORTUNITY_LINE_ITEM_SNAPSHOT">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="SUBSCRIPTION_TERM_CALCULATED_C" target="CALCULATED SUBSCRIPTION TERM">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="ANNUAL_PRICE" target="EXCLUDE_FROM_1_ST_YEAR_MRR_C">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="ANNUAL_PRICE" target="TRANSFORM_DEV.DBT_MAHMUDNABI_SNAPSHOTS.SFDC_OPPORTUNITY_LINE_ITEM_ANALYTICS_SNAPSHOT">
+      <data key="d0">10.0</data>
+    </edge>
+    <edge source="ANNUAL_PRICE" target="SALES ANALYTICS">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="ANNUAL_PRICE" target="SALES DATA">
+      <data key="d0">7.0</data>
+    </edge>
+    <edge source="ANNUAL_PRICE" target="REVENUE">
+      <data key="d0">26.0</data>
+    </edge>
+    <edge source="ANNUAL_PRICE" target="OPPORTUNITY_LINE">
+      <data key="d0">10.0</data>
+    </edge>
+    <edge source="EXCLUDE_FROM_1_ST_YEAR_MRR_C" target="EXCLUSION FROM MRR">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="EXCLUDE_FROM_1_ST_YEAR_MRR_C" target="EXCLUSION FROM 1ST YEAR MRR">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="ID" target="OPPORTUNITY LINE ITEM">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="ID" target="CLOSED_OPPORTUNITIES">
+      <data key="d0">7.0</data>
+    </edge>
+    <edge source="ID" target="OPEN_OPPORTUNITIES">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="ID" target="HASH">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="ORIGINAL_ANNUAL_PRICE_RENEWAL" target="SUBSCRIPTION">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="ORIGINAL_ANNUAL_PRICE_RENEWAL" target="JOINED_TABLES">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="STAGE_NAME" target="CLOSED_OPPORTUNITIES">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="STAGE_NAME" target="OPEN_OPPORTUNITIES">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="STAGE_NAME" target="CLOSED">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="STAGE_NAME" target="OPEN">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="STAGE_NAME" target="STAGE">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="CLOSE_DATE" target="CLOSE DATE">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="RECURRING_SOFTWARE_AMOUNT_CHANGE_C" target="RECURRING SOFTWARE AMOUNT CHANGE">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="LEGACY_RENEWAL_OPPORTUNITY_NEW_C" target="RENEWAL">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="CUSTOM_FORECAST_C" target="FORECAST">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="PRODUCT_RSAC_CALC_SNAPSHOT_USD" target="RSAC">
+      <data key="d0">10.0</data>
+    </edge>
+    <edge source="PRODUCT_RSAC_CALC_SNAPSHOT_USD" target="RSAC CALCULATION">
+      <data key="d0">10.0</data>
+    </edge>
+    <edge source="PRODUCT_RSAC_CALC_SNAPSHOT_USD" target="OPPORTUNITY_MONTHLY_SNAPSHOT_USD">
+      <data key="d0">20.0</data>
+    </edge>
+    <edge source="PRODUCT_ID" target="TRANSFORM_DEV.DBT_MAHMUDNABI_SNAPSHOTS.SFDC_OPPORTUNITY_LINE_ITEM_ANALYTICS_SNAPSHOT">
+      <data key="d0">10.0</data>
+    </edge>
+    <edge source="MONTHLY SNAPSHOT" target="OPPORTUNITY_MONTHLY_SNAPSHOT_USD">
+      <data key="d0">30.0</data>
+    </edge>
+    <edge source="CURRENCY CONVERSION" target="STG_OPTI_SALESFORCE_CURRENCY_TYPE.ISO_CODE">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="CURRENCY CONVERSION" target="STG_OPTI_SALESFORCE_CURRENCY_TYPE.CONVERSION_RATE_TO_USD">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="OPPORTUNITY LINE ITEM" target="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.OPPORTUNITY_LINE_ITEM_ANALYTICS_SNAPSHOT">
+      <data key="d0">18.0</data>
+    </edge>
+    <edge source="OPPORTUNITY LINE ITEM" target="OPPORTUNITY_LINE_ID">
+      <data key="d0">38.0</data>
+    </edge>
+    <edge source="OPPORTUNITY LINE ITEM" target="OPPORTUNITY_PRODUCT_NAME">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="OPPORTUNITY LINE ITEM" target="QUANTITY">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="OPPORTUNITY LINE ITEM" target="UNIT_PRICE">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="OPPORTUNITY LINE ITEM" target="LIST_PRICE">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="OPPORTUNITY LINE ITEM" target="DISCOUNT">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="OPPORTUNITY LINE ITEM" target="MRR">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="OPPORTUNITY LINE ITEM" target="ARR">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="OPPORTUNITY LINE ITEM" target="SBQQ_RENEWED_SUBSCRIPTION">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="OPPORTUNITY LINE ITEM" target="OPP_PRODUCT_RSAC">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="OPPORTUNITY LINE ITEM" target="INCLUDED_IN_ARR">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="OPPORTUNITY LINE ITEM" target="OPP_PRODUCT_RSAC_CONVERTED">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="OPPORTUNITY LINE ITEM" target="TRANSFORM_DEV.DBT_MAHMUDNABI_SNAPSHOTS.SFDC_OPPORTUNITY_LINE_ITEM_SNAPSHOT">
+      <data key="d0">10.0</data>
+    </edge>
+    <edge source="OPPORTUNITY LINE ITEM" target="CUSTOMER_UNIT_PRICE_C">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="OPPORTUNITY LINE ITEM" target="PRORATE_BY_C">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="OPPORTUNITY LINE ITEM" target="NET_SUITE_PRICE_C">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="OPPORTUNITY LINE ITEM" target="TRANSFORM_DEV.DBT_MAHMUDNABI_SNAPSHOTS.SFDC_OPPORTUNITY_PRODUCT_SNAPSHOT">
+      <data key="d0">11.0</data>
+    </edge>
+    <edge source="OPPORTUNITY LINE ITEM" target="QUOTE_LINE_ID">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="OPPORTUNITY LINE ITEM" target="STG_OPTI_SALESFORCE_OPPORTUNITY_LINE.ID">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="OPPORTUNITY LINE ITEM" target="STG_OPTI_SALESFORCE_QUOTE_LINE.QUOTE_LINE_ID">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="SUBSCRIPTION" target="SUBSCRIPTION_C">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="SUBSCRIPTION" target="RENEWED_SUBSCRIPTION">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="SUBSCRIPTION" target="CPI_ADJUSTMENTS">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="SUBSCRIPTION" target="ORIGINAL_PRICE_RENEWAL">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="SUBSCRIPTION" target="STG_OPTI_SALESFORCE_QUOTE_LINE.RENEWED_SUBSCRIPTION">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="SUBSCRIPTION" target="STG_OPTI_SALESFORCE_SUBSCRIPTION.CPI_ADJUSTMENTS">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="SUBSCRIPTION" target="STG_OPTI_SALESFORCE_SUBSCRIPTION.ORIGINAL_PRICE_RENEWAL">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="SUBSCRIPTION" target="FINAL MODEL">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="SUBSCRIPTION" target="SUBSCRIPTION_METRICS">
+      <data key="d0">18.0</data>
+    </edge>
+    <edge source="SUBSCRIPTION" target="CPI_ADJUSTMENT">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="SUBSCRIPTION" target="JOINED_TABLES">
+      <data key="d0">18.0</data>
+    </edge>
+    <edge source="OPPORTUNITY_MONTHLY_SNAPSHOT_USD" target="OPPORTUNITY_SNAPSHOT">
+      <data key="d0">18.0</data>
+    </edge>
+    <edge source="OPPORTUNITY_MONTHLY_SNAPSHOT_USD" target="PRODUCT_CODE">
+      <data key="d0">37.0</data>
+    </edge>
+    <edge source="OPPORTUNITY_SNAPSHOT" target="GENERATED_MONTHS">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="OPPORTUNITY_SNAPSHOT" target="POSITIVE RECURRING SOFTWARE AMOUNT CHANGE">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="OPPORTUNITY_SNAPSHOT" target="LEGACY RENEWAL">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="OPPORTUNITY_SNAPSHOT" target="FORECAST NOT OMITTED">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="OPPORTUNITY_SNAPSHOT" target="CLOSE DATE">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="OPPORTUNITY_SNAPSHOT" target="MONTH">
+      <data key="d0">43.0</data>
+    </edge>
+    <edge source="OPPORTUNITY_SNAPSHOT" target="USD CONVERSION RATE">
+      <data key="d0">27.0</data>
+    </edge>
+    <edge source="OPPORTUNITY_SNAPSHOT" target="SOLUTION INFORMATION">
+      <data key="d0">21.0</data>
+    </edge>
+    <edge source="ANNUAL_PRICE_INCREASE" target="JOINED_TABLES">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="PRODUCT_CODE" target="TRANSFORM_DEV.DBT_MAHMUDNABI_SNAPSHOTS.SFDC_OPPORTUNITY_LINE_ITEM_ANALYTICS_SNAPSHOT">
+      <data key="d0">10.0</data>
+    </edge>
+    <edge source="PRODUCT_CODE" target="OPPORTUNITY-PRODUCT COMBINATION">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="PRODUCT_CODE" target="CLOSED OPPORTUNITY">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="PRODUCT_CODE" target="OPEN OPPORTUNITY">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="PRODUCT_CODE" target="CLOSED STAGE">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="PRODUCT_CODE" target="OPEN STAGE">
+      <data key="d0">1.0</data>
+    </edge>
+    <edge source="CLOSE DATE" target="TRANSFORM_DEV.DBT_MAHMUDNABI_OPTI_SALESFORCE.STG_OPTI_SALESFORCE_OPPORTUNITY">
+      <data key="d0">14.0</data>
+    </edge>
+    <edge source="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.OPPORTUNITY_LINE_ITEM_ANALYTICS_SNAPSHOT" target="TRANSFORM_DEV.DBT_MAHMUDNABI_SNAPSHOTS.SFDC_OPPORTUNITY_LINE_ITEM_ANALYTICS_SNAPSHOT">
+      <data key="d0">20.0</data>
+    </edge>
+    <edge source="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.OPPORTUNITY_LINE_ITEM_ANALYTICS_SNAPSHOT" target="SALESFORCE SNAPSHOT">
+      <data key="d0">18.0</data>
+    </edge>
+    <edge source="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.OPPORTUNITY_LINE_ITEM_ANALYTICS_SNAPSHOT" target="REPORTING">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.OPPORTUNITY_LINE_ITEM_ANALYTICS_SNAPSHOT" target="ANALYTICS">
+      <data key="d0">18.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_SNAPSHOTS.SFDC_OPPORTUNITY_LINE_ITEM_ANALYTICS_SNAPSHOT" target="SBQQ_RENEWED_SUBSCRIPTION">
+      <data key="d0">10.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_SNAPSHOTS.SFDC_OPPORTUNITY_LINE_ITEM_ANALYTICS_SNAPSHOT" target="SBQQ_NET_PRICE">
+      <data key="d0">10.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_SNAPSHOTS.SFDC_OPPORTUNITY_LINE_ITEM_ANALYTICS_SNAPSHOT" target="OPP_PRODUCT_RSAC">
+      <data key="d0">10.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_SNAPSHOTS.SFDC_OPPORTUNITY_LINE_ITEM_ANALYTICS_SNAPSHOT" target="PRODUCT_NAME">
+      <data key="d0">10.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_SNAPSHOTS.SFDC_OPPORTUNITY_LINE_ITEM_ANALYTICS_SNAPSHOT" target="PRODUCT_SOLUTION">
+      <data key="d0">10.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_SNAPSHOTS.SFDC_OPPORTUNITY_LINE_ITEM_ANALYTICS_SNAPSHOT" target="PRODUCT_CATEGORY">
+      <data key="d0">10.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_SNAPSHOTS.SFDC_OPPORTUNITY_LINE_ITEM_ANALYTICS_SNAPSHOT" target="PRODUCT_GROUP">
+      <data key="d0">10.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_SNAPSHOTS.SFDC_OPPORTUNITY_LINE_ITEM_ANALYTICS_SNAPSHOT" target="FAMILY">
+      <data key="d0">10.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_SNAPSHOTS.SFDC_OPPORTUNITY_LINE_ITEM_ANALYTICS_SNAPSHOT" target="LOB">
+      <data key="d0">10.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_SNAPSHOTS.SFDC_OPPORTUNITY_LINE_ITEM_ANALYTICS_SNAPSHOT" target="LOB_SUBCATEGORY">
+      <data key="d0">10.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_SNAPSHOTS.SFDC_OPPORTUNITY_LINE_ITEM_ANALYTICS_SNAPSHOT" target="PRODUCT_LINE">
+      <data key="d0">10.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_SNAPSHOTS.SFDC_OPPORTUNITY_LINE_ITEM_ANALYTICS_SNAPSHOT" target="PRODUCT_NEW">
+      <data key="d0">10.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_SNAPSHOTS.SFDC_OPPORTUNITY_LINE_ITEM_ANALYTICS_SNAPSHOT" target="PRODUCT_SOLUTION_NEW">
+      <data key="d0">10.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_SNAPSHOTS.SFDC_OPPORTUNITY_LINE_ITEM_ANALYTICS_SNAPSHOT" target="PRODUCT_LINE_NEW">
+      <data key="d0">10.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_SNAPSHOTS.SFDC_OPPORTUNITY_LINE_ITEM_ANALYTICS_SNAPSHOT" target="PRODUCT_GROUP_NEW">
+      <data key="d0">10.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_SNAPSHOTS.SFDC_OPPORTUNITY_LINE_ITEM_ANALYTICS_SNAPSHOT" target="TEMP_PRODUCT_GROUP_LI">
+      <data key="d0">10.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_SNAPSHOTS.SFDC_OPPORTUNITY_LINE_ITEM_ANALYTICS_SNAPSHOT" target="TEMP_PRODUCT_SOLUTION_LI">
+      <data key="d0">10.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_SNAPSHOTS.SFDC_OPPORTUNITY_LINE_ITEM_ANALYTICS_SNAPSHOT" target="INCLUDED_IN_ARR">
+      <data key="d0">10.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_SNAPSHOTS.SFDC_OPPORTUNITY_LINE_ITEM_ANALYTICS_SNAPSHOT" target="NEW_LINE_OF_BUSINESS">
+      <data key="d0">10.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_SNAPSHOTS.SFDC_OPPORTUNITY_LINE_ITEM_ANALYTICS_SNAPSHOT" target="PRODUCT_FAMILY">
+      <data key="d0">10.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_SNAPSHOTS.SFDC_OPPORTUNITY_LINE_ITEM_ANALYTICS_SNAPSHOT" target="OPP_PRODUCT_RSAC_CONVERTED">
+      <data key="d0">10.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_SNAPSHOTS.SFDC_OPPORTUNITY_LINE_ITEM_ANALYTICS_SNAPSHOT" target="PRODUCT_FAMILY_SUMMARIZE">
+      <data key="d0">10.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_SNAPSHOTS.SFDC_OPPORTUNITY_LINE_ITEM_ANALYTICS_SNAPSHOT" target="DBT_SCD_ID">
+      <data key="d0">10.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_SNAPSHOTS.SFDC_OPPORTUNITY_LINE_ITEM_ANALYTICS_SNAPSHOT" target="DBT_UPDATED_AT">
+      <data key="d0">10.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_SNAPSHOTS.SFDC_OPPORTUNITY_LINE_ITEM_ANALYTICS_SNAPSHOT" target="DBT_VALID_TO">
+      <data key="d0">10.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_SNAPSHOTS.SFDC_OPPORTUNITY_LINE_ITEM_ANALYTICS_SNAPSHOT" target="SNAPSHOT">
+      <data key="d0">1.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_SNAPSHOTS.SFDC_OPPORTUNITY_LINE_ITEM_ANALYTICS_SNAPSHOT" target="SALES OPPORTUNITY LINE ITEM">
+      <data key="d0">1.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_SNAPSHOTS.SFDC_OPPORTUNITY_LINE_ITEM_ANALYTICS_SNAPSHOT" target="SFDC_OPPORTUNITY_LINE_ITEM_ANALYTICS_SNAPSHOT">
+      <data key="d0">20.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_SNAPSHOTS.SFDC_OPPORTUNITY_LINE_ITEM_ANALYTICS_SNAPSHOT" target="INDIVIDUAL OPPORTUNITY LINE ITEM ANALYTICS RECORDS">
+      <data key="d0">20.0</data>
+    </edge>
+    <edge source="SALESFORCE SNAPSHOT" target="CREATED_AT">
+      <data key="d0">14.0</data>
+    </edge>
+    <edge source="SALESFORCE SNAPSHOT" target="UPDATED_AT">
+      <data key="d0">2.0</data>
+    </edge>
+    <edge source="OPPORTUNITY_LINE_ID" target="FINAL MODEL">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="SBQQ_NET_PRICE" target="SALES ANALYTICS">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="SBQQ_NET_PRICE" target="SALES DATA">
+      <data key="d0">7.0</data>
+    </edge>
+    <edge source="PRODUCT_SOLUTION" target="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPE_GENERATION_BOOKINGS_TARGETS">
+      <data key="d0">18.0</data>
+    </edge>
+    <edge source="PRODUCT_CATEGORY" target="PRODUCT CATEGORY">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="PRODUCT_GROUP" target="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPE_GENERATION_BOOKINGS_TARGETS">
+      <data key="d0">15.0</data>
+    </edge>
+    <edge source="PRODUCT_GROUP" target="PIPE_GEN">
+      <data key="d0">31.0</data>
+    </edge>
+    <edge source="PRODUCT_GROUP" target="BOOKINGS">
+      <data key="d0">31.0</data>
+    </edge>
+    <edge source="PRODUCT_GROUP" target="JOINED_TARGETS">
+      <data key="d0">24.0</data>
+    </edge>
+    <edge source="PRODUCT_GROUP" target="CONCAT_PRODUCT_TARGETS">
+      <data key="d0">36.0</data>
+    </edge>
+    <edge source="PRODUCT_GROUP" target="STG_GTM_ANALYTICS_TARGETS_DOLLARS">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="PRODUCT_GROUP" target="PIPELINE_TARGETS_WITH_GOALS_AND_TERRITORY_AND_LEADS_AND_SKUS">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="PRODUCT_GROUP" target="PRODUCT_GROUP">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="LOB" target="LINE OF BUSINESS">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="LOB_SUBCATEGORY" target="LINE OF BUSINESS">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="LOB_SUBCATEGORY" target="LINE OF BUSINESS SUBCATEGORY">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="PRODUCT_LINE" target="PRODUCT LINE">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="PRODUCT_GROUP_NEW" target="OPPORTUNITY PRODUCT SNAPSHOT">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="TEMP_PRODUCT_GROUP_LI" target="OPPORTUNITY PRODUCT SNAPSHOT">
+      <data key="d0">7.0</data>
+    </edge>
+    <edge source="TEMP_PRODUCT_SOLUTION_LI" target="OPPORTUNITY PRODUCT SNAPSHOT">
+      <data key="d0">7.0</data>
+    </edge>
+    <edge source="TEMP_PRODUCT_SOLUTION_LI" target="PRODUCT SOLUTION LINE ITEM">
+      <data key="d0">7.0</data>
+    </edge>
+    <edge source="INCLUDED_IN_ARR" target="ANNUAL RECURRING REVENUE (ARR)">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="INCLUDED_IN_ARR" target="OPPORTUNITY PRODUCT SNAPSHOT">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="INCLUDED_IN_ARR" target="ARR INCLUSION">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="NEW_LINE_OF_BUSINESS" target="LINE OF BUSINESS">
+      <data key="d0">17.0</data>
+    </edge>
+    <edge source="NEW_LINE_OF_BUSINESS" target="OPPORTUNITY PRODUCT SNAPSHOT">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="PRODUCT_FAMILY" target="PRODUCT FAMILY">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="PRODUCT_FAMILY_SUMMARIZE" target="PRODUCT FAMILY">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="DBT_SCD_ID" target="CHANGE DATA CAPTURE">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="DBT_SCD_ID" target="OPPORTUNITY PRODUCT SNAPSHOT">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="DBT_SCD_ID" target="SLOWLY CHANGING DIMENSION">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="DBT_SCD_ID" target="CURRENT TABLE">
+      <data key="d0">14.0</data>
+    </edge>
+    <edge source="DBT_UPDATED_AT" target="CURRENT TABLE">
+      <data key="d0">30.0</data>
+    </edge>
+    <edge source="DBT_UPDATED_AT" target="OPPORTUNITY PRODUCT SNAPSHOT">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="DBT_VALID_TO" target="SFDC_OPPORTUNITY_LINE_ITEM_ANALYTICS_SNAPSHOT">
+      <data key="d0">2.0</data>
+    </edge>
+    <edge source="DBT_VALID_TO" target="CURRENT TABLE">
+      <data key="d0">18.0</data>
+    </edge>
+    <edge source="DBT_VALID_TO" target="OPPORTUNITY PRODUCT SNAPSHOT">
+      <data key="d0">1.0</data>
+    </edge>
+    <edge source="PRODUCT CATEGORY" target="PRODUCT_CATEGORY_C">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_SNAPSHOTS.SFDC_OPPORTUNITY_LINE_ITEM_SNAPSHOT" target="DYNAMICS_ID_C">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_SNAPSHOTS.SFDC_OPPORTUNITY_LINE_ITEM_SNAPSHOT" target="LEGACY_DEVELOPMENT_PERIOD_C">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_SNAPSHOTS.SFDC_OPPORTUNITY_LINE_ITEM_SNAPSHOT" target="LEGACY_DEV_PERIOD_C">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_SNAPSHOTS.SFDC_OPPORTUNITY_LINE_ITEM_SNAPSHOT" target="LEGACY_TERMS_C">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_SNAPSHOTS.SFDC_OPPORTUNITY_LINE_ITEM_SNAPSHOT" target="LEGACY_SERVICE_START_DATE_C">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_SNAPSHOTS.SFDC_OPPORTUNITY_LINE_ITEM_SNAPSHOT" target="PRODUCT_OF_INTEREST_C">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_SNAPSHOTS.SFDC_OPPORTUNITY_LINE_ITEM_SNAPSHOT" target="MRR_C">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_SNAPSHOTS.SFDC_OPPORTUNITY_LINE_ITEM_SNAPSHOT" target="ARR_C">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_SNAPSHOTS.SFDC_OPPORTUNITY_LINE_ITEM_SNAPSHOT" target="DEVELOPMENT_PHASE_MONTHS_C">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_SNAPSHOTS.SFDC_OPPORTUNITY_LINE_ITEM_SNAPSHOT" target="DEV_PERIOD_RATE_ADJUSTMENT_C">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_SNAPSHOTS.SFDC_OPPORTUNITY_LINE_ITEM_SNAPSHOT" target="SBAA_APPROVAL_STATUS_C">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_SNAPSHOTS.SFDC_OPPORTUNITY_LINE_ITEM_SNAPSHOT" target="BUNDLE_REFERENCE_NUMBER_C">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_SNAPSHOTS.SFDC_OPPORTUNITY_LINE_ITEM_SNAPSHOT" target="QUANTITY_REF_C">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_SNAPSHOTS.SFDC_OPPORTUNITY_LINE_ITEM_SNAPSHOT" target="QUANTITY_THIS_QUOTE_C">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_SNAPSHOTS.SFDC_OPPORTUNITY_LINE_ITEM_SNAPSHOT" target="DISCRETIONARY_DISCOUNT_C">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_SNAPSHOTS.SFDC_OPPORTUNITY_LINE_ITEM_SNAPSHOT" target="CELIGO_SFNSIO_CONTRACT_ITEM_ID_C">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_SNAPSHOTS.SFDC_OPPORTUNITY_LINE_ITEM_SNAPSHOT" target="CELIGO_SFNSIO_CONTRACT_TERM_C">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_SNAPSHOTS.SFDC_OPPORTUNITY_LINE_ITEM_SNAPSHOT" target="CELIGO_SFNSIO_END_DATE_C">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_SNAPSHOTS.SFDC_OPPORTUNITY_LINE_ITEM_SNAPSHOT" target="CELIGO_SFNSIO_LIST_RATE_C">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_SNAPSHOTS.SFDC_OPPORTUNITY_LINE_ITEM_SNAPSHOT" target="CELIGO_SFNSIO_NET_SUITE_LINE_ID_C">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_SNAPSHOTS.SFDC_OPPORTUNITY_LINE_ITEM_SNAPSHOT" target="CELIGO_SFNSIO_START_DATE_C">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_SNAPSHOTS.SFDC_OPPORTUNITY_LINE_ITEM_SNAPSHOT" target="CELIGO_AT_BILLING_MODE_C">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_SNAPSHOTS.SFDC_OPPORTUNITY_LINE_ITEM_SNAPSHOT" target="CELIGO_AT_CHARGE_FREQUENCY_C">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_SNAPSHOTS.SFDC_OPPORTUNITY_LINE_ITEM_SNAPSHOT" target="CELIGO_AT_LINE_TYPE_C">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_SNAPSHOTS.SFDC_OPPORTUNITY_LINE_ITEM_SNAPSHOT" target="CELIGO_AT_NET_SUITE_ITEM_TYPE_C">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_SNAPSHOTS.SFDC_OPPORTUNITY_LINE_ITEM_SNAPSHOT" target="CELIGO_AT_REPEAT_EVERY_C">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_SNAPSHOTS.SFDC_OPPORTUNITY_LINE_ITEM_SNAPSHOT" target="CELIGO_AT_START_DATE_C">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_SNAPSHOTS.SFDC_OPPORTUNITY_LINE_ITEM_SNAPSHOT" target="CELIGO_AT_STATUS_C">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_SNAPSHOTS.SFDC_OPPORTUNITY_LINE_ITEM_SNAPSHOT" target="CUSTOMER_UNIT_PRICE_C">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_SNAPSHOTS.SFDC_OPPORTUNITY_LINE_ITEM_SNAPSHOT" target="IS_SLA_PRODUCT_C">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_SNAPSHOTS.SFDC_OPPORTUNITY_LINE_ITEM_SNAPSHOT" target="SINGLE OPPORTUNITY LINE ITEM SNAPSHOT">
+      <data key="d0">20.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_SNAPSHOTS.SFDC_OPPORTUNITY_LINE_ITEM_SNAPSHOT" target="SFDC_OPPORTUNITY_LINE_ITEM_SNAPSHOT">
+      <data key="d0">10.0</data>
+    </edge>
+    <edge source="PRICEBOOK_ENTRY_ID" target="PRICEBOOK ENTRY">
+      <data key="d0">1.0</data>
+    </edge>
+    <edge source="DYNAMICS_ID_C" target="DYNAMICS ID">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="LEGACY_DEVELOPMENT_PERIOD_C" target="LEGACY DEVELOPMENT PERIOD">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="LEGACY_DEV_PERIOD_C" target="LEGACY DEVELOPMENT PERIOD">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="LEGACY_TERMS_C" target="LEGACY TERMS">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="LEGACY_SERVICE_START_DATE_C" target="LEGACY SERVICE START DATE">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="PRODUCT_OF_INTEREST_C" target="PRODUCT OF INTEREST">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="MRR_C" target="MONTHLY RECURRING REVENUE">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="ARR_C" target="ANNUAL RECURRING REVENUE">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="DEVELOPMENT_PHASE_MONTHS_C" target="DEVELOPMENT PHASE MONTHS">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="DEV_PERIOD_RATE_ADJUSTMENT_C" target="DEV PERIOD RATE ADJUSTMENT">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="SBAA_APPROVAL_STATUS_C" target="SBAA APPROVAL STATUS">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="BUNDLE_REFERENCE_NUMBER_C" target="BUNDLE REFERENCE NUMBER">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="QUANTITY_REF_C" target="QUANTITY REFERENCE">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="QUANTITY_THIS_QUOTE_C" target="QUANTITY IN THIS QUOTE">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="DISCRETIONARY_DISCOUNT_C" target="DISCRETIONARY DISCOUNT">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="CELIGO_SFNSIO_CONTRACT_ITEM_ID_C" target="CELIGO CONTRACT ITEM ID">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="CELIGO_SFNSIO_CONTRACT_TERM_C" target="CELIGO CONTRACT TERM">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="CELIGO_SFNSIO_END_DATE_C" target="CELIGO END DATE">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="CELIGO_SFNSIO_LIST_RATE_C" target="CELIGO LIST RATE">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="CELIGO_SFNSIO_NET_SUITE_LINE_ID_C" target="CELIGO NETSUITE LINE ID">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="CELIGO_SFNSIO_START_DATE_C" target="CELIGO START DATE">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="CELIGO_AT_BILLING_MODE_C" target="CELIGO BILLING MODE">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="CELIGO_AT_CHARGE_FREQUENCY_C" target="CELIGO CHARGE FREQUENCY">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="CELIGO_AT_LINE_TYPE_C" target="CELIGO LINE TYPE">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="CELIGO_AT_NET_SUITE_ITEM_TYPE_C" target="CELIGO NETSUITE ITEM TYPE">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="CELIGO_AT_REPEAT_EVERY_C" target="CELIGO REPEAT INTERVAL">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="CELIGO_AT_START_DATE_C" target="CELIGO START DATE">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="CELIGO_AT_STATUS_C" target="CELIGO STATUS">
+      <data key="d0">32.0</data>
+    </edge>
+    <edge source="CUSTOMER_UNIT_PRICE_C" target="CUSTOMER UNIT PRICE">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="IS_SLA_PRODUCT_C" target="SLA PRODUCT">
+      <data key="d0">18.0</data>
+    </edge>
+    <edge source="MIGRATION_ID_C" target="MIGRATION ID">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="HISTORICAL_CURRENT_SUBSCRIPTION_SOFTWARE_C" target="HISTORICAL SUBSCRIPTION SOFTWARE">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="OPPORTUNITY_BILLING_CYCLE_STATUS_C" target="BILLING CYCLE STATUS">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="OPPORTUNITY_BILLING_CYCLE_STATUS_C" target="OPPORTUNITY BILLING CYCLE STATUS">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="PRORATE_BY_C" target="PRORATE BY">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="PRICE_PLAN_TYPE_C" target="PRICE PLAN">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="PRICE_PLAN_TYPE_C" target="PRICE PLAN TYPE">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="PRODUCT_REGION_C" target="PRODUCT REGION">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="PRODUCT REGION" target="PRODUCT_REGION_SET_C">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="_FIVETRAN_SYNCED" target="FIVETRAN SYNC STATUS">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="FIVETRAN SYNC STATUS" target="_FIVETRAN_DELETED">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="WL_MIGRATION_ID_C" target="WL MIGRATION ID">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="_FIVETRAN_DELETED" target="FIVETRAN DELETION STATUS">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="TOTAL_USAGE_VOLUME_C" target="USAGE VOLUME">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="TOTAL_USAGE_VOLUME_C" target="TOTAL USAGE VOLUME">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="NETSUITE_PRODUCT_FAMILY_C" target="NETSUITE PRODUCT FAMILY">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="NET_SUITE_PRICE_C" target="NETSUITE PRICE">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="RSACAT_CLOSED_DATE_C" target="RSACAT CLOSED DATE">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="PRODUCT_REGION_SET_C" target="PRODUCT REGION SET">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="PROVISIONING_LANGUAGE_C" target="PROVISIONING LANGUAGE">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="KANTATA_TRIGGER_C" target="KANTATA TRIGGER">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPE_GENERATION_BOOKINGS_TARGETS_MANUAL" target="TRANSFORM_DEV.DBT_MAHMUDNABI_SHARE_POINT.STG_SHARE_POINT_PIPE_GEN_BOOKINGS_TARGETS_MANUAL">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPE_GENERATION_BOOKINGS_TARGETS_MANUAL" target="JOINED_TABLE">
+      <data key="d0">10.0</data>
+    </edge>
+    <edge source="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPE_GENERATION_BOOKINGS_TARGETS_MANUAL" target="PRODUCT-SOLUTION / PRODUCT-GROUP / TERRITORY / REGION / SEGMENT / CUSTOMER-TYPE / YEAR / QUARTER">
+      <data key="d0">10.0</data>
+    </edge>
+    <edge source="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPE_GENERATION_BOOKINGS_TARGETS_MANUAL" target="SALES TERRITORY">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPE_GENERATION_BOOKINGS_TARGETS_MANUAL" target="GEOGRAPHIC REGION">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPE_GENERATION_BOOKINGS_TARGETS_MANUAL" target="DATA SOURCE">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPE_GENERATION_BOOKINGS_TARGETS_MANUAL" target="MARKET SEGMENT">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPE_GENERATION_BOOKINGS_TARGETS_MANUAL" target="CUSTOMER TYPE">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPE_GENERATION_BOOKINGS_TARGETS_MANUAL" target="FISCAL YEAR">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPE_GENERATION_BOOKINGS_TARGETS_MANUAL" target="QUARTER">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPE_GENERATION_BOOKINGS_TARGETS_MANUAL" target="BOOKINGS">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPE_GENERATION_BOOKINGS_TARGETS_MANUAL" target="PIPELINE GENERATION">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPE_GENERATION_BOOKINGS_TARGETS_MANUAL" target="MQLS">
+      <data key="d0">1.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_SHARE_POINT.STG_SHARE_POINT_PIPE_GEN_BOOKINGS_TARGETS_MANUAL" target="CONCAT_TARGETS">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="JOINED_TABLE" target="UNPIVOTED_BOOKINGS">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="JOINED_TABLE" target="UNPIVOTED_PIPE_GENERATION">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="JOINED_TABLE" target="UNPIVOTED_MQLS">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="JOINED_TABLE" target="CONCAT_PRODUCT_TARGETS">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="JOINED_TABLE" target="DATE_YEAR_QUARTER">
+      <data key="d0">10.0</data>
+    </edge>
+    <edge source="JOINED_TABLE" target="INNER JOIN">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="JOINED_TABLE" target="PRODUCT-SOLUTION / PRODUCT-GROUP / TERRITORY / REGION / SEGMENT / CUSTOMER-TYPE / YEAR / QUARTER">
+      <data key="d0">1.0</data>
+    </edge>
+    <edge source="JOINED_TABLE" target="NORMALIZED PRODUCT GROUP">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="SALES TERRITORY" target="TERRITORY">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="GEOGRAPHIC REGION" target="REGION">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="DATA SOURCE" target="SOURCE">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="MARKET SEGMENT" target="SEGMENT">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="CUSTOMER TYPE" target="CUSTOMER_TYPE">
+      <data key="d0">24.0</data>
+    </edge>
+    <edge source="CUSTOMER TYPE" target="TRANSFORM_DEV.DBT_MAHMUDNABI_OPTI_SALESFORCE.STG_OPTI_SALESFORCE_OPPORTUNITY">
+      <data key="d0">14.0</data>
+    </edge>
+    <edge source="FISCAL YEAR" target="DATE_YEAR">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="QUARTER" target="Q1_BOOKINGS">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="QUARTER" target="Q1_PIPE_GENERATION">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="QUARTER" target="Q1_MQLS">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="QUARTER" target="SNAPSHOT_QUARTER">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="BOOKINGS" target="Q1_BOOKINGS">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="BOOKINGS" target="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPE_GENERATION_BOOKINGS_TARGETS">
+      <data key="d0">56.0</data>
+    </edge>
+    <edge source="BOOKINGS" target="PIPE_GEN">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="BOOKINGS" target="TRANSFORM_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.STG_GTM_ANALYTICS_TARGETS_DOLLARS">
+      <data key="d0">10.0</data>
+    </edge>
+    <edge source="BOOKINGS" target="JOINED_TARGETS">
+      <data key="d0">27.0</data>
+    </edge>
+    <edge source="BOOKINGS" target="STG_GTM_ANALYTICS_TARGETS_DOLLARS">
+      <data key="d0">20.0</data>
+    </edge>
+    <edge source="BOOKINGS" target="LEGACY_CUSTOMER_TYPE_CCVR">
+      <data key="d0">7.0</data>
+    </edge>
+    <edge source="BOOKINGS" target="DATE_QUARTER">
+      <data key="d0">7.0</data>
+    </edge>
+    <edge source="BOOKINGS" target="SEGMENT">
+      <data key="d0">7.0</data>
+    </edge>
+    <edge source="BOOKINGS" target="SOURCE">
+      <data key="d0">7.0</data>
+    </edge>
+    <edge source="BOOKINGS" target="TERRITORY">
+      <data key="d0">7.0</data>
+    </edge>
+    <edge source="BOOKINGS" target="SUPER_REGION">
+      <data key="d0">7.0</data>
+    </edge>
+    <edge source="BOOKINGS" target="BUSINESS_TYPE">
+      <data key="d0">14.0</data>
+    </edge>
+    <edge source="PIPELINE GENERATION" target="Q1_PIPE_GENERATION">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="MQLS" target="Q1_MQLS">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="CONCAT_TARGETS" target="CONCAT_PRODUCT_TARGETS">
+      <data key="d0">10.0</data>
+    </edge>
+    <edge source="CONCAT_TARGETS" target="UNPIVOTED_BOOKINGS">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="CONCAT_TARGETS" target="UNPIVOTED_PIPE_GENERATION">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="CONCAT_TARGETS" target="UNPIVOTED_MQLS">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="CONCAT_PRODUCT_TARGETS" target="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPE_GENERATION_BOOKINGS_TARGETS">
+      <data key="d0">27.0</data>
+    </edge>
+    <edge source="CONCAT_PRODUCT_TARGETS" target="JOINED_TARGETS">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="CONCAT_PRODUCT_TARGETS" target="LEGACY_CUSTOMER_TYPE_CCVR">
+      <data key="d0">42.0</data>
+    </edge>
+    <edge source="CONCAT_PRODUCT_TARGETS" target="DATE_QUARTER">
+      <data key="d0">42.0</data>
+    </edge>
+    <edge source="CONCAT_PRODUCT_TARGETS" target="SEGMENT">
+      <data key="d0">42.0</data>
+    </edge>
+    <edge source="CONCAT_PRODUCT_TARGETS" target="SOURCE">
+      <data key="d0">42.0</data>
+    </edge>
+    <edge source="CONCAT_PRODUCT_TARGETS" target="TERRITORY">
+      <data key="d0">42.0</data>
+    </edge>
+    <edge source="CONCAT_PRODUCT_TARGETS" target="SUPER_REGION">
+      <data key="d0">42.0</data>
+    </edge>
+    <edge source="CONCAT_PRODUCT_TARGETS" target="PIPELINE_GENERATION_MODEL">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="CONCAT_PRODUCT_TARGETS" target="PRODUCT_TARGETS">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="UNPIVOTED_BOOKINGS" target="DATE_QUARTER">
+      <data key="d0">10.0</data>
+    </edge>
+    <edge source="UNPIVOTED_BOOKINGS" target="UNPIVOT">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="UNPIVOTED_PIPE_GENERATION" target="DATE_QUARTER">
+      <data key="d0">10.0</data>
+    </edge>
+    <edge source="UNPIVOTED_PIPE_GENERATION" target="UNPIVOT">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="UNPIVOTED_MQLS" target="DATE_QUARTER">
+      <data key="d0">10.0</data>
+    </edge>
+    <edge source="UNPIVOTED_MQLS" target="UNPIVOT">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="DATE_QUARTER" target="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPE_GENERATION_BOOKINGS_TARGETS">
+      <data key="d0">7.0</data>
+    </edge>
+    <edge source="DATE_QUARTER" target="PIPE_GEN">
+      <data key="d0">7.0</data>
+    </edge>
+    <edge source="DATE_QUARTER" target="JOINED_TARGETS">
+      <data key="d0">24.0</data>
+    </edge>
+    <edge source="DATE_QUARTER" target="STG_GTM_ANALYTICS_TARGETS_DOLLARS">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="DATE_QUARTER" target="PIPELINE_GENERATION_MODEL">
+      <data key="d0">7.0</data>
+    </edge>
+    <edge source="DATE_QUARTER" target="DATE_QUARTER">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="DATE_YEAR_QUARTER" target="YEAR-QUARTER">
+      <data key="d0">10.0</data>
+    </edge>
+    <edge source="TERRITORY" target="TERRITORY">
+      <data key="d0">32.0</data>
+    </edge>
+    <edge source="TERRITORY" target="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPE_GENERATION_BOOKINGS_TARGETS">
+      <data key="d0">35.0</data>
+    </edge>
+    <edge source="TERRITORY" target="PIPE_GEN">
+      <data key="d0">7.0</data>
+    </edge>
+    <edge source="TERRITORY" target="JOINED_TARGETS">
+      <data key="d0">24.0</data>
+    </edge>
+    <edge source="TERRITORY" target="STG_GTM_ANALYTICS_TARGETS_DOLLARS">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="TERRITORY" target="PIPELINE_TARGETS_WITH_GOALS_AND_TERRITORY">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="TERRITORY" target="PIPELINE_TARGETS_WITH_GOALS_AND_TERRITORY_AND_LEADS">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="TERRITORY" target="TERRITORY_ID">
+      <data key="d0">25.0</data>
+    </edge>
+    <edge source="TERRITORY" target="SUB_TERRITORY">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="TERRITORY" target="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPE_GENERATION_BOOKINGS_OPPORTUNITY">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="TERRITORY" target="TRANSFORM_DEV.DBT_MAHMUDNABI_OPTI_SALESFORCE.STG_OPTI_SALESFORCE_TERRITORY">
+      <data key="d0">20.0</data>
+    </edge>
+    <edge source="TERRITORY" target="TERRITORY_NAME">
+      <data key="d0">32.0</data>
+    </edge>
+    <edge source="TERRITORY" target="TRANSFORM_DEV.DBT_MAHMUDNABI_OPTI_SALESFORCE.STG_OPTI_SALESFORCE_ACCOUNT">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="TERRITORY" target="TRANSFORM_DEV.DBT_MAHMUDNABI_OPTI_SALESFORCE.STG_OPTI_SALESFORCE_OPPORTUNITY">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="TERRITORY" target="OPPORTUNITY_LEVEL_SNAPSHOT">
+      <data key="d0">34.0</data>
+    </edge>
+    <edge source="TERRITORY" target="TRANSFORM_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPELINE_TERRITORY_HIERARCHIES">
+      <data key="d0">18.0</data>
+    </edge>
+    <edge source="REGION" target="REGION">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="REGION" target="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPE_GENERATION_BOOKINGS_TARGETS">
+      <data key="d0">35.0</data>
+    </edge>
+    <edge source="REGION" target="JOINED_TARGETS">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="REGION" target="SUPER_REGION">
+      <data key="d0">45.0</data>
+    </edge>
+    <edge source="REGION" target="PIPELINE_GENERATION_MODEL">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="REGION" target="EMEA-DACH">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="REGION" target="EMEA">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="REGION" target="TRANSFORM_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPELINE_TERRITORY_HIERARCHIES">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="SOURCE" target="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPE_GENERATION_BOOKINGS_TARGETS">
+      <data key="d0">7.0</data>
+    </edge>
+    <edge source="SOURCE" target="PIPE_GEN">
+      <data key="d0">7.0</data>
+    </edge>
+    <edge source="SOURCE" target="JOINED_TARGETS">
+      <data key="d0">24.0</data>
+    </edge>
+    <edge source="SOURCE" target="STG_GTM_ANALYTICS_TARGETS_DOLLARS">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="SOURCE" target="SOURCE">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="SEGMENT" target="SEGMENT">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="SEGMENT" target="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPE_GENERATION_BOOKINGS_TARGETS">
+      <data key="d0">7.0</data>
+    </edge>
+    <edge source="SEGMENT" target="PIPE_GEN">
+      <data key="d0">7.0</data>
+    </edge>
+    <edge source="SEGMENT" target="JOINED_TARGETS">
+      <data key="d0">24.0</data>
+    </edge>
+    <edge source="SEGMENT" target="STG_GTM_ANALYTICS_TARGETS_DOLLARS">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="SEGMENT" target="ACCOUNT">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="SEGMENT" target="TRANSFORM_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPELINE_TERRITORY_HIERARCHIES">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="CUSTOMER_TYPE" target="ACCOUNT">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="CUSTOMER_TYPE" target="CUSTOMER">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="CUSTOMER_TYPE" target="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPE_GENERATION_BOOKINGS_TARGETS">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="CUSTOMER_TYPE" target="JOINED_TARGETS">
+      <data key="d0">44.0</data>
+    </edge>
+    <edge source="CUSTOMER_TYPE" target="LEGACY_CUSTOMER_TYPE_CCVR">
+      <data key="d0">45.0</data>
+    </edge>
+    <edge source="CUSTOMER_TYPE" target="PIPELINE_TARGETS_WITH_GOALS">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="CUSTOMER_TYPE" target="CUSTOMER_TYPE">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="Q1_BOOKINGS" target="SUM">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="Q1_BOOKINGS" target="QUARTERLY PERFORMANCE">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="SUM" target="Q1_PIPE_GENERATION">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="SUM" target="Q1_MQLS">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="QUARTERLY PERFORMANCE" target="Q1_PIPE_GENERATION">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="QUARTERLY PERFORMANCE" target="Q1_MQLS">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_SNAPSHOTS.SFDC_OPPORTUNITY_PRODUCT_SNAPSHOT" target="OPPORTUNITY PRODUCT SNAPSHOT">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_SNAPSHOTS.SFDC_OPPORTUNITY_PRODUCT_SNAPSHOT" target="SFDC_OPPORTUNITY_PRODUCT_SNAPSHOT">
+      <data key="d0">10.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_SNAPSHOTS.SFDC_OPPORTUNITY_PRODUCT_SNAPSHOT" target="OPPORTUNITY PRODUCT">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="OPPORTUNITY PRODUCT SNAPSHOT" target="NETSUITE_PRODUCT_FAMILY">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="NETSUITE_PRODUCT_FAMILY" target="PRODUCT FAMILY">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPE_GENERATION_BOOKINGS_PRODUCT" target="STG_OPTI_SALESFORCE_OPPORTUNITY_LINE">
+      <data key="d0">18.0</data>
+    </edge>
+    <edge source="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPE_GENERATION_BOOKINGS_PRODUCT" target="SKUS_MASTER_REPORT">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPE_GENERATION_BOOKINGS_PRODUCT" target="STG_OPTI_SALESFORCE_PRODUCTS">
+      <data key="d0">18.0</data>
+    </edge>
+    <edge source="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPE_GENERATION_BOOKINGS_PRODUCT" target="PIPELINE_PRODUCT_GROUP_CATEGORIES">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPE_GENERATION_BOOKINGS_PRODUCT" target="STG_OPTI_SALESFORCE_QUOTE_LINE">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPE_GENERATION_BOOKINGS_PRODUCT" target="STG_OPTI_SALESFORCE_SUBSCRIPTION">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPE_GENERATION_BOOKINGS_PRODUCT" target="STG_OPTI_SALESFORCE_CURRENCY_TYPE">
+      <data key="d0">18.0</data>
+    </edge>
+    <edge source="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPE_GENERATION_BOOKINGS_PRODUCT" target="PIPE_GENERATION_BOOKINGS_OPPORTUNITY">
+      <data key="d0">18.0</data>
+    </edge>
+    <edge source="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPE_GENERATION_BOOKINGS_PRODUCT" target="PER-LINE-ITEM SNAPSHOT">
+      <data key="d0">2.0</data>
+    </edge>
+    <edge source="PIPE_GENERATION_BOOKINGS_OPPORTUNITY" target="OPPORTUNITY_LINE">
+      <data key="d0">18.0</data>
+    </edge>
+    <edge source="PIPE_GENERATION_BOOKINGS_OPPORTUNITY" target="JOINED_TABLES">
+      <data key="d0">18.0</data>
+    </edge>
+    <edge source="REVENUE" target="NET_UNIT_PRICE">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="REVENUE" target="STG_OPTI_SALESFORCE_OPPORTUNITY_LINE.ANNUAL_PRICE">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="REVENUE" target="STG_OPTI_SALESFORCE_QUOTE_LINE.NET_UNIT_PRICE">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="REVENUE" target="OPPORTUNITY_RSAC">
+      <data key="d0">18.0</data>
+    </edge>
+    <edge source="REVENUE" target="OPPORTUNITY_PRODUCT_RSAC">
+      <data key="d0">18.0</data>
+    </edge>
+    <edge source="REVENUE" target="OPPORTUNITY_PRODUCT_RSAC_CONVERTED_DYNAMIC">
+      <data key="d0">18.0</data>
+    </edge>
+    <edge source="REVENUE" target="OPPORTUNITY_PRODUCT_RSAC_CONVERTED">
+      <data key="d0">18.0</data>
+    </edge>
+    <edge source="REVENUE" target="BOOKING_VALUE">
+      <data key="d0">18.0</data>
+    </edge>
+    <edge source="QUOTE_LINE_ID" target="QUOTE_LINE">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="NET_UNIT_PRICE" target="QUOTE_LINE">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="MCID" target="CAMPAIGN">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="MCID" target="CONVERTED_RATES">
+      <data key="d0">18.0</data>
+    </edge>
+    <edge source="CAMPAIGN" target="PIPE_GENERATION_BOOKINGS_OPPORTUNITY.MCID">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="CAMPAIGN" target="CAMPAIGN_ID">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="CAMPAIGN" target="TRANSFORM_DEV.DBT_MAHMUDNABI_OPTI_SALESFORCE.STG_OPTI_SALESFORCE_CAMPAIGN">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="CAMPAIGN" target="TRANSFORM_DEV.DBT_MAHMUDNABI_OPTI_SALESFORCE.STG_OPTI_SALESFORCE_OPPORTUNITY">
+      <data key="d0">14.0</data>
+    </edge>
+    <edge source="ACCOUNT_NAME" target="ACCOUNT">
+      <data key="d0">27.0</data>
+    </edge>
+    <edge source="ACCOUNT_NAME" target="STG_OPTI_SALESFORCE_ACCOUNT">
+      <data key="d0">2.0</data>
+    </edge>
+    <edge source="ACCOUNT" target="ICP_ACCOUNT">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="ACCOUNT" target="ICP_ACCOUNT_OR_NOT">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="ACCOUNT" target="PRIMARY_CSM">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="ACCOUNT" target="PRIMARY_ACCOUNT_EXECUTIVE">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="ACCOUNT" target="PRIMARY_CONTACT_ID">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="ACCOUNT" target="PRIMARY_CONTACT_NAME">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="ACCOUNT" target="PRIMARY_CONTACT_PERSONA">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="ACCOUNT" target="NUMBER_OF_EMPLOYEES">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="ACCOUNT" target="MARKETING_EMPLOYEES_COUNTS">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="ACCOUNT" target="ACCOUNT_TYPE">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="ACCOUNT" target="SUB_INDUSTRY">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="ACCOUNT" target="INDUSTRY">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="ACCOUNT" target="ACCOUNT_ID">
+      <data key="d0">36.0</data>
+    </edge>
+    <edge source="ACCOUNT" target="PIPE_GENERATION_BOOKINGS_OPPORTUNITY.ACCOUNT_NAME">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="ACCOUNT" target="PIPE_GENERATION_BOOKINGS_OPPORTUNITY.ICP_ACCOUNT">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="ACCOUNT" target="PIPE_GENERATION_BOOKINGS_OPPORTUNITY.ICP_ACCOUNT_OR_NOT">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="ACCOUNT" target="PIPE_GENERATION_BOOKINGS_OPPORTUNITY.PRIMARY_CSM">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="ACCOUNT" target="PIPE_GENERATION_BOOKINGS_OPPORTUNITY.PRIMARY_ACCOUNT_EXECUTIVE">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="ACCOUNT" target="PIPE_GENERATION_BOOKINGS_OPPORTUNITY.PRIMARY_CONTACT_ID">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="ACCOUNT" target="PIPE_GENERATION_BOOKINGS_OPPORTUNITY.PRIMARY_CONTACT_NAME">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="ACCOUNT" target="PIPE_GENERATION_BOOKINGS_OPPORTUNITY.PRIMARY_CONTACT_PERSONA">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="ACCOUNT" target="PIPE_GENERATION_BOOKINGS_OPPORTUNITY.NUMBER_OF_EMPLOYEES">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="ACCOUNT" target="PIPE_GENERATION_BOOKINGS_OPPORTUNITY.MARKETING_EMPLOYEES_COUNTS">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="ACCOUNT" target="PIPE_GENERATION_BOOKINGS_OPPORTUNITY.ACCOUNT_TYPE">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="ACCOUNT" target="PIPE_GENERATION_BOOKINGS_OPPORTUNITY.SUB_INDUSTRY">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="ACCOUNT" target="PIPE_GENERATION_BOOKINGS_OPPORTUNITY.INDUSTRY">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="ACCOUNT" target="PIPE_GENERATION_BOOKINGS_OPPORTUNITY.ACCOUNT_ID">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="ACCOUNT" target="PIPE_GENERATION_BOOKINGS_OPPORTUNITY.CUSTOMER_TYPE">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="ACCOUNT" target="TRANSFORM_DEV.DBT_MAHNABI_SNAPSHOTS.SFDC_OPPORTUNITY_ANALYTICS_SNAPSHOT">
+      <data key="d0">18.0</data>
+    </edge>
+    <edge source="ACCOUNT" target="BILLING_COUNTRY">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="ACCOUNT" target="ANNUAL_REVENUE">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="ACCOUNT" target="ACCOUNT_INDUSTRY">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="ACCOUNT" target="VERTICAL">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="ACCOUNT" target="ABM_ACCOUNT">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="ACCOUNT" target="EMPLOYEE_COUNT">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="ACCOUNT" target="PRIMARY_ACCOUNT_EXECUTIVE_ID">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="ACCOUNT" target="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPE_GENERATION_BOOKINGS_OPPORTUNITY">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="ACCOUNT" target="SF_USERS">
+      <data key="d0">32.0</data>
+    </edge>
+    <edge source="ACCOUNT" target="SF_CONTACT">
+      <data key="d0">32.0</data>
+    </edge>
+    <edge source="ACCOUNT" target="TRANSFORM_DEV.DBT_MAHMUDNABI_OPTI_SALESFORCE.STG_OPTI_SALESFORCE_ACCOUNT">
+      <data key="d0">20.0</data>
+    </edge>
+    <edge source="ACCOUNT" target="TRANSFORM_DEV.DBT_MAHMUDNABI_OPTI_SALESFORCE.STG_OPTI_SALESFORCE_CONTACT">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="ACCOUNT" target="TRANSFORM_DEV.DBT_MAHMUDNABI_OPTI_SALESFORCE.STG_OPTI_SALESFORCE_PARTNERS">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="ACCOUNT" target="TRANSFORM_DEV.DBT_MAHMUDNABI_OPTI_SALESFORCE.STG_OPTI_SALESFORCE_OPPORTUNITY">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="ACCOUNT" target="OPPORTUNITY_LEVEL_SNAPSHOT">
+      <data key="d0">18.0</data>
+    </edge>
+    <edge source="ICP_ACCOUNT" target="IDEAL CUSTOMER PROFILE (ICP)">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="ACCOUNT_TYPE" target="STG_OPTI_SALESFORCE_ACCOUNT">
+      <data key="d0">2.0</data>
+    </edge>
+    <edge source="SUB_INDUSTRY" target="STG_OPTI_SALESFORCE_ACCOUNT">
+      <data key="d0">2.0</data>
+    </edge>
+    <edge source="INDUSTRY" target="TRANSFORM_DEV.DBT_MAHMUDNABI_OPTI_SALESFORCE.STG_OPTI_SALESFORCE_ACCOUNT">
+      <data key="d0">14.0</data>
+    </edge>
+    <edge source="OPPORTUNITY_NAME" target="STG_OPTI_SALESFORCE_OPPORTUNITY">
+      <data key="d0">2.0</data>
+    </edge>
+    <edge source="OPPORTUNITY_LINE" target="FINAL MODEL">
+      <data key="d0">10.0</data>
+    </edge>
+    <edge source="OPPORTUNITY_LINE" target="EXCLUDE_FROM_1ST_YEAR_MRR">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="OPPORTUNITY_LINE" target="SUBSCRIPTION_TERM">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="OPPORTUNITY_LINE" target="QUOTE_LINE">
+      <data key="d0">18.0</data>
+    </edge>
+    <edge source="FINAL MODEL" target="QUOTE_LINE">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="FINAL MODEL" target="JOINED_TABLES">
+      <data key="d0">10.0</data>
+    </edge>
+    <edge source="FINAL MODEL" target="CONVERTED_RATES">
+      <data key="d0">10.0</data>
+    </edge>
+    <edge source="FINAL MODEL" target="BOOKING_VALUE">
+      <data key="d0">10.0</data>
+    </edge>
+    <edge source="FINAL MODEL" target="ONE ROW PER OPPORTUNITY LINE ITEM">
+      <data key="d0">2.0</data>
+    </edge>
+    <edge source="QUOTE_LINE" target="QUOTE_LINE_SOURCE">
+      <data key="d0">18.0</data>
+    </edge>
+    <edge source="JOINED_TABLES" target="OPPORTUNITY_PRODUCT_RSAC">
+      <data key="d0">10.0</data>
+    </edge>
+    <edge source="JOINED_TABLES" target="ICP_LABEL">
+      <data key="d0">10.0</data>
+    </edge>
+    <edge source="JOINED_TABLES" target="GOOGLE_OPTIMIZE">
+      <data key="d0">10.0</data>
+    </edge>
+    <edge source="JOINED_TABLES" target="SINGLE_OR_MULTI_PRODUCT_OPPORTUNITY">
+      <data key="d0">10.0</data>
+    </edge>
+    <edge source="JOINED_TABLES" target="OPT_EXPCOL_EXCLUSION">
+      <data key="d0">10.0</data>
+    </edge>
+    <edge source="JOINED_TABLES" target="CONVERTED_RATES">
+      <data key="d0">18.0</data>
+    </edge>
+    <edge source="JOINED_TABLES" target="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPE_GENERATION_BOOKINGS_OPPORTUNITY">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="JOINED_TABLES" target="TRANSFORM_DEV.DBT_MAHMUDNABI_OPTI_SALESFORCE.STG_OPTI_SALESFORCE_CAMPAIGN">
+      <data key="d0">32.0</data>
+    </edge>
+    <edge source="JOINED_TABLES" target="TRANSFORM_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPELINE_OPPORTUNITY_TYPE_CATEGORY">
+      <data key="d0">32.0</data>
+    </edge>
+    <edge source="JOINED_TABLES" target="TRANSFORM_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPELINE_OPPORTUNITY_SOURCE_CATEGORY">
+      <data key="d0">32.0</data>
+    </edge>
+    <edge source="JOINED_TABLES" target="TRANSFORM_DEV.DBT_MAHMUDNABI_OPTI_SALESFORCE.STG_OPTI_SALESFORCE_USERS">
+      <data key="d0">32.0</data>
+    </edge>
+    <edge source="JOINED_TABLES" target="TRANSFORM_DEV.DBT_MAHMUDNABI_OPTI_SALESFORCE.STG_OPTI_SALESFORCE_ACCOUNT">
+      <data key="d0">46.0</data>
+    </edge>
+    <edge source="JOINED_TABLES" target="TRANSFORM_DEV.DBT_MAHMUDNABI_OPTI_SALESFORCE.STG_OPTI_SALESFORCE_PARTNERS">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="JOINED_TABLES" target="TRANSFORM_DEV.DBT_MAHMUDNABI_OPTI_SALESFORCE.STG_OPTI_SALESFORCE_OPPORTUNITY">
+      <data key="d0">46.0</data>
+    </edge>
+    <edge source="JOINED_TABLES" target="TRANSFORM_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPELINE_TERRITORY_LEADS">
+      <data key="d0">2.0</data>
+    </edge>
+    <edge source="JOINED_TABLES" target="OPPORTUNITY_LEVEL_SNAPSHOT">
+      <data key="d0">20.0</data>
+    </edge>
+    <edge source="JOINED_TABLES" target="TRANSFORM_DEV.DBT_MAHMUDNABI_OPTI_SALESFORCE.STG_OPTI_SALESFORCE_PARTNER">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="JOINED_TABLES" target="TRANSFORM_DEV.DBT_MAHMUDNABI_OPTI_SALESFORCE.STG_OPTI_SALESFORCE_USER">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="CONVERTED_RATES" target="HISTORICAL_RATE">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="CONVERTED_RATES" target="LATEST_RATE">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="CONVERTED_RATES" target="OPPORTUNITY_PRODUCT_RSAC_CONVERTED_DYNAMIC">
+      <data key="d0">10.0</data>
+    </edge>
+    <edge source="CONVERTED_RATES" target="OPPORTUNITY_PRODUCT_RSAC_CONVERTED">
+      <data key="d0">10.0</data>
+    </edge>
+    <edge source="CONVERTED_RATES" target="OPT_EXPCOL_EXCLUSION">
+      <data key="d0">18.0</data>
+    </edge>
+    <edge source="EXCLUDE_FROM_SALES_PIPELINE" target="SALES PIPELINE">
+      <data key="d0">26.0</data>
+    </edge>
+    <edge source="TARGET_MQLS_PROPORTIONAL" target="PROPORTIONAL METRIC">
+      <data key="d0">1.0</data>
+    </edge>
+    <edge source="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPE_GENERATION_BOOKINGS_TARGETS" target="PIPE_GEN">
+      <data key="d0">20.0</data>
+    </edge>
+    <edge source="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPE_GENERATION_BOOKINGS_TARGETS" target="JOINED_TARGETS">
+      <data key="d0">20.0</data>
+    </edge>
+    <edge source="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPE_GENERATION_BOOKINGS_TARGETS" target="PIPE_GEN_GOAL">
+      <data key="d0">40.0</data>
+    </edge>
+    <edge source="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPE_GENERATION_BOOKINGS_TARGETS" target="BOOKINGS_GOAL">
+      <data key="d0">40.0</data>
+    </edge>
+    <edge source="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPE_GENERATION_BOOKINGS_TARGETS" target="QUARTERLY TARGETS">
+      <data key="d0">18.0</data>
+    </edge>
+    <edge source="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPE_GENERATION_BOOKINGS_TARGETS" target="CONSOLIDATED TARGET VIEW">
+      <data key="d0">40.0</data>
+    </edge>
+    <edge source="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPE_GENERATION_BOOKINGS_TARGETS" target="PIPE GENERATION">
+      <data key="d0">18.0</data>
+    </edge>
+    <edge source="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPE_GENERATION_BOOKINGS_TARGETS" target="QUARTERLY">
+      <data key="d0">18.0</data>
+    </edge>
+    <edge source="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPE_GENERATION_BOOKINGS_TARGETS" target="PIPE_GENERATION">
+      <data key="d0">18.0</data>
+    </edge>
+    <edge source="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPE_GENERATION_BOOKINGS_TARGETS" target="LEGACY_CUSTOMER_TYPE_CCVR">
+      <data key="d0">7.0</data>
+    </edge>
+    <edge source="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPE_GENERATION_BOOKINGS_TARGETS" target="METRIC_VALUE">
+      <data key="d0">7.0</data>
+    </edge>
+    <edge source="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPE_GENERATION_BOOKINGS_TARGETS" target="SUPER_REGION">
+      <data key="d0">7.0</data>
+    </edge>
+    <edge source="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPE_GENERATION_BOOKINGS_TARGETS" target="TERRITORY_VP">
+      <data key="d0">7.0</data>
+    </edge>
+    <edge source="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPE_GENERATION_BOOKINGS_TARGETS" target="TERRITORY_SVP">
+      <data key="d0">7.0</data>
+    </edge>
+    <edge source="PIPE_GEN" target="TRANSFORM_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.STG_GTM_ANALYTICS_TARGETS_DOLLARS">
+      <data key="d0">10.0</data>
+    </edge>
+    <edge source="PIPE_GEN" target="JOINED_TARGETS">
+      <data key="d0">27.0</data>
+    </edge>
+    <edge source="PIPE_GEN" target="STG_GTM_ANALYTICS_TARGETS_DOLLARS">
+      <data key="d0">20.0</data>
+    </edge>
+    <edge source="PIPE_GEN" target="LEGACY_CUSTOMER_TYPE_CCVR">
+      <data key="d0">7.0</data>
+    </edge>
+    <edge source="PIPE_GEN" target="SUPER_REGION">
+      <data key="d0">7.0</data>
+    </edge>
+    <edge source="PIPE_GEN" target="BUSINESS_TYPE">
+      <data key="d0">14.0</data>
+    </edge>
+    <edge source="JOINED_TARGETS" target="TRANSFORM_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPELINE_TERRITORY_LEADS">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="JOINED_TARGETS" target="TRANSFORM_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPELINE_TERRITORY_HIERARCHIES">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="JOINED_TARGETS" target="PIPELINE_TERRITORY_LEADS">
+      <data key="d0">40.0</data>
+    </edge>
+    <edge source="JOINED_TARGETS" target="PIPELINE_TERRITORY_HIERARCHIES">
+      <data key="d0">40.0</data>
+    </edge>
+    <edge source="JOINED_TARGETS" target="LEGACY_CUSTOMER_TYPE_CCVR">
+      <data key="d0">25.0</data>
+    </edge>
+    <edge source="JOINED_TARGETS" target="SUPER_REGION">
+      <data key="d0">24.0</data>
+    </edge>
+    <edge source="JOINED_TARGETS" target="PIPE_GEN_GOAL">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="JOINED_TARGETS" target="BOOKINGS_GOAL">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="JOINED_TARGETS" target="PIPELINE_GENERATION_MODEL">
+      <data key="d0">10.0</data>
+    </edge>
+    <edge source="JOINED_TARGETS" target="BOOKING_GOALS">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="JOINED_TARGETS" target="PIPELINE_GENERATION">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="PIPE_GENERATION" target="PIPELINE_GENERATION">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="LEGACY_CUSTOMER_TYPE_CCVR" target="NEW CUSTOMER">
+      <data key="d0">32.0</data>
+    </edge>
+    <edge source="LEGACY_CUSTOMER_TYPE_CCVR" target="EXISTING CUSTOMER">
+      <data key="d0">32.0</data>
+    </edge>
+    <edge source="LEGACY_CUSTOMER_TYPE_CCVR" target="STG_GTM_ANALYTICS_TARGETS_DOLLARS">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="LEGACY_CUSTOMER_TYPE_CCVR" target="LEGACY_CUSTOMER_TYPE_CCVR">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="METRIC_VALUE" target="STG_GTM_ANALYTICS_TARGETS_DOLLARS">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="SUPER_REGION" target="EMEA">
+      <data key="d0">32.0</data>
+    </edge>
+    <edge source="SUPER_REGION" target="STG_GTM_ANALYTICS_TARGETS_DOLLARS">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="SUPER_REGION" target="PIPELINE_GENERATION_MODEL">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="TERRITORY_VP" target="PIPELINE_TERRITORY_LEADS">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="TERRITORY_VP" target="TRANSFORM_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPELINE_TERRITORY_LEADS">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="TERRITORY_SVP" target="PIPELINE_TERRITORY_LEADS">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="TERRITORY_SVP" target="TRANSFORM_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPELINE_TERRITORY_LEADS">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="ROW_NUMBER" target="CLOSED_OPPORTUNITIES">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="ROW_NUMBER" target="OPEN_OPPORTUNITIES">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPELINE_TERRITORY_LEADS" target="SUB_TERRITORY">
+      <data key="d0">1.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPELINE_TERRITORY_LEADS" target="TERRITORY_NAME">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPELINE_TERRITORY_LEADS" target="SUB_TERRITORY_NAME">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPELINE_TERRITORY_LEADS" target="TERRITORY LEAD">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPELINE_TERRITORY_LEADS" target="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPE_GENERATION_BOOKINGS_OPPORTUNITY">
+      <data key="d0">25.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPELINE_TERRITORY_LEADS" target="OPPORTUNITY_LEVEL_SNAPSHOT">
+      <data key="d0">52.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPELINE_TERRITORY_HIERARCHIES" target="TERRITORY_ID">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPELINE_TERRITORY_HIERARCHIES" target="TERRITORY_NAME">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPELINE_TERRITORY_HIERARCHIES" target="SUB_REGION">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPELINE_TERRITORY_HIERARCHIES" target="TERRITORY HIERARCHY">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPELINE_TERRITORY_HIERARCHIES" target="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPE_GENERATION_BOOKINGS_OPPORTUNITY">
+      <data key="d0">25.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPELINE_TERRITORY_HIERARCHIES" target="OPPORTUNITY_LEVEL_SNAPSHOT">
+      <data key="d0">36.0</data>
+    </edge>
+    <edge source="PIPELINE_TERRITORY_LEADS" target="TERRITORY_NAME">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="PIPELINE_TERRITORY_LEADS" target="PIPELINE_GENERATION_MODEL">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="PIPELINE_TERRITORY_LEADS" target="PIPELINE_TARGETS_WITH_GOALS_AND_TERRITORY_AND_LEADS">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="PIPELINE_TERRITORY_LEADS" target="TERRITORY_LEADS">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="PIPELINE_TERRITORY_HIERARCHIES" target="TERRITORY_NAME">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="PIPELINE_TERRITORY_HIERARCHIES" target="PIPELINE_GENERATION_MODEL">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="PIPELINE_TERRITORY_HIERARCHIES" target="PIPELINE_TARGETS_WITH_GOALS_AND_TERRITORY">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="PIPELINE_TERRITORY_HIERARCHIES" target="TERRITORY_HIERARCHY">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="EMEA" target="PIPELINE_GENERATION_MODEL">
+      <data key="d0">7.0</data>
+    </edge>
+    <edge source="PIPELINE_GENERATION_MODEL" target="PIPELINE_TARGETS_WITH_GOALS">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="PIPELINE_GENERATION_MODEL" target="PIPELINE_TARGETS_WITH_GOALS_AND_TERRITORY">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="PIPELINE_GENERATION_MODEL" target="PIPELINE_TARGETS_WITH_GOALS_AND_TERRITORY_AND_LEADS">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="PIPELINE_GENERATION_MODEL" target="PIPELINE_TARGETS_WITH_GOALS_AND_TERRITORY_AND_LEADS_AND_SKUS">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="PIPELINE_GENERATION_MODEL" target="BOOKING_GOALS">
+      <data key="d0">17.0</data>
+    </edge>
+    <edge source="PIPELINE_GENERATION_MODEL" target="PIPELINE_GENERATION">
+      <data key="d0">17.0</data>
+    </edge>
+    <edge source="PIPELINE_GENERATION_MODEL" target="ONE ROW PER UNIQUE COMBINATION OF LEGACY_CUSTOMER_TYPE_CCVR, PRODUCT_GROUP, DATE_QUARTER, SEGMENT, SOURCE, TERRITORY, AND SUPER_REGION">
+      <data key="d0">10.0</data>
+    </edge>
+    <edge source="PIPELINE_GENERATION_MODEL" target="MAP">
+      <data key="d0">7.0</data>
+    </edge>
+    <edge source="PIPELINE_GENERATION_MODEL" target="CONCAT">
+      <data key="d0">7.0</data>
+    </edge>
+    <edge source="PIPELINE_GENERATION_MODEL" target="LEFT JOIN">
+      <data key="d0">1.0</data>
+    </edge>
+    <edge source="PIPELINE_GENERATION_MODEL" target="EMEA-DACH">
+      <data key="d0">7.0</data>
+    </edge>
+    <edge source="PIPELINE_TARGETS_WITH_GOALS" target="BOOKING_GOALS">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="PIPELINE_TARGETS_WITH_GOALS" target="PIPELINE_GENERATION">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="BOOKING_GOALS" target="BOOKING_GOAL">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="CONCAT" target="SNAPSHOT_YEAR_QUARTER">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.OPPORTUNITY_ANALYTICS_SNAPSHOT" target="TRANSFORM_DEV.DBT_MAHMUDNABI_SNAPSHOTS.SFDC_OPPORTUNITY_ANALYTICS_SNAPSHOT">
+      <data key="d0">10.0</data>
+    </edge>
+    <edge source="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.OPPORTUNITY_ANALYTICS_SNAPSHOT" target="SALES PIPELINE ANALYSIS">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.OPPORTUNITY_ANALYTICS_SNAPSHOT" target="FINANCIAL REPORTING">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_SNAPSHOTS.SFDC_OPPORTUNITY_ANALYTICS_SNAPSHOT" target="SALESFORCE">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="DATE_ENTERED_PROPOSAL" target="SALES STAGE">
+      <data key="d0">17.0</data>
+    </edge>
+    <edge source="SALES STAGE" target="DATE_ENTERED_SAL">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="SALES STAGE" target="DATE_ENTERED_SQL">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="SALES STAGE" target="DATE_ENTERED_DISCOVERY">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="SALES STAGE" target="DATE_ENTERED_PROOF_OF_VALUE">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="SALES STAGE" target="DATE_ENTERED_CONTRACTS">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="SALES STAGE" target="DATE_ENTERED_CLOSED_WON">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="SALES STAGE" target="DATE_ENTERED_CLOSED_WON_FINANCE">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="SALES STAGE" target="DATE_ENTERED_PROSPECTING">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="SALES STAGE" target="CLOSE_WON_YEAR">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHNABI_SNAPSHOTS.SFDC_OPPORTUNITY_ANALYTICS_SNAPSHOT" target="ONE ROW PER OPPORTUNITY SNAPSHOT">
+      <data key="d0">20.0</data>
+    </edge>
+    <edge source="ACCOUNT_INDUSTRY" target="STG_OPTI_SALESFORCE_ACCOUNT">
+      <data key="d0">2.0</data>
+    </edge>
+    <edge source="ICP_SOLUTION" target="IDEAL CUSTOMER PROFILE (ICP)">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="IDEAL CUSTOMER PROFILE (ICP)" target="ICP_TRUE_FALSE">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.OPPORTUNITY_RSAC_QUARTERLY" target="CLOSED_OPPORTUNITIES">
+      <data key="d0">10.0</data>
+    </edge>
+    <edge source="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.OPPORTUNITY_RSAC_QUARTERLY" target="OPEN_OPPORTUNITIES">
+      <data key="d0">10.0</data>
+    </edge>
+    <edge source="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.OPPORTUNITY_RSAC_QUARTERLY" target="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.OPPORTUNITY_RSAC_MONTHLY_SNAPSHOT">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.OPPORTUNITY_RSAC_QUARTERLY" target="OPPORTUNITY-BY-QUARTER-BY-PRODUCT">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="CLOSED_OPPORTUNITIES" target="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.OPPORTUNITY_RSAC_MONTHLY_SNAPSHOT">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="CLOSED_OPPORTUNITIES" target="SNAPSHOT_QUARTER">
+      <data key="d0">7.0</data>
+    </edge>
+    <edge source="CLOSED_OPPORTUNITIES" target="SNAPSHOT_YEAR">
+      <data key="d0">7.0</data>
+    </edge>
+    <edge source="CLOSED_OPPORTUNITIES" target="OPEN_OPPORTUNITIES">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="CLOSED_OPPORTUNITIES" target="CLOSED OPPORTUNITY">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="CLOSED_OPPORTUNITIES" target="DISCOVERY">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="CLOSED_OPPORTUNITIES" target="PROOF OF VALUE">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="CLOSED_OPPORTUNITIES" target="PROPOSAL">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="CLOSED_OPPORTUNITIES" target="CONTRACTS">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="CLOSED_OPPORTUNITIES" target="CLOSED STAGE">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="OPEN_OPPORTUNITIES" target="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.OPPORTUNITY_RSAC_MONTHLY_SNAPSHOT">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="OPEN_OPPORTUNITIES" target="SNAPSHOT_QUARTER">
+      <data key="d0">7.0</data>
+    </edge>
+    <edge source="OPEN_OPPORTUNITIES" target="SNAPSHOT_YEAR">
+      <data key="d0">7.0</data>
+    </edge>
+    <edge source="OPEN_OPPORTUNITIES" target="OPEN OPPORTUNITY">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="OPEN_OPPORTUNITIES" target="DISCOVERY">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="OPEN_OPPORTUNITIES" target="PROOF OF VALUE">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="OPEN_OPPORTUNITIES" target="PROPOSAL">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="OPEN_OPPORTUNITIES" target="CONTRACTS">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="OPEN_OPPORTUNITIES" target="OPEN STAGE">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="OPPORTUNITY-BY-QUARTER-BY-PRODUCT" target="SNAPSHOT_QUARTER">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="OPPORTUNITY-BY-QUARTER-BY-PRODUCT" target="SNAPSHOT_YEAR">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="SNAPSHOT_QUARTER" target="SNAPSHOT_YEAR_QUARTER">
+      <data key="d0">7.0</data>
+    </edge>
+    <edge source="SNAPSHOT_YEAR" target="SNAPSHOT_YEAR_QUARTER">
+      <data key="d0">7.0</data>
+    </edge>
+    <edge source="SNAPSHOT_YEAR" target="YEAR">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPE_GENERATION_BOOKINGS_OPPORTUNITY" target="OPPORTUNITY CENTRIC VIEW">
+      <data key="d0">1.0</data>
+    </edge>
+    <edge source="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPE_GENERATION_BOOKINGS_OPPORTUNITY" target="SF_USERS">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPE_GENERATION_BOOKINGS_OPPORTUNITY" target="SF_CONTACT">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPE_GENERATION_BOOKINGS_OPPORTUNITY" target="PARTNERS">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPE_GENERATION_BOOKINGS_OPPORTUNITY" target="PRIMARY_COMPETITOR">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPE_GENERATION_BOOKINGS_OPPORTUNITY" target="TRANSFORM_DEV.DBT_MAHMUDNABI_OPTI_SALESFORCE.STG_OPTI_SALESFORCE_TERRITORY">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPE_GENERATION_BOOKINGS_OPPORTUNITY" target="TRANSFORM_DEV.DBT_MAHMUDNABI_OPTI_SALESFORCE.STG_OPTI_SALESFORCE_USERS">
+      <data key="d0">18.0</data>
+    </edge>
+    <edge source="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPE_GENERATION_BOOKINGS_OPPORTUNITY" target="TRANSFORM_DEV.DBT_MAHMUDNABI_OPTI_SALESFORCE.STG_OPTI_SALESFORCE_CONTACT">
+      <data key="d0">18.0</data>
+    </edge>
+    <edge source="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPE_GENERATION_BOOKINGS_OPPORTUNITY" target="TRANSFORM_DEV.DBT_MAHMUDNABI_OPTI_SALESFORCE.STG_OPTI_SALESFORCE_ACCOUNT">
+      <data key="d0">18.0</data>
+    </edge>
+    <edge source="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPE_GENERATION_BOOKINGS_OPPORTUNITY" target="TRANSFORM_DEV.DBT_MAHMUDNABI_OPTI_SALESFORCE.STG_OPTI_SALESFORCE_OPPORTUNITY">
+      <data key="d0">18.0</data>
+    </edge>
+    <edge source="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPE_GENERATION_BOOKINGS_OPPORTUNITY" target="TRANSFORM_DEV.DBT_MAHMUDNABI_OPTI_SALESFORCE.STG_OPTI_SALESFORCE_CAMPAIGN">
+      <data key="d0">18.0</data>
+    </edge>
+    <edge source="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPE_GENERATION_BOOKINGS_OPPORTUNITY" target="TRANSFORM_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPELINE_OPPORTUNITY_TYPE_CATEGORY">
+      <data key="d0">18.0</data>
+    </edge>
+    <edge source="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPE_GENERATION_BOOKINGS_OPPORTUNITY" target="TRANSFORM_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPELINE_OPPORTUNITY_SOURCE_CATEGORY">
+      <data key="d0">18.0</data>
+    </edge>
+    <edge source="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPE_GENERATION_BOOKINGS_OPPORTUNITY" target="TRANSFORM_DEV.DBT_MAHMUDNABI_OPTI_SALESFORCE.STG_OPTI_SALESFORCE_PARTNERS">
+      <data key="d0">18.0</data>
+    </edge>
+    <edge source="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPE_GENERATION_BOOKINGS_OPPORTUNITY" target="OPPORTUNITY-LEVEL SNAPSHOT">
+      <data key="d0">20.0</data>
+    </edge>
+    <edge source="REPORTING_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPE_GENERATION_BOOKINGS_OPPORTUNITY" target="ONE ROW PER OPPORTUNITY">
+      <data key="d0">20.0</data>
+    </edge>
+    <edge source="STG_OPTI_SALESFORCE_USERS" target="NAME">
+      <data key="d0">2.0</data>
+    </edge>
+    <edge source="NAME" target="STG_OPTI_SALESFORCE_USER_ROLE">
+      <data key="d0">2.0</data>
+    </edge>
+    <edge source="NAME" target="STG_OPTI_SALESFORCE_TERRITORY">
+      <data key="d0">2.0</data>
+    </edge>
+    <edge source="STG_OPTI_SALESFORCE_CONTACT" target="PERSONA_C">
+      <data key="d0">2.0</data>
+    </edge>
+    <edge source="STG_OPTI_SALESFORCE_PARTNERS" target="PARTNER_TYPE">
+      <data key="d0">2.0</data>
+    </edge>
+    <edge source="STG_OPTI_SALESFORCE_PARTNERS" target="PARTNER_ROLE">
+      <data key="d0">2.0</data>
+    </edge>
+    <edge source="STG_OPTI_SALESFORCE_OPPORTUNITY" target="TYPE">
+      <data key="d0">2.0</data>
+    </edge>
+    <edge source="STG_OPTI_SALESFORCE_OPPORTUNITY" target="LEAD_SOURCE">
+      <data key="d0">2.0</data>
+    </edge>
+    <edge source="STG_OPTI_SALESFORCE_OPPORTUNITY" target="OPPORTUNITY_SOURCE_C">
+      <data key="d0">2.0</data>
+    </edge>
+    <edge source="TYPE" target="OPPORTUNITY TYPE">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="TYPE" target="TRANSFORM_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPELINE_OPPORTUNITY_TYPE_CATEGORY">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="LEAD_SOURCE" target="LEAD SOURCE">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="LEAD_SOURCE" target="TRANSFORM_DEV.DBT_MAHMUDNABI_OPTI_SALESFORCE.STG_OPTI_SALESFORCE_CONTACT">
+      <data key="d0">7.0</data>
+    </edge>
+    <edge source="OPPORTUNITY_SOURCE_C" target="OPPORTUNITY SOURCE">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="OPPORTUNITY_SOURCE_C" target="TRANSFORM_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPELINE_OPPORTUNITY_SOURCE_CATEGORY">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="CAMPAIGN_ID" target="TRANSFORM_DEV.DBT_MAHMUDNABI_OPTI_SALESFORCE.STG_OPTI_SALESFORCE_CAMPAIGN">
+      <data key="d0">17.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_OPTI_SALESFORCE.STG_OPTI_SALESFORCE_CAMPAIGN" target="CAMPAIGN_NAME">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="OWNER_ID" target="OWNER">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="OPPORTUNITY TYPE" target="TRANSFORM_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPELINE_OPPORTUNITY_TYPE_CATEGORY">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPELINE_OPPORTUNITY_TYPE_CATEGORY" target="OPPORTUNITY_TYPE">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPELINE_OPPORTUNITY_TYPE_CATEGORY" target="OPPORTUNITY_TYPE_CATEGORY">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="OPPORTUNITY SOURCE" target="TRANSFORM_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPELINE_OPPORTUNITY_SOURCE_CATEGORY">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPELINE_OPPORTUNITY_SOURCE_CATEGORY" target="OPPORTUNITY_SOURCE">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPELINE_OPPORTUNITY_SOURCE_CATEGORY" target="OPPORTUNITY_SOURCE_CATEGORY">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_GTM_ANALYTICS.PIPELINE_OPPORTUNITY_SOURCE_CATEGORY" target="OPPORTUNITY_SOURCE_CATEGORY_GROUPING">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="GENERATED_BY_C" target="USER">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="USER" target="SF_USERS">
+      <data key="d0">9.0</data>
+    </edge>
+    <edge source="DATE_ENTERED_STAGE_DISCOVERY" target="STAGE">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="STAGE" target="DATE_ENTERED_STAGE_CLOSED_WON">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="STAGE" target="DATE_ENTERED_STAGE_CLOSED_WON_FINANCE">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="STAGE" target="DATE_ENTERED_STAGE_CLOSED_LOST">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="STAGE" target="DATE_ENTERED_STAGE_SAL_C">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="STAGE" target="DATE_ENTERED_STAGE_SQL_C">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="STAGE" target="DATE_ENTERED_STAGE_ACCEPTED">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="STAGE" target="DATE_ENTERED_STAGE_PROOF_OF_VALUE">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="STAGE" target="DATE_ENTERED_STAGE_PROPOSAL">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="STAGE" target="DATE_ENTERED_STAGE_CONTRACTS">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="STAGE" target="DATE_ENTERED_STAGE_PROSPECTING">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="HISTORICAL_CURRENT_CONTRACT_SOFTWARE_C" target="CONTRACT AMOUNT">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="CONTRACT AMOUNT" target="RECURRING_SOFTWARE_AMOUNT_NEW_ROLLUP_C">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="CONTRACT AMOUNT" target="CURRENT_CONTRACT_SOFTWARE_NEW_C">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="CONTRACT AMOUNT" target="PRICE_INCREASE_SOFTWARE">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="PRIMARY_COMPETITOR_C" target="COMPETITOR">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="COMPETITOR" target="TRANSFORM_DEV.DBT_MAHMUDNABI_OPTI_SALESFORCE.STG_OPTI_SALESFORCE_OPPORTUNITY">
+      <data key="d0">1.0</data>
+    </edge>
+    <edge source="COMPETITOR" target="OPPORTUNITY_LEVEL_SNAPSHOT">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="PIPELINE_INFLUENCE" target="PIPELINE INFLUENCE">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="ACCOUNT_CATEGORIZATION" target="ACCOUNT CATEGORIZATION">
+      <data key="d0">8.0</data>
+    </edge>
+    <edge source="SF_USERS" target="TRANSFORM_DEV.DBT_MAHMUDNABI_OPTI_SALESFORCE.STG_OPTI_SALESFORCE_USERS">
+      <data key="d0">18.0</data>
+    </edge>
+    <edge source="SF_USERS" target="TRANSFORM_DEV.DBT_MAHMUDNABI_OPTI_SALESFORCE.STG_OPTI_SALESFORCE_USER_ROLE">
+      <data key="d0">18.0</data>
+    </edge>
+    <edge source="SF_USERS" target="ROLE_NAME">
+      <data key="d0">32.0</data>
+    </edge>
+    <edge source="SF_USERS" target="OPPORTUNITY_LEVEL_SNAPSHOT">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="SF_USERS" target="TRANSFORM_DEV.DBT_MAHMUDNABI_OPTI_SALESFORCE.STG_OPTI_SALESFORCE_USER">
+      <data key="d0">18.0</data>
+    </edge>
+    <edge source="SF_CONTACT" target="TRANSFORM_DEV.DBT_MAHMUDNABI_OPTI_SALESFORCE.STG_OPTI_SALESFORCE_CONTACT">
+      <data key="d0">36.0</data>
+    </edge>
+    <edge source="SF_CONTACT" target="OPPORTUNITY_LEVEL_SNAPSHOT">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="PARTNERS" target="TRANSFORM_DEV.DBT_MAHMUDNABI_OPTI_SALESFORCE.STG_OPTI_SALESFORCE_PARTNERS">
+      <data key="d0">18.0</data>
+    </edge>
+    <edge source="PARTNERS" target="PARTNER_ACCOUNT_NAMES">
+      <data key="d0">34.0</data>
+    </edge>
+    <edge source="PARTNERS" target="PARTNER_TYPES">
+      <data key="d0">34.0</data>
+    </edge>
+    <edge source="PARTNERS" target="PARTNER_ROLES">
+      <data key="d0">34.0</data>
+    </edge>
+    <edge source="PARTNERS" target="OPPORTUNITY_LEVEL_SNAPSHOT">
+      <data key="d0">18.0</data>
+    </edge>
+    <edge source="PARTNERS" target="TRANSFORM_DEV.DBT_MAHMUDNABI_OPTI_SALESFORCE.STG_OPTI_SALESFORCE_PARTNER">
+      <data key="d0">18.0</data>
+    </edge>
+    <edge source="PRIMARY_COMPETITOR" target="TRANSFORM_DEV.DBT_MAHMUDNABI_OPTI_SALESFORCE.STG_OPTI_SALESFORCE_ACCOUNT">
+      <data key="d0">36.0</data>
+    </edge>
+    <edge source="PRIMARY_COMPETITOR" target="OPPORTUNITY_LEVEL_SNAPSHOT">
+      <data key="d0">18.0</data>
+    </edge>
+    <edge source="PRIMARY_COMPETITOR" target="COMPETITOR_ACCOUNT_INFORMATION">
+      <data key="d0">18.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_OPTI_SALESFORCE.STG_OPTI_SALESFORCE_CONTACT" target="PERSONA">
+      <data key="d0">7.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_OPTI_SALESFORCE.STG_OPTI_SALESFORCE_CONTACT" target="LEAD SOURCE TYPE">
+      <data key="d0">7.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_OPTI_SALESFORCE.STG_OPTI_SALESFORCE_CONTACT" target="USER ROLE">
+      <data key="d0">7.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_OPTI_SALESFORCE.STG_OPTI_SALESFORCE_ACCOUNT" target="ICP ACCOUNT">
+      <data key="d0">14.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_OPTI_SALESFORCE.STG_OPTI_SALESFORCE_ACCOUNT" target="ACCOUNT TYPE">
+      <data key="d0">14.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_OPTI_SALESFORCE.STG_OPTI_SALESFORCE_ACCOUNT" target="ACCOUNT EXECUTIVE">
+      <data key="d0">7.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_OPTI_SALESFORCE.STG_OPTI_SALESFORCE_ACCOUNT" target="CUSTOMER SUCCESS MANAGER">
+      <data key="d0">7.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_OPTI_SALESFORCE.STG_OPTI_SALESFORCE_ACCOUNT" target="CONTACT">
+      <data key="d0">7.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_OPTI_SALESFORCE.STG_OPTI_SALESFORCE_OPPORTUNITY" target="USER ROLE">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_OPTI_SALESFORCE.STG_OPTI_SALESFORCE_OPPORTUNITY" target="STAGE NAME">
+      <data key="d0">14.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_OPTI_SALESFORCE.STG_OPTI_SALESFORCE_PARTNERS" target="PARTNER">
+      <data key="d0">20.0</data>
+    </edge>
+    <edge source="ONE ROW PER OPPORTUNITY" target="OPPORTUNITY_LEVEL_SNAPSHOT">
+      <data key="d0">2.0</data>
+    </edge>
+    <edge source="TRANSFORM_DEV.DBT_MAHMUDNABI_OPTI_SALESFORCE.STG_OPTI_SALESFORCE_USER_ROLE" target="USER ROLE">
+      <data key="d0">11.0</data>
+    </edge>
+    <edge source="USER ROLE" target="OPPORTUNITY_LEVEL_SNAPSHOT">
+      <data key="d0">16.0</data>
+    </edge>
+    <edge source="PARTNER" target="OPPORTUNITY_LEVEL_SNAPSHOT">
+      <data key="d0">16.0</data>
+    </edge>
+  </graph>
+</graphml>

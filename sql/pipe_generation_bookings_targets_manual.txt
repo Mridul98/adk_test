@@ -1,0 +1,33 @@
+## Table Name: REPORTING_DEV.DBT_MAHMUDNABI_gtm_analytics.pipe_generation_bookings_targets_manual
+
+## Overview  
+This model aggregates quarterly booking, pipeline generation, and MQL metrics from a staging table, pivots them into a long format, joins the metrics on matching product and time dimensions, and produces a consolidated view of performance by product, territory, region, segment, and customer type at a quarterly granularity.
+
+## Tables Involved  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_share_point.stg_share_point_pipe_gen_bookings_targets_manual`: source table containing raw quarterly metrics and dimension attributes.
+
+## Columns Used  
+`TRANSFORM_DEV.DBT_MAHMUDNABI_share_point.stg_share_point_pipe_gen_bookings_targets_manual`:  
+- `product_solution` – product solution identifier.  
+- `product_group` – product group classification.  
+- `territory` – sales territory.  
+- `region` – geographic region.  
+- `source` – data source indicator.  
+- `segment` – market segment.  
+- `customer_type` – type of customer.  
+- `date_year` – fiscal year.  
+- `q1_bookings`, `q2_bookings`, `q3_bookings`, `q4_bookings` – bookings per quarter.  
+- `q1_pipe_generation`, `q2_pipe_generation`, `q3_pipe_generation`, `q4_pipe_generation` – pipeline generation per quarter.  
+- `q1_mqls`, `q2_mqls`, `q3_mqls`, `q4_mqls` – MQLs per quarter.  
+- `concat_product_targets` (derived in CTE) – concatenated key of year, region, territory, segment, customer type, source, and product group.
+
+## Logic Explanation  
+1. **concat_targets** – Aggregates the raw quarterly metrics by summing each quarter’s bookings, pipeline generation, and MQLs across all dimensions. It also creates a concatenated key (`concat_product_targets`) for later joins.  
+2. **unpivoted_bookings** – Unpivots the summed booking columns into rows, producing one row per quarter with a `date_quarter` value derived from the column name.  
+3. **unpivoted_pipe_generation** – Unpivots the summed pipeline generation columns similarly, aligning on the same `concat_product_targets` and `date_quarter`.  
+4. **unpivoted_mqls** – Unpivots the summed MQL columns, also aligned on `concat_product_targets` and `date_quarter`.  
+5. **joined_table** – Performs inner joins between the three unpivoted datasets on the concatenated key and quarter, ensuring that bookings, pipeline generation, and MQLs for the same product and time period are combined. It also normalizes the `product_group` value for a specific case and constructs a `date_year_quarter` string.  
+6. **Final SELECT** – Returns all columns from `joined_table` and recomputes a final `concat_product_targets` string that includes the year‑quarter component.
+
+## Grain of Data  
+The result set is at the **product‑solution / product‑group / territory / region / segment / customer‑type / year / quarter** level, providing one row per unique combination of these dimensions.

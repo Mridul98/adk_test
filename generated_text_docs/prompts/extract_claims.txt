@@ -6,7 +6,7 @@ You are an intelligent assistant that helps a human analyst to analyze claims ab
 Given a dbt model description in markdown, an entity specification, and a claim description, extract all entities that match the entity specification and all claims related to data engineering operations on those entities.
 
 -Steps-
-1. Extract all entities from the text that match the predefined entity specification. For dbt models, entity types include: Model, CTE, Source Table, Column, Derived Column, Function, Business Concept, Data Grain.
+1. Extract all entities from the text that match the predefined entity specification. For dbt models, entity types include: Model, Current Table, CTE, Source Table, Column, Derived Column, Function, Business Concept, Data Grain.
 2. For each entity identified in step 1, extract all claims associated with the entity. Claims need to match the specified claim description, and the entity should be the subject of the claim.
 For each claim, extract the following information:
 - Subject: the entity performing the action, capitalized. Must be one of the entities extracted.

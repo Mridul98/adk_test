@@ -30,7 +30,7 @@ Example 1:
 
 entity_types: [Current Table, Model, CTE, Source Table, Column, Function, Derived Column, Data Quality Rule, Business Concept, Data Grain]
 text:
-## Table Name: stg_customers
+## Table Name: transform_dev.dbt_mahmudnabi_gtm_analytics.stg_customers
 
 ## Overview  
 This model cleans raw customer data by trimming and formatting names, normalizing email addresses, converting timestamps to dates, and ensuring an active status flag. It filters out records with invalid email formats and outputs a tidy customer table.
@@ -68,7 +68,7 @@ One row per customer (`customer_id`), representing the cleaned customer record.
 
 ------------------------
 output:
-("entity"{tuple_delimiter}stg_customers{tuple_delimiter}Current Table{tuple_delimiter}Primary dbt model representing the cleaned customer table.)
+("entity"{tuple_delimiter}transform_dev.dbt_mahmudnabi_gtm_analytics.stg_customers{tuple_delimiter}Current Table{tuple_delimiter}Primary dbt model representing the cleaned customer table.)
 {record_delimiter}
 ("entity"{tuple_delimiter}cleaned{tuple_delimiter}CTE{tuple_delimiter}Intermediate cleaned dataset derived from raw.customers by applying filtering and transformation logic.)
 {record_delimiter}
@@ -142,9 +142,9 @@ output:
 {record_delimiter}
 ("relationship"{tuple_delimiter}cleaned_customer_model{tuple_delimiter}One row per customer{tuple_delimiter}Defines the data grain of the model.{tuple_delimiter}10)
 {record_delimiter}
-("relationship"{tuple_delimiter}stg_customers{tuple_delimiter}cleaned{tuple_delimiter}Current Table is produced from the cleaned CTE.{tuple_delimiter}10)
+("relationship"{tuple_delimiter}transform_dev.dbt_mahmudnabi_gtm_analytics.stg_customers{tuple_delimiter}cleaned{tuple_delimiter}Current Table is produced from the cleaned CTE.{tuple_delimiter}10)
 {record_delimiter}
-("relationship"{tuple_delimiter}stg_customers{tuple_delimiter}raw.customers{tuple_delimiter}Current Table depends on raw.customers source table as input source.{tuple_delimiter}9)
+("relationship"{tuple_delimiter}transform_dev.dbt_mahmudnabi_gtm_analytics.stg_customers{tuple_delimiter}raw.customers{tuple_delimiter}Current Table depends on raw.customers source table as input source.{tuple_delimiter}9)
 {completion_delimiter}
 #############################
 
@@ -153,7 +153,7 @@ Example 2:
 
 entity_types: [Current Table, Model, CTE, Source Table, Column, Function, Derived Column, Data Quality Rule, Business Concept, Data Grain]
 text:
-## Table Name: int_region_sales
+## Table Name: transform_dev.dbt_mahmudnabi_gtm_analytics.int_region_sales
 ## Overview  
 This model aggregates daily order amounts by region and product category, then computes monthly totals, active sales days, and month‑over‑month growth percentages for each region‑category pair.
 
@@ -186,7 +186,7 @@ The output is at the monthly level per `region` and `category` (one row per regi
 
 ------------------------
 output:
-("entity"{tuple_delimiter}int_region_sales{tuple_delimiter}Current Table{tuple_delimiter}Monthly region-category sales aggregation model computing totals, active days, and month-over-month growth.)
+("entity"{tuple_delimiter}transform_dev.dbt_mahmudnabi_gtm_analytics.int_region_sales{tuple_delimiter}Current Table{tuple_delimiter}Monthly region-category sales aggregation model computing totals, active days, and month-over-month growth.)
 {record_delimiter}
 ("entity"{tuple_delimiter}base{tuple_delimiter}CTE{tuple_delimiter}Joins orders with products and customers to attach region and category; computes daily_sales per day.)
 {record_delimiter}
@@ -294,13 +294,13 @@ output:
 {record_delimiter}
 ("relationship"{tuple_delimiter}monthly_region_category_model{tuple_delimiter}One row per region-category-month{tuple_delimiter}Defines the data grain of the model.{tuple_delimiter}10)
 {record_delimiter}
-("relationship"{tuple_delimiter}int_region_sales{tuple_delimiter}base{tuple_delimiter}Current Table is built from the base CTE.{tuple_delimiter}10)
+("relationship"{tuple_delimiter}transform_dev.dbt_mahmudnabi_gtm_analytics.int_region_sales{tuple_delimiter}base{tuple_delimiter}Current Table is built from the base CTE.{tuple_delimiter}10)
 {record_delimiter}
-("relationship"{tuple_delimiter}int_region_sales{tuple_delimiter}monthly_aggregates{tuple_delimiter}Current Table depends on monthly aggregates produced by this CTE.{tuple_delimiter}10)
+("relationship"{tuple_delimiter}transform_dev.dbt_mahmudnabi_gtm_analytics.int_region_sales{tuple_delimiter}monthly_aggregates{tuple_delimiter}Current Table depends on monthly aggregates produced by this CTE.{tuple_delimiter}10)
 {record_delimiter}
-("relationship"{tuple_delimiter}int_region_sales{tuple_delimiter}yoy_growth{tuple_delimiter}Current Table includes month-over-month growth computed in this CTE.{tuple_delimiter}10)
+("relationship"{tuple_delimiter}transform_dev.dbt_mahmudnabi_gtm_analytics.int_region_sales{tuple_delimiter}yoy_growth{tuple_delimiter}Current Table includes month-over-month growth computed in this CTE.{tuple_delimiter}10)
 {record_delimiter}
-("relationship"{tuple_delimiter}int_region_sales{tuple_delimiter}Monthly region-category grain{tuple_delimiter}Defines the final data grain of the Current table.{tuple_delimiter}10)
+("relationship"{tuple_delimiter}transform_dev.dbt_mahmudnabi_gtm_analytics.int_region_sales{tuple_delimiter}Monthly region-category grain{tuple_delimiter}Defines the final data grain of the Current table.{tuple_delimiter}10)
 {completion_delimiter}
 #############################
 

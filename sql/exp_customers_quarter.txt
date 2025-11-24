@@ -1,0 +1,41 @@
+## Table Name: REPORTING_DEV.DBT_MAHMUDNABI_gtm_analytics.exp_customers_quarter
+
+## Overview  
+Provides quarterly aggregates of experiment activity and user logins, including distinct customer counts, experiments created, started, and concluded, and the number of sign‑in events.
+
+## Tables Involved  
+- **REPORTING_DEV.DBT_MAHMUDNABI_opti_application.experiment_metrics** – source of experiment lifecycle timestamps and identifiers.  
+- **REPORTING_DEV.DBT_MAHMUDNABI_experiment_benchmark.gae_activity** – source of user sign‑in events.
+
+## Columns Used  
+
+**REPORTING_DEV.DBT_MAHMUDNABI_opti_application.experiment_metrics**  
+- `experiment_creation_timestamp` – timestamp when an experiment was created.  
+- `experiment_start_time_impressions_reached` – timestamp when impressions were first reached.  
+- `experiment_concluded_time` – timestamp when an experiment concluded.  
+- `customer_id` – identifier of the customer associated with the experiment.  
+- `experiment_id` – unique identifier of the experiment.  
+
+**REPORTING_DEV.DBT_MAHMUDNABI_experiment_benchmark.gae_activity**  
+- `created_gae` – timestamp of the GAE activity event.  
+- `email` – email address of the user who performed the event.  
+- `event` – type of activity event (e.g., 'signin').  
+
+**Derived columns**  
+- `year_quarter` – concatenation of year and quarter derived from the relevant timestamp.  
+- `count_of_customer_id` – distinct count of customers per quarter.  
+- `experiments_created` – distinct count of experiments created per quarter.  
+- `experiments_started` – distinct count of experiments started per quarter.  
+- `experiments_concluded` – distinct count of experiments concluded per quarter.  
+- `user_logins` – count of sign‑in events per quarter.
+
+## Logic Explanation  
+1. **subq1** – Builds a set of unique `(year_quarter, customer_id)` pairs from three experiment timestamp columns (creation, start, conclusion). It filters out rows where the derived `year_quarter` is null, then counts distinct customers per quarter.  
+2. **subq2** – Aggregates distinct `experiment_id` counts per quarter based on `experiment_creation_timestamp`.  
+3. **subq3** – Aggregates distinct `experiment_id` counts per quarter based on `experiment_start_time_impressions_reached`.  
+4. **subq4** – Counts sign‑in events per quarter by grouping `created_gae` where `event = 'signin'`.  
+5. **subq5** – Aggregates distinct `experiment_id` counts per quarter based on `experiment_concluded_time`.  
+6. **Final SELECT** – Left‑joins all five subqueries on `year_quarter`, ensuring that every quarter present in `subq1` appears in the result. The query returns the customer count along with experiment and login metrics for each quarter, ordered by `year_quarter` descending.
+
+## Grain of Data  
+Quarterly (one row per `year_quarter`).

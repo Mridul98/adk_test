@@ -1,0 +1,59 @@
+## Table Name: REPORTING_DEV.DBT_MAHMUDNABI_gtm_analytics.opportunity_product_snapshot
+
+## Overview  
+This query retrieves a complete snapshot of opportunity product details from the `sfdc_opportunity_product_snapshot` table, providing all available attributes for each opportunity line item.
+
+## Tables Involved  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_product_snapshot`: Snapshot of Salesforce opportunity product records.
+
+## Columns Used  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_product_snapshot.OPPORTUNITY_LINE_ID`: Unique identifier for the opportunity line item.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_product_snapshot.OPPORTUNITY_ID`: Identifier of the parent opportunity.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_product_snapshot.CURRENCY_CODE`: Currency used for pricing.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_product_snapshot.OPPORTUNITY_PRODUCT_NAME`: Name of the product on the opportunity.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_product_snapshot.QUANTITY`: Quantity of the product.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_product_snapshot.TOTAL_PRICE`: Total price for the line item.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_product_snapshot.UNIT_PRICE`: Unit price of the product.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_product_snapshot.LIST_PRICE`: List price of the product.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_product_snapshot.SUBSCRIPTION_TERM`: Subscription term length.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_product_snapshot.OPPORTUNITY_PRODUCT_OF_INTEREST`: Flag indicating product of interest.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_product_snapshot.DISCOUNT`: Discount applied.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_product_snapshot.MRR`: Monthly recurring revenue.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_product_snapshot.ARR`: Annual recurring revenue.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_product_snapshot.CREATED_DATE`: Record creation date.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_product_snapshot.SBQQ_QUOTE_LINE_C`: Quote line identifier.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_product_snapshot.HISTORICAL_CURRENT_SUBSCRIPTION_SOFTWARE`: Historical subscription software flag.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_product_snapshot.ANNUAL_PRICE`: Annual price of the product.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_product_snapshot.SBQQ_NET_PRICE`: Net price after discounts.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_product_snapshot.ANNUAL_PRICE_INCREASE`: Increase in annual price.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_product_snapshot.ORIGINAL_ANNUAL_PRICE_RENEWAL`: Original annual price at renewal.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_product_snapshot.OPP_PRODUCT_RSAC_OLD`: Old RSAC value.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_product_snapshot.OPP_PRODUCT_RSAC_NEW`: New RSAC value.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_product_snapshot.PRODUCT_ID`: Identifier of the product.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_product_snapshot.PRODUCT_NAME`: Name of the product.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_product_snapshot.PRODUCT_SOLUTION`: Product solution category.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_product_snapshot.PRODUCT_CODE`: Product code.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_product_snapshot.PRODUCT_CATEGORY`: Category of the product.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_product_snapshot.PRODUCT_GROUP`: Grouping of the product.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_product_snapshot.PRODUCT_NEW`: Flag indicating new product.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_product_snapshot.PRODUCT_SOLUTION_NEW`: New product solution.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_product_snapshot.PRODUCT_LINE_NEW`: New product line.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_product_snapshot.PRODUCT_GROUP_NEW`: New product group.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_product_snapshot.TEMP_PRODUCT_GROUP_LI`: Temporary product group line item.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_product_snapshot.TEMP_PRODUCT_SOLUTION_LI`: Temporary product solution line item.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_product_snapshot.INCLUDED_IN_ARR`: Flag indicating inclusion in ARR.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_product_snapshot.NEW_LINE_OF_BUSINESS`: New line of business indicator.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_product_snapshot.NETSUITE_PRODUCT_FAMILY`: Netsuite product family.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_product_snapshot.DBT_SCD_ID`: Slowly changing dimension identifier.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_product_snapshot.DBT_UPDATED_AT`: Timestamp of last update.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_product_snapshot.DBT_VALID_FROM`: Validity start date.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_product_snapshot.DBT_VALID_TO`: Validity end date.
+
+## Logic Explanation  
+1. **Source**: The query reads directly from the `sfdc_opportunity_product_snapshot` table in the `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots` schema.  
+2. **Selection**: All columns listed in the SELECT clause are retrieved without any transformation or filtering.  
+3. **No Joins or Aggregations**: The query contains no JOINs, WHERE clauses, GROUP BY, or ORDER BY statements.  
+4. **Result**: Each row returned represents a single snapshot of an opportunity product, preserving all original attributes.
+
+## Grain of Data  
+The result set is at the **opportunity line item** level; each row corresponds to one opportunity product snapshot.

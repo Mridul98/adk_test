@@ -1,0 +1,23 @@
+## Table Name: REPORTING_DEV.DBT_MAHMUDNABI_gtm_analytics.tat_anchor_product_summary_snapshot
+
+## Overview
+This query retrieves a snapshot of anchor product summary data, including identifiers, product counts, and validity timestamps, from the `arr_tat_anchor_product_summary_snapshot` table.
+
+## Tables Involved
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.arr_tat_anchor_product_summary_snapshot`: Snapshot table containing anchor product summary information.
+
+## Columns Used
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.arr_tat_anchor_product_summary_snapshot.MCID` - Unique customer or entity identifier.
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.arr_tat_anchor_product_summary_snapshot.NAME` - Name associated with the MCID.
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.arr_tat_anchor_product_summary_snapshot.ANCHOR_PRODUCTS` - List or description of anchor products.
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.arr_tat_anchor_product_summary_snapshot.ANCHOR_PRODUCT_COUNT` - Count of anchor products.
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.arr_tat_anchor_product_summary_snapshot.DBT_SCD_ID` - Slowly changing dimension identifier.
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.arr_tat_anchor_product_summary_snapshot.DBT_UPDATED_AT` - Timestamp of the last update.
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.arr_tat_anchor_product_summary_snapshot.DBT_VALID_FROM` - Start of the validity period.
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.arr_tat_anchor_product_summary_snapshot.DBT_VALID_TO` - End of the validity period.
+
+## Logic Explanation
+The query performs a straightforward `SELECT` from the `arr_tat_anchor_product_summary_snapshot` table. No joins, filters, aggregations, or transformations are applied. It simply returns all rows and the specified columns, providing a flat view of the snapshot data.
+
+## Grain of Data
+Each row represents a single snapshot record for a specific MCID, capturing the state of anchor product information at a particular point in time.

@@ -3,32 +3,33 @@
 
 ### LLM settings ###
 ## There are a number of settings to tune the threading and token limits for LLM calls - check the docs.
-#  default_chat_model:
+# models:
+#   default_chat_model:
 #     type: chat
 #     model_provider: openai
 #     auth_type: api_key # or azure_managed_identity
 #     api_key: ${GRAPHRAG_API_KEY} # set this in the generated .env file, or remove if managed identity
-#     model: qwen3:14b
+#     model: gpt-oss:20b
 #     api_base: http://localhost:11434/v1 # e.g. https://<instance>.openai.azure.com
 #     # api_version: 2024-05-01-preview
 #     model_supports_json: true # recommended if this is available for your model.
 #     temparature: 0
 #     async_mode: asyncio
 #     request_timeout: 500.0
-#   default_embedding_model:
-#     type: embedding
-#     model_provider: openai
-#     auth_type: api_key
-#     api_key: ${GRAPHRAG_API_KEY}
-#     model: nomic-embed-text
-#     api_base: http://localhost:11434/v1
-#     # api_version: 2024-05-01-preview
-#     concurrent_requests: 5
-#     async_mode: asyncio # or asyncio
-#     retry_strategy: exponential_backoff
-#     max_retries: 10
-#     tokens_per_minute: null
-#     requests_per_minute: null
+  # default_embedding_model:
+  #   type: embedding
+  #   model_provider: openai
+  #   auth_type: api_key
+  #   api_key: ${GRAPHRAG_API_KEY}
+  #   model: nomic-embed-text
+  #   api_base: http://localhost:11434/v1
+  #   # api_version: 2024-05-01-preview
+  #   concurrent_requests: 5
+  #   async_mode: asyncio # or asyncio
+  #   retry_strategy: exponential_backoff
+  #   max_retries: 10
+  #   tokens_per_minute: null
+  #   requests_per_minute: null
 
 
 models:
@@ -43,19 +44,22 @@ models:
     temparature: 0
     async_mode: asyncio
     request_timeout: 500.0
+    requests_per_minute: 14
+    tokens_per_minute: 200000 
   default_embedding_model:
     type: embedding
-    model_provider: gemini
+    model_provider: openai
     auth_type: api_key
-    api_key: ${GEMINI_API_KEY}
-    model: gemini-embedding-001
+    api_key: ${GRAPHRAG_API_KEY}
+    model: all-minilm:latest
+    api_base: http://localhost:11434/v1
     # api_version: 2024-05-01-preview
-    concurrent_requests: 5
+    concurrent_requests: 2
     async_mode: asyncio # or asyncio
     retry_strategy: exponential_backoff
     max_retries: 10
     tokens_per_minute: null
-    requests_per_minute: null
+    requests_per_minute: 2
 
 ### Input settings ###
 

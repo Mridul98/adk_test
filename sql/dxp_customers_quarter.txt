@@ -1,0 +1,45 @@
+## Table Name: REPORTING_DEV.DBT_MAHMUDNABI_gtm_analytics.dxp_customers_quarter
+
+## Overview  
+This model aggregates daily customer activity metrics into quarterly summaries for two distinct units of measure—pageviews and transactions. It counts unique customers, sums the activity quantity, and calculates the average usage per customer for each quarter, then combines the two measures into a single result set.
+
+## Tables Involved  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_gtm_analytics.stg_gtm_analytics_dxp_daily_appinsights_metrics`: Daily pageview metrics.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_gtm_analytics.stg_gtm_analytics_dxp_daily_b2c_transactions`: Daily transaction metrics.
+
+## Columns Used  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_gtm_analytics.stg_gtm_analytics_dxp_daily_appinsights_metrics`:  
+  - `metrics_date` – Date of the metric record.  
+  - `master_customer_id` – Unique identifier for a customer.  
+  - `pageviews` – Number of pageviews for the day.  
+  - `year_quarter` – Derived from `metrics_date` (`YEAR(metrics_date)-QQUARTER(metrics_date)`).  
+  - `uom` – Constant value `'pageviews'`.  
+  - `daily_aggregated_customers` – Derived `COUNT(DISTINCT master_customer_id)`.  
+  - `daily_aggregated_quantity` – Derived `SUM(pageviews)`.  
+  - `usage_per_customer_daily` – Derived `ROUND(SUM(pageviews)/COUNT(DISTINCT master_customer_id), 2)`.  
+
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_gtm_analytics.stg_gtm_analytics_dxp_daily_b2c_transactions`:  
+  - `metrics_date` – Date of the metric record.  
+  - `master_customer_id` – Unique identifier for a customer.  
+  - `transactions` – Number of transactions for the day.  
+  - `year_quarter` – Derived from `metrics_date` (`YEAR(metrics_date)-QQUARTER(metrics_date)`).  
+  - `uom` – Constant value `'transactions'`.  
+  - `daily_aggregated_customers` – Derived `COUNT(DISTINCT master_customer_id)`.  
+  - `daily_aggregated_quantity` – Derived `SUM(transactions)`.  
+  - `usage_per_customer_daily` – Derived `ROUND(SUM(transactions)/COUNT(DISTINCT master_customer_id), 2)`.
+
+## Logic Explanation  
+1. **CTE `pageviews`** – Aggregates the pageview table by quarter:  
+   - Groups rows by `year_quarter`.  
+   - Counts distinct customers (`daily_aggregated_customers`).  
+   - Sums pageviews (`daily_aggregated_quantity`).  
+   - Calculates average pageviews per customer (`usage_per_customer_daily`).  
+   - Adds a constant unit of measure (`uom = 'pageviews'`).  
+
+2. **CTE `transactions`** – Performs the same quarterly aggregation on the transactions table, using the `transactions` column and setting `uom = 'transactions'`.  
+
+3. **Final SELECT** – Unions the two CTE results (`UNION ALL`) to produce a single table containing both metrics.  
+4. **Ordering** – Sorts the combined result by `year_quarter` descending and `uom` ascending.
+
+## Grain of Data  
+The output is aggregated at the **quarterly level per unit of measure** (pageviews or transactions). Each row represents a single quarter and a single UOM, summarizing customer counts, total quantity, and average usage per customer.

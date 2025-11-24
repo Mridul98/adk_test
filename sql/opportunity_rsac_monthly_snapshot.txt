@@ -1,0 +1,98 @@
+## Table Name: REPORTING_DEV.DBT_MAHMUDNABI_gtm_analytics.opportunity_rsac_monthly_snapshot
+
+## Overview  
+This query produces a monthly snapshot of opportunity and product-level revenue metrics in USD, including a calculated RSAC value, for opportunities that meet specific filtering criteria. It enriches the data with product grouping and solution information from the SKU master report.
+
+## Tables Involved  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_opti_salesforce.stg_opti_salesforce_currency_type`: Currency conversion rates.  
+- `REPORTING_DEV.DBT_MAHMUDNABI_sku_management.skus_master_report`: Master data for SKUs, including product group and solution.  
+- `REPORTING_DEV.DBT_MAHMUDNABI_gtm_analytics.opportunity_line_item_snapshot`: Snapshot of opportunity line items.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_sbqq_quote_line_snapshot`: Snapshot of quote line data.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_subscription_snapshot`: Snapshot of subscription data.  
+- `REPORTING_DEV.DBT_MAHMUDNABI_gtm_analytics.opportunity_snapshot`: Snapshot of opportunity data.
+
+## Columns Used  
+
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_opti_salesforce.stg_opti_salesforce_currency_type`  
+  - `iso_code` – Currency ISO code.  
+  - `conversion_rate_to_usd` – Conversion rate to USD.  
+
+- `REPORTING_DEV.DBT_MAHMUDNABI_sku_management.skus_master_report`  
+  - `"Product Group"` – Product group name.  
+  - `"Product Solution"` – Product solution name.  
+  - `"Product ID"` – Unique product identifier.  
+  - `"Is Deleted"` – Flag indicating if the SKU is deleted.  
+  - `"Product Code (SKU)"` – SKU code used for deduplication.  
+  - `"Valid To"` – End date of SKU validity.  
+
+- `REPORTING_DEV.DBT_MAHMUDNABI_gtm_analytics.opportunity_line_item_snapshot`  
+  - `opportunity_id` – Identifier of the opportunity.  
+  - `product_2_id` – Identifier of the product.  
+  - `dbt_valid_from` – Start date of the snapshot validity.  
+  - `dbt_valid_to` – End date of the snapshot validity.  
+  - `product_code` – Code of the product.  
+  - `product_category_c` – Product category.  
+  - `product_of_interest_c` – Indicator of product interest.  
+  - `historical_current_subscription_software_c` – Historical subscription software amount.  
+  - `subscription_term_calculated_c` – Calculated subscription term in months.  
+  - `exclude_from_1_st_year_mrr_c` – Flag for exclusion from first-year MRR.  
+  - `total_price` – Total price of the line item.  
+  - `currency_iso_code` – Currency ISO code.  
+  - `is_deleted` – Flag indicating if the line item is deleted.  
+
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_sbqq_quote_line_snapshot`  
+  - `id` – Quote line identifier.  
+  - `sbqq_net_price_c` – Net price from the quote line.  
+
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_subscription_snapshot`  
+  - `id` – Subscription identifier.  
+  - `sbqq_quote_line_c` – Reference to the quote line.  
+  - `cpi_adjustments_c` – CPI adjustment factor.  
+  - `original_price_renewal_c` – Original renewal price.  
+
+- `REPORTING_DEV.DBT_MAHMUDNABI_gtm_analytics.opportunity_snapshot`  
+  - `id` – Opportunity identifier.  
+  - `dbt_valid_from` – Start date of the snapshot validity.  
+  - `dbt_valid_to` – End date of the snapshot validity.  
+  - `currency_iso_code` – Currency ISO code.  
+  - `stage_name` – Current stage of the opportunity.  
+  - `close_date` – Expected close date.  
+  - `recurring_software_amount_change_c` – Change in recurring software amount.  
+  - `legacy_renewal_opportunity_new_c` – Flag for legacy renewal.  
+  - `custom_forecast_c` – Custom forecast status.  
+  - `is_deleted` – Flag indicating if the opportunity is deleted.  
+
+- Derived columns (fully qualified names shown where applicable):  
+  - `opportunity_product_snapshots.snapshot_date` – Monthly snapshot date derived from `dbt_valid_from`.  
+  - `opportunity_product_snapshots.annual_price` – Calculated annual price based on subscription term and exclusion flag.  
+  - `opportunity_product_snapshots.annual_price_increase` – Calculated increase factor.  
+  - `opportunity_product_snapshots.original_annual_price_renewal` – Calculated original renewal price.  
+  - `opportunity_snapshot.snapshot_date` – Monthly snapshot date derived from `dbt_valid_from`.  
+  - `product_rsac_calc_snapshot_usd` – Final RSAC calculation in USD.  
+
+## Logic Explanation  
+1. **recent_currency_rates** – Pulls ISO code and USD conversion rate from the currency type table.  
+2. **skus_report** – Filters the SKU master report for non‑deleted SKUs, then keeps the most recent record per SKU code based on `Valid To`.  
+3. **opportunity_product_snapshots** –  
+   - Joins opportunity line items with quote line and subscription snapshots.  
+   - Generates a monthly sequence (`generated_months`) covering the validity period of each line item.  
+   - Calculates `snapshot_date` as the first day of each month in that period.  
+   - Computes `annual_price`, `annual_price_increase`, and `original_annual_price_renewal` using conditional logic on subscription term and exclusion flag.  
+   - Filters out deleted line items and excludes products of interest 'Expert Services' and 'Education'.  
+   - Keeps the latest snapshot per opportunity, product, product code, and month using a row number qualifier.  
+4. **opportunity_snapshot** –  
+   - Generates a monthly sequence for each opportunity’s validity period.  
+   - Calculates `snapshot_date` similarly to the product snapshots.  
+   - Joins with `recent_currency_rates` to bring in the conversion rate.  
+   - Applies filters: non‑deleted, positive recurring software amount change, not a legacy renewal, forecast not omitted, and close date after 2022‑01‑01.  
+   - Keeps the latest snapshot per opportunity and month via a row number qualifier.  
+5. **Final SELECT** –  
+   - Joins the opportunity snapshots with product snapshots on opportunity ID and snapshot date.  
+   - Joins product snapshots with SKU report on product ID.  
+   - Joins product snapshots with currency rates on currency ISO code.  
+   - Calculates `product_rsac_calc_snapshot_usd` by subtracting historical subscription amounts (or renewal amounts plus increase) from the annual price, converting the result to USD using the conversion rate.  
+   - Filters to include only rows where a product code exists.  
+   - Returns distinct rows to eliminate duplicates arising from the joins.  
+
+## Grain of Data  
+The result set is at the monthly snapshot level per opportunity and product combination, enriched with product group and solution information. Each row represents a unique `(opportunity_id, snapshot_date, product_code)` combination.

@@ -1,0 +1,77 @@
+## Table Name: REPORTING_DEV.DBT_MAHMUDNABI_gtm_analytics.opportunity_line_item_analytics_snapshot
+
+## Overview  
+This query retrieves all columns from the `sfdc_opportunity_line_item_analytics_snapshot` table, providing a comprehensive snapshot of opportunity line item analytics for downstream analysis or reporting.
+
+## Tables Involved  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_analytics_snapshot`: Snapshot table containing detailed analytics for Salesforce opportunity line items.
+
+## Columns Used  
+`TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_analytics_snapshot`:  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_analytics_snapshot.OPPORTUNITY_ID` - Not inferable from provided SQL.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_analytics_snapshot.STAGE_NAME` - Not inferable from provided SQL.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_analytics_snapshot.CLOSE_DATE` - Not inferable from provided SQL.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_analytics_snapshot.CLOSE_YEAR` - Not inferable from provided SQL.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_analytics_snapshot.YEAR_QUARTER_CLOSE_DATE` - Not inferable from provided SQL.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_analytics_snapshot.LEGACY_RENEWAL_OPPORTUNITY_NEW_C` - Not inferable from provided SQL.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_analytics_snapshot.OPP_RSAC` - Not inferable from provided SQL.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_analytics_snapshot.OPPORTUNITY_LINE_ID` - Not inferable from provided SQL.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_analytics_snapshot.CREATED_BY_ID` - Not inferable from provided SQL.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_analytics_snapshot.CURRENCY_CODE` - Not inferable from provided SQL.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_analytics_snapshot.OPPORTUNITY_PRODUCT_NAME` - Not inferable from provided SQL.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_analytics_snapshot.QUANTITY` - Not inferable from provided SQL.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_analytics_snapshot.TOTAL_PRICE` - Not inferable from provided SQL.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_analytics_snapshot.UNIT_PRICE` - Not inferable from provided SQL.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_analytics_snapshot.LIST_PRICE` - Not inferable from provided SQL.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_analytics_snapshot.SUBSCRIPTION_TERM_CALCULATED` - Not inferable from provided SQL.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_analytics_snapshot.PRODUCT_OF_INTEREST` - Not inferable from provided SQL.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_analytics_snapshot.DISCOUNT` - Not inferable from provided SQL.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_analytics_snapshot.MRR` - Not inferable from provided SQL.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_analytics_snapshot.ARR` - Not inferable from provided SQL.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_analytics_snapshot.CREATED_AT` - Not inferable from provided SQL.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_analytics_snapshot.UPDATED_AT` - Not inferable from provided SQL.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_analytics_snapshot.CREATED_DATE` - Not inferable from provided SQL.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_analytics_snapshot.SBQQ_QUOTE_LINE_C` - Not inferable from provided SQL.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_analytics_snapshot.HISTORICAL_CURRENT_SUBSCRIPTION_SOFTWARE` - Not inferable from provided SQL.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_analytics_snapshot.ANNUAL_PRICE` - Not inferable from provided SQL.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_analytics_snapshot.IS_DELETED` - Not inferable from provided SQL.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_analytics_snapshot.SBQQ_RENEWED_SUBSCRIPTION` - Not inferable from provided SQL.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_analytics_snapshot.SBQQ_NET_PRICE` - Not inferable from provided SQL.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_analytics_snapshot.OPP_PRODUCT_RSAC` - Not inferable from provided SQL.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_analytics_snapshot.PRODUCT_ID` - Not inferable from provided SQL.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_analytics_snapshot.PRODUCT_NAME` - Not inferable from provided SQL.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_analytics_snapshot.PRODUCT_SOLUTION` - Not inferable from provided SQL.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_analytics_snapshot.PRODUCT_CODE` - Not inferable from provided SQL.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_analytics_snapshot.PRODUCT_CATEGORY` - Not inferable from provided SQL.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_analytics_snapshot.PRODUCT_GROUP` - Not inferable from provided SQL.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_analytics_snapshot.FAMILY` - Not inferable from provided SQL.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_analytics_snapshot.LOB` - Not inferable from provided SQL.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_analytics_snapshot.LOB_SUBCATEGORY` - Not inferable from provided SQL.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_analytics_snapshot.PRODUCT_LINE` - Not inferable from provided SQL.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_analytics_snapshot.PRODUCT_NEW` - Not inferable from provided SQL.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_analytics_snapshot.PRODUCT_SOLUTION_NEW` - Not inferable from provided SQL.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_analytics_snapshot.PRODUCT_LINE_NEW` - Not inferable from provided SQL.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_analytics_snapshot.PRODUCT_GROUP_NEW` - Not inferable from provided SQL.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_analytics_snapshot.TEMP_PRODUCT_GROUP_LI` - Not inferable from provided SQL.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_analytics_snapshot.TEMP_PRODUCT_SOLUTION_LI` - Not inferable from provided SQL.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_analytics_snapshot.INCLUDED_IN_ARR` - Not inferable from provided SQL.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_analytics_snapshot.NEW_LINE_OF_BUSINESS` - Not inferable from provided SQL.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_analytics_snapshot.PRODUCT_FAMILY` - Not inferable from provided SQL.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_analytics_snapshot.OPP_PRODUCT_RSAC_CONVERTED` - Not inferable from provided SQL.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_analytics_snapshot.PRODUCT_FAMILY_SUMMARIZE` - Not inferable from provided SQL.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_analytics_snapshot.DBT_SCD_ID` - Not inferable from provided SQL.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_analytics_snapshot.DBT_UPDATED_AT` - Not inferable from provided SQL.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_analytics_snapshot.DBT_VALID_FROM` - Not inferable from provided SQL.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_analytics_snapshot.DBT_VALID_TO` - Not inferable from provided SQL.
+
+## Logic Explanation  
+The query performs a straightforward projection of all columns from the `sfdc_opportunity_line_item_analytics_snapshot` table.  
+- **Data source**: `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_analytics_snapshot`.  
+- **No joins**: The query references only this single table.  
+- **No filters**: There are no WHERE clauses.  
+- **No aggregations**: All columns are selected as-is.  
+- **No ordering or limiting**: The result set preserves the table’s inherent order.  
+- **CTE flow**: None; the query directly selects from the base table.
+
+## Grain of Data  
+The result set is at the row level of the `sfdc_opportunity_line_item_analytics_snapshot` table, representing individual opportunity line item analytics records.

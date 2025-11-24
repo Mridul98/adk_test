@@ -1,0 +1,46 @@
+## Table Name: REPORTING_DEV.DBT_MAHMUDNABI_gtm_analytics.opportunity_rsac_quarterly
+
+## Overview  
+This model produces a quarterly snapshot of opportunities, capturing the most recent open-stage record or the earliest closed-stage record for each opportunity and product combination. The result is a consolidated view of opportunity status and associated RSAC metrics per quarter.
+
+## Tables Involved  
+- **REPORTING_DEV.DBT_MAHMUDNABI_gtm_analytics.opportunity_rsac_monthly_snapshot**: Monthly snapshot of opportunities with RSAC calculations and stage information.
+
+## Columns Used  
+**REPORTING_DEV.DBT_MAHMUDNABI_gtm_analytics.opportunity_rsac_monthly_snapshot**  
+- `opportunity_id` – Unique identifier for the opportunity.  
+- `product_code` – Code of the product associated with the opportunity.  
+- `snapshot_date` – Date of the snapshot record.  
+- `stage_name` – Current stage of the opportunity.  
+- `close_date` – Date when the opportunity was closed.  
+- `product_category` – Category of the product.  
+- `product_of_interest` – Indicator of product interest.  
+- `product_group` – Group classification of the product.  
+- `product_solution` – Solution type for the product.  
+- `product_rsac_calc_snapshot_usd` – RSAC calculation snapshot in USD.  
+
+**Derived columns**  
+- `snapshot_quarter` – `QUARTER(snapshot_date)` – Quarter of the snapshot.  
+- `snapshot_year` – `YEAR(snapshot_date)` – Year of the snapshot.  
+- `id` – `HASH(opportunity_id, product_code, snapshot_quarter, snapshot_year)` – Unique hash used to identify closed opportunities per quarter/year/product.  
+- `snapshot_year_quarter` – `CONCAT(snapshot_year, '-', snapshot_quarter)` – Combined year‑quarter string.
+
+## Logic Explanation  
+1. **closed_opportunities CTE**  
+   - Filters `opportunity_rsac_monthly_snapshot` for stages that are considered closed (`stage_name NOT IN ('Discovery', 'Proof of Value', 'Proposal', 'Contracts')`).  
+   - For each combination of `snapshot_year`, `snapshot_quarter`, `opportunity_id`, and `product_code`, it selects the earliest snapshot (`ROW_NUMBER() OVER (PARTITION BY ... ORDER BY snapshot_date ASC) = 1`).  
+   - Adds `snapshot_quarter`, `snapshot_year`, and a hash `id` to uniquely identify the closed snapshot per group.
+
+2. **open_opportunities CTE**  
+   - Starts with all snapshots where `stage_name` is in the open list (`'Discovery', 'Proof of Value', 'Proposal', 'Contracts'`).  
+   - Left‑joins `closed_opportunities` on the hash `id` to determine if a closed snapshot exists for the same quarter/year/product.  
+   - Keeps only rows where no closed snapshot exists (`HAVING closed_opportunities.id IS NULL`).  
+   - For each group of `snapshot_year`, `snapshot_quarter`, `opportunity_id`, and `product_code`, it selects the most recent snapshot (`ROW_NUMBER() OVER (PARTITION BY ... ORDER BY snapshot_date DESC) = 1`).  
+   - Adds `snapshot_quarter` and `snapshot_year`.
+
+3. **Final SELECT**  
+   - Unions all rows from `open_opportunities` and `closed_opportunities`.  
+   - Projects the same set of columns, including the derived `snapshot_year_quarter` string.
+
+## Grain of Data  
+The result set is at the **opportunity‑by‑quarter‑by‑product** level: one row per unique combination of `opportunity_id`, `product_code`, `snapshot_year`, and `snapshot_quarter`, representing either the latest open snapshot or the earliest closed snapshot.

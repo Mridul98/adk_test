@@ -1,0 +1,130 @@
+## Table Name: REPORTING_DEV.DBT_MAHMUDNABI_gtm_analytics.subscription_snapshot
+
+## Overview  
+This query extracts a full snapshot of Salesforce CPQ subscription records from the `sfdc_sbqq_subscription_snapshot` table, providing all available fields for downstream analytics or reporting.
+
+## Tables Involved  
+- **TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_sbqq_subscription_snapshot**: Snapshot of Salesforce CPQ subscription data.
+
+## Columns Used  
+**TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_sbqq_subscription_snapshot**  
+- `ID` - Unique identifier for the subscription record.  
+- `OWNER_ID` - Salesforce user ID of the record owner.  
+- `IS_DELETED` - Flag indicating if the subscription has been deleted.  
+- `NAME` - Name of the subscription.  
+- `CURRENCY_ISO_CODE` - ISO currency code for the subscription.  
+- `CREATED_DATE` - Timestamp when the record was created.  
+- `CREATED_BY_ID` - Salesforce user ID who created the record.  
+- `LAST_MODIFIED_DATE` - Timestamp of the last modification.  
+- `LAST_MODIFIED_BY_ID` - Salesforce user ID who last modified the record.  
+- `SYSTEM_MODSTAMP` - System modification stamp.  
+- `LAST_VIEWED_DATE` - Timestamp of the last view.  
+- `LAST_REFERENCED_DATE` - Timestamp of the last reference.  
+- `SBQQ_ACCOUNT_C` - Account ID associated with the subscription.  
+- `SBQQ_ADDITIONAL_DISCOUNT_AMOUNT_C` - Additional discount amount applied.  
+- `SBQQ_BILLING_FREQUENCY_C` - Billing frequency setting.  
+- `SBQQ_BILLING_TYPE_C` - Billing type setting.  
+- `SBQQ_BUNDLE_C` - Indicates if the subscription is part of a bundle.  
+- `SBQQ_BUNDLED_QUANTITY_C` - Quantity of bundled items.  
+- `SBQQ_BUNDLED_C` - Flag indicating bundled status.  
+- `SBQQ_CHARGE_TYPE_C` - Type of charge applied.  
+- `SBQQ_COMPONENT_DISCOUNTED_BY_PACKAGE_C` - Discount applied by package component.  
+- `SBQQ_COMPONENT_SUBSCRIPTION_SCOPE_C` - Scope of the component subscription.  
+- `SBQQ_CONTRACT_C` - Contract ID linked to the subscription.  
+- `SBQQ_CUSTOMER_PRICE_C` - Customer price for the subscription.  
+- `SBQQ_DIMENSION_C` - Dimension value for the subscription.  
+- `SBQQ_DISCOUNT_SCHEDULE_TYPE_C` - Type of discount schedule.  
+- `SBQQ_DISCOUNT_SCHEDULE_C` - Discount schedule details.  
+- `SBQQ_DISCOUNT_C` - Discount amount.  
+- `SBQQ_DISTRIBUTOR_DISCOUNT_C` - Distributor discount amount.  
+- `SBQQ_DYNAMIC_OPTION_ID_C` - Dynamic option identifier.  
+- `SBQQ_HAS_CONSUMPTION_SCHEDULE_C` - Flag indicating a consumption schedule.  
+- `SBQQ_LIST_PRICE_C` - List price of the subscription.  
+- `SBQQ_MARKUP_AMOUNT_C` - Markup amount applied.  
+- `SBQQ_MARKUP_RATE_C` - Markup rate applied.  
+- `SBQQ_NET_PRICE_C` - Net price after discounts and markups.  
+- `SBQQ_NUMBER_C` - Subscription number.  
+- `SBQQ_OPTION_DISCOUNT_AMOUNT_C` - Option discount amount.  
+- `SBQQ_OPTION_DISCOUNT_C` - Option discount value.  
+- `SBQQ_OPTION_LEVEL_C` - Level of the option.  
+- `SBQQ_OPTION_TYPE_C` - Type of the option.  
+- `SBQQ_ORDER_PRODUCT_C` - Order product identifier.  
+- `SBQQ_ORIGINAL_QUOTE_LINE_C` - Original quote line ID.  
+- `SBQQ_ORIGINAL_UNIT_COST_C` - Original unit cost.  
+- `SBQQ_PACKAGE_PRODUCT_CODE_C` - Package product code.  
+- `SBQQ_PACKAGE_PRODUCT_DESCRIPTION_C` - Description of the package product.  
+- `SBQQ_PARTNER_DISCOUNT_C` - Partner discount amount.  
+- `SBQQ_PRICING_METHOD_C` - Pricing method used.  
+- `SBQQ_PRODUCT_OPTION_C` - Product option identifier.  
+- `SBQQ_PRODUCT_SUBSCRIPTION_TYPE_C` - Type of product subscription.  
+- `SBQQ_PRODUCT_C` - Product identifier.  
+- `SBQQ_PRORATE_MULTIPLIER_C` - Prorate multiplier value.  
+- `SBQQ_QUANTITY_C` - Quantity of the subscription.  
+- `SBQQ_QUOTE_LINE_C` - Quote line identifier.  
+- `SBQQ_REGULAR_PRICE_C` - Regular price of the subscription.  
+- `SBQQ_RENEWAL_PRICE_C` - Renewal price.  
+- `SBQQ_RENEWAL_QUANTITY_C` - Quantity for renewal.  
+- `SBQQ_RENEWAL_UPLIFT_RATE_C` - Renewal uplift rate.  
+- `SBQQ_RENEWED_DATE_C` - Date of renewal.  
+- `SBQQ_REQUIRED_BY_ID_C` - Required by user ID.  
+- `SBQQ_REQUIRED_BY_PRODUCT_C` - Required by product ID.  
+- `SBQQ_REVISED_SUBSCRIPTION_C` - Revised subscription flag.  
+- `SBQQ_ROOT_ID_C` - Root subscription ID.  
+- `SBQQ_SEGMENT_END_DATE_C` - Segment end date.  
+- `SBQQ_SEGMENT_INDEX_C` - Segment index.  
+- `SBQQ_SEGMENT_KEY_C` - Segment key.  
+- `SBQQ_SEGMENT_LABEL_C` - Segment label.  
+- `SBQQ_SEGMENT_QUANTITY_C` - Quantity for the segment.  
+- `SBQQ_SEGMENT_START_DATE_C` - Segment start date.  
+- `SBQQ_SEGMENT_UPLIFT_AMOUNT_C` - Segment uplift amount.  
+- `SBQQ_SEGMENT_UPLIFT_C` - Segment uplift flag.  
+- `SBQQ_SPECIAL_PRICE_C` - Special price applied.  
+- `SBQQ_SUBSCRIPTION_END_DATE_C` - Subscription end date.  
+- `SBQQ_SUBSCRIPTION_START_DATE_C` - Subscription start date.  
+- `SBQQ_SUBSCRIPTION_TYPE_C` - Type of subscription.  
+- `SBQQ_TERM_DISCOUNT_SCHEDULE_C` - Term discount schedule.  
+- `SBQQ_TERMINATED_DATE_C` - Termination date.  
+- `SBQQ_UNIT_COST_C` - Unit cost.  
+- `DEVELOPMENT_PHASE_MONTHS_PICKLIST_C` - Development phase months picklist.  
+- `PRODUCT_OF_INTEREST_C` - Product of interest identifier.  
+- `MRR_C` - Monthly recurring revenue.  
+- `ARR_C` - Annual recurring revenue.  
+- `NETSUITE_ID_C` - NetSuite identifier.  
+- `ORIGINAL_NS_ID_C` - Original NetSuite ID.  
+- `RENEWAL_QUOTE_LINE_C` - Renewal quote line ID.  
+- `SBQQ_SUBSCRIPTION_PRICING_C` - Subscription pricing details.  
+- `SUBSCRIPTION_LINE_STATUS_C` - Status of the subscription line.  
+- `BILLING_MODE_C` - Billing mode setting.  
+- `INCLUDE_QUANTITY_FOPTI_IN_1_000_S_C` - Flag for quantity inclusion.  
+- `LICENSE_ID_C` - License identifier.  
+- `NETSUITE_END_DATE_C` - NetSuite end date.  
+- `NETSUITE_START_DATE_C` - NetSuite start date.  
+- `NETSUITE_SUB_LINE_C` - NetSuite sub line identifier.  
+- `NET_SUITE_UNIQUE_KEY_C` - NetSuite unique key.  
+- `RENEWAL_SUBSCRIPTION_TERM_C` - Renewal subscription term.  
+- `PRODUCT_REGION_C` - Product region.  
+- `CHURN_REASON_C` - Reason for churn.  
+- `MOVEMENT_IN_ARR_TAGGING_C` - Movement in ARR tagging.  
+- `ORIGINAL_PRICE_RENEWAL_C` - Original price at renewal.  
+- `CPI_ADJUSTMENTS_C` - CPI adjustment value.  
+- `_FIVETRAN_DELETED` - Fivetran deletion flag.  
+- `_FIVETRAN_SYNCED` - Fivetran sync timestamp.  
+- `RENEWAL_BASELINE_SUBSCRIPTION_C` - Renewal baseline subscription flag.  
+- `DBT_SCD_ID` - Slowly changing dimension identifier.  
+- `DBT_UPDATED_AT` - Timestamp of last DBT update.  
+- `DBT_VALID_FROM` - Validity start timestamp.  
+- `DBT_VALID_TO` - Validity end timestamp.  
+- `LANGUAGE_C` - Language setting.  
+- `CELIGO_AT_REPEAT_EVERY_C` - Celigo repeat interval.
+
+## Logic Explanation  
+The query performs a straightforward projection of all columns from the `sfdc_sbqq_subscription_snapshot` table.  
+1. **Source**: Reads from `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_sbqq_subscription_snapshot`.  
+2. **Projection**: Selects every column listed in the SELECT clause.  
+3. **No filtering**: No WHERE clause is present, so all rows are returned.  
+4. **No joins**: The query operates on a single table only.  
+5. **No aggregations or calculations**: All columns are returned as stored.  
+6. **Result**: A flat table where each row represents a snapshot of a Salesforce CPQ subscription at a point in time.
+
+## Grain of Data  
+The data is at the subscription snapshot level; each row corresponds to a single subscription record as captured in the snapshot table.
