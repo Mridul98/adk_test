@@ -1,0 +1,57 @@
+## Table Name: REPORTING_DEV.DBT_MAHMUDNABI_gtm_analytics.pipe_generation_bookings_targets
+
+## Overview  
+This model aggregates quarterly target metrics for pipe generation and bookings, enriches them with product solution information and territory leadership details, and produces a consolidated view of target goals per customer type, product group, and territory.
+
+## Tables Involved  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_gtm_analytics.stg_gtm_analytics_targets_dollars`: source of pipe generation and booking metrics.  
+- `REPORTING_DEV.DBT_MAHMUDNABI_sku_management.skus_master_report`: provides product group to product solution mapping.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_gtm_analytics.pipeline_territory_hierarchies`: contains territory hierarchy data (used only for join).  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_gtm_analytics.pipeline_territory_leads`: supplies territory VP and SVP information.
+
+## Columns Used  
+
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_gtm_analytics.stg_gtm_analytics_targets_dollars.legacy_customer_type_ccvr`: customer type identifier.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_gtm_analytics.stg_gtm_analytics_targets_dollars.metric_value`: numeric target value.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_gtm_analytics.stg_gtm_analytics_targets_dollars.product_group`: product group (mapped from 'Other' to 'Other Services').  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_gtm_analytics.stg_gtm_analytics_targets_dollars.date_quarter`: quarter in `YYYYQX` format.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_gtm_analytics.stg_gtm_analytics_targets_dollars.segment`: market segment.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_gtm_analytics.stg_gtm_analytics_targets_dollars.source`: sales source.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_gtm_analytics.stg_gtm_analytics_targets_dollars.territory`: territory name.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_gtm_analytics.stg_gtm_analytics_targets_dollars.super_region`: super region.  
+
+- `REPORTING_DEV.DBT_MAHMUDNABI_sku_management.skus_master_report."Product Group"`: product group key.  
+- `REPORTING_DEV.DBT_MAHMUDNABI_sku_management.skus_master_report."Product Solution"`: product solution description.  
+- `REPORTING_DEV.DBT_MAHMUDNABI_sku_management.skus_master_report."Is Deleted"`: flag used in filter.  
+- `REPORTING_DEV.DBT_MAHMUDNABI_sku_management.skus_master_report."Valid To"`: date used for latest record selection.  
+
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_gtm_analytics.pipeline_territory_hierarchies.territory_name`: territory key for join.  
+
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_gtm_analytics.pipeline_territory_leads.territory_name`: territory key for join.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_gtm_analytics.pipeline_territory_leads.territory_vp`: VP of territory.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_gtm_analytics.pipeline_territory_leads.territory_svp`: SVP of territory.  
+
+- Derived columns:  
+  - `customer_type`: derived from `legacy_customer_type_ccvr` (`'New'` → `'New Customer'`, else `'Existing Customer'`).  
+  - `region`: derived from `super_region` (`'EMEA-DACH'` → `'EMEA'`, else original).  
+  - `concat_product_targets`: concatenation of `date_quarter`, `super_region`, `territory`, `segment`, `legacy_customer_type_ccvr`, `source`, `product_group`.  
+  - `pipe_gen_goal`: alias of `pipe_gen.metric_value`.  
+  - `bookings_goal`: alias of `bookings.metric_value`.
+
+## Logic Explanation  
+1. **pipe_gen CTE** – Filters `stg_gtm_analytics_targets_dollars` for rows where `business_type = 'pipe_generation'` and `date_quarter` has length 7. It normalizes the `product_group` column, mapping `'Other'` to `'Other Services'`.  
+2. **bookings CTE** – Similar to `pipe_gen` but filters for `business_type = 'bookings'`.  
+3. **skus_report CTE** – Selects the latest `product_solution` per `product_group` from `skus_master_report` where the record is not deleted. The latest record is determined by `ROW_NUMBER()` over `product_group` ordered by `"Valid To"` descending.  
+4. **joined_targets CTE** – Performs a left join of `pipe_gen` to `bookings` on all key columns (`legacy_customer_type_ccvr`, `product_group`, `date_quarter`, `segment`, `source`, `territory`). It retains all pipe generation rows, adding the corresponding booking goal if available. It also creates a human‑readable `customer_type` flag.  
+5. **Final SELECT** –  
+   - Projects all columns from `joined_targets`.  
+   - Adds a `region` column that maps `'EMEA-DACH'` to `'EMEA'`.  
+   - Builds a concatenated string `concat_product_targets` from several key fields.  
+   - Left joins `pipeline_territory_hierarchies` and `pipeline_territory_leads` on `territory` to bring in hierarchy and leadership data.  
+   - Left joins `skus_report` on `product_group` to attach the product solution.  
+   - Orders the result set by `date_quarter`.  
+
+No aggregation or filtering beyond the initial CTEs is performed; all joins are left joins to preserve pipe generation rows.
+
+## Grain of Data  
+The output is at the level of each unique combination of `legacy_customer_type_ccvr`, `product_group`, `date_quarter`, `segment`, `source`, `territory`, and `super_region`. Each row represents a target goal for a specific customer type and product group within a territory for a given quarter.

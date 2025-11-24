@@ -1,0 +1,17 @@
+## Table Name: REPORTING_DEV.DBT_MAHMUDNABI_gtm_analytics.lead
+
+## Overview
+A simple query that retrieves all columns from the `stg_opti_salesforce_lead` staging table in the `TRANSFORM_DEV` database.
+
+## Tables Involved
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_opti_salesforce.stg_opti_salesforce_lead`: staging table containing Salesforce lead data.
+
+## Columns Used
+`TRANSFORM_DEV.DBT_MAHMUDNABI_opti_salesforce.stg_opti_salesforce_lead`:
+- Not inferable from provided SQL.
+
+## Logic Explanation
+The query performs a direct `SELECT *` from the staging table. No joins, filters, aggregations, or transformations are applied. It simply returns every column and every row present in the table.
+
+## Grain of Data
+Row-level granularity; each row represents a distinct Salesforce lead record.

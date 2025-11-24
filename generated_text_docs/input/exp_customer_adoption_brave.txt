@@ -1,0 +1,144 @@
+## Table Name: REPORTING_DEV.DBT_MAHMUDNABI_gtm_analytics.exp_customer_adoption_brave
+
+## Overview  
+This query produces a monthly activity and performance snapshot for each customer, combining ARR, experiment lifecycle events, feature flag usage, login activity, and consumption metrics over a 48‑month period starting January 2022. The result is a customer‑by‑month table that includes current, lag, year‑over‑year, and rolling‑average comparisons for each metric.
+
+## Tables Involved  
+- `REPORTING_DEV.DBT_MAHMUDNABI_arr_sst.arr_report` – ARR snapshots and product group information.  
+- `REPORTING_DEV.DBT_MAHMUDNABI_opti_application.experiment_metrics` – Experiment lifecycle timestamps and outcomes.  
+- `REPORTING_DEV.DBT_MAHMUDNABI_opti_application.feature_flags_metrics` – Feature flag activation data.  
+- `REPORTING.OPTI_APPLICATION.EXPERIMENT_METRICS` – Experiment outcome data for significant increase.  
+- `REPORTING.EXPERIMENT_BENCHMARK.GAE_ACTIVITY` – User login events.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_experimentation_metrics.stg_exp_consumption_metrics` – Experiment consumption quantities.  
+- `REPORTING_DEV.DBT_MAHMUDNABI_opti_application.oa_customer_detail` – Core customer master record.
+
+## Columns Used  
+
+- `REPORTING_DEV.DBT_MAHMUDNABI_arr_sst.arr_report`  
+  - `MCID` – Customer identifier.  
+  - `ARR_USD_CCFX` – ARR value.  
+  - `SNAPSHOT_DATE` – Date of the ARR snapshot.  
+  - `UPDATED_PRODUCT_GROUP` – Product group flag.
+
+- `REPORTING_DEV.DBT_MAHMUDNABI_opti_application.experiment_metrics`  
+  - `CUSTOMER_ID` – Customer identifier.  
+  - `EXPERIMENT_CREATION_TIMESTAMP` – Experiment creation time.  
+  - `EXPERIMENT_START_TIME_IMPRESSIONS_REACHED` – Experiment start time.  
+  - `EXPERIMENT_CONCLUDED_TIME` – Experiment conclusion time.  
+  - `EXPERIMENT_ID` – Experiment identifier.  
+  - `EXPERIMENT_OUTCOME` – Outcome label.
+
+- `REPORTING_DEV.DBT_MAHMUDNABI_opti_application.feature_flags_metrics`  
+  - `CUSTOMER_ID` – Customer identifier.  
+  - `FLAG_ACTIVATE` – Flag activation timestamp.  
+  - `FEATURE_FLAG_STATUS` – Boolean status.  
+  - `FLAG_CREATED` – Flag creation timestamp.  
+  - `FEATURE_FLAG_ID` – Feature flag identifier.
+
+- `REPORTING.OPTI_APPLICATION.EXPERIMENT_METRICS`  
+  - `CUSTOMER_ID` – Customer identifier.  
+  - `EXPERIMENT_START_TIME_IMPRESSIONS_REACHED` – Experiment start time.  
+  - `EXPERIMENT_ID` – Experiment identifier.  
+  - `EXPERIMENT_OUTCOME` – Outcome label.
+
+- `REPORTING.EXPERIMENT_BENCHMARK.GAE_ACTIVITY`  
+  - `ACCOUNT_ID` – Customer identifier.  
+  - `CREATED_GAE` – Login event timestamp.  
+  - `EMAIL` – User email.  
+  - `EVENT` – Event type (used to filter logins).
+
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_experimentation_metrics.stg_exp_consumption_metrics`  
+  - `PERIOD_START_DATE` – Consumption period start date.  
+  - `MASTER_CUSTOMER_ID` – Customer identifier.  
+  - `ACCOUNT_ID` – Customer identifier.  
+  - `QUANTITY` – Consumption quantity.
+
+- `REPORTING_DEV.DBT_MAHMUDNABI_opti_application.oa_customer_detail`  
+  - `CUSTOMER_ID` – Customer identifier.  
+  - `CUSTOMER_NAME` – Customer name.  
+  - `SALESFORCE_ACCOUNT_ID` – Salesforce account ID.  
+  - `PRIMARY_ACCOUNT_EXECUTIVE_ID` – Executive contact ID.  
+  - `BILLING_STATE_CODE` – Billing state.  
+  - `CONTRACT_START_DATE` – Contract start date.  
+  - `CONTRACT_END_DATE` – Contract end date.  
+  - `IS_ACTIVE` – Active flag.  
+  - `MASTER_CUSTOMER_ID` – Master customer ID.
+
+- `DATE_SERIES` (CTE)  
+  - `YEAR_MONTH` – Generated month string (`YYYY‑MM`).
+
+- `ARR_DATES` (CTE)  
+  - `MCID` – Customer identifier.  
+  - `EARLIEST_EXP_TAT_DATE` – Minimum snapshot date (derived).  
+  - `LATEST_EXP_TAT_DATE` – Maximum snapshot date (derived).
+
+- `ARR_LATEST` (CTE)  
+  - `MCID` – Customer identifier.  
+  - `ARR` – Latest ARR value (derived from `arr_report`).
+
+- `EXP_CREATED` (CTE)  
+  - `CUSTOMER_ID` – Customer identifier.  
+  - `YEAR_MONTH` – Derived month (`YYYY‑MM`).  
+  - `EXPERIMENTS_CREATED` – Count of experiments created (derived).
+
+- `EXP_STARTED` (CTE)  
+  - `CUSTOMER_ID` – Customer identifier.  
+  - `YEAR_MONTH` – Derived month.  
+  - `EXPERIMENTS_STARTED` – Count of experiments started (derived).
+
+- `FLAGS_ENABLED` (CTE)  
+  - `CUSTOMER_ID` – Customer identifier.  
+  - `YEAR_MONTH` – Derived month.  
+  - `FEATURE_FLAGS_ENABLED` – Count of flags enabled (derived).
+
+- `EXP_CONCLUDED` (CTE)  
+  - `CUSTOMER_ID` – Customer identifier.  
+  - `YEAR_MONTH` – Derived month.  
+  - `EXPERIMENTS_CONCLUDED` – Count of experiments concluded (derived).
+
+- `EXP_SIG_INCREASE` (CTE)  
+  - `CUSTOMER_ID` – Customer identifier.  
+  - `YEAR_MONTH` – Derived month.  
+  - `EXPERIMENTS_SIG_INCREASE` – Count of significant‑increase experiments (derived).
+
+- `EXP_SIG_DECREASE` (CTE)  
+  - `CUSTOMER_ID` – Customer identifier.  
+  - `YEAR_MONTH` – Derived month.  
+  - `EXPERIMENTS_SIG_DECREASE` – Count of significant‑decrease experiments (derived).
+
+- `LOGINS` (CTE)  
+  - `ACCOUNT_ID` – Customer identifier.  
+  - `YEAR_MONTH` – Derived month.  
+  - `USER_LOGINS` – Count of login events (derived).  
+  - `USER_LOGINS_UNIQUE` – Count of unique users (derived).
+
+- `EXP_USAGE_DATA` (CTE)  
+  - `YEAR_MONTH` – Derived month.  
+  - `MASTER_CUSTOMER_ID` – Customer identifier.  
+  - `ACCOUNT_ID` – Customer identifier.  
+  - `EXP_USAGE` – Consumption quantity for the current month (derived).
+
+- `EXP_USAGE_DATA_LY` (CTE)  
+  - `YEAR_MONTH` – Derived month for last year.  
+  - `MASTER_CUSTOMER_ID` – Customer identifier.  
+  - `ACCOUNT_ID` – Customer identifier.  
+  - `EXP_USAGE` – Consumption quantity for the same month last year (derived).
+
+## Logic Explanation  
+
+1. **`DATE_SERIES`** – Generates a list of months (`YEAR_MONTH`) from 2022‑01 to 2023‑12 (48 months).  
+2. **`ARR_LATEST`** – For each customer (`MCID`) selects the most recent ARR snapshot where `UPDATED_PRODUCT_GROUP` is in the target groups, summing `ARR_USD_CCFX`.  
+3. **`EXP_CREATED`** – Counts experiments created per customer per month using `EXPERIMENT_CREATION_TIMESTAMP`.  
+4. **`EXP_STARTED`** – Counts experiments started per customer per month using `EXPERIMENT_START_TIME_IMPRESSIONS_REACHED`.  
+5. **`FLAGS_ENABLED`** – Counts feature flags activated per customer per month; activation time is derived from `FLAG_ACTIVATE` or, if null, from `FLAG_CREATED`.  
+6. **`EXP_CONCLUDED`** – Counts experiments concluded per customer per month using `EXPERIMENT_CONCLUDED_TIME`.  
+7. **`EXP_SIG_INCREASE` / `EXP_SIG_DECREASE`** – Counts experiments with significant increase or decrease outcomes per customer per month, filtering on `EXPERIMENT_OUTCOME`.  
+8. **`LOGINS`** – Aggregates login events per customer per month, filtering on `EVENT = 'login'`.  
+9. **`ARR_DATES`** – Determines the earliest and latest ARR snapshot dates for each customer (`MCID`).  
+10. **`EXP_USAGE_DATA`** – Sums consumption quantity (`QUANTITY`) per customer per month.  
+11. **`EXP_USAGE_DATA_LY`** – Re‑joins `EXP_USAGE_DATA` for the same month in the previous year by shifting `YEAR_MONTH` back one year.  
+
+The main query cross‑joins `oa_customer_detail` with `DATE_SERIES` to create a row for every customer for every month. It left‑joins each CTE on the appropriate keys (`CUSTOMER_ID`, `MASTER_CUSTOMER_ID`, `YEAR_MONTH`). Window functions compute lag, year‑over‑year, and 6‑month rolling averages for each metric. Finally, a filter limits the output to months up to the current month.
+
+## Grain of Data  
+Each row represents a unique combination of `CUSTOMER_ID` and `YEAR_MONTH`, providing monthly aggregates and comparative metrics for that customer. The table is therefore at the **customer‑by‑month** granularity.

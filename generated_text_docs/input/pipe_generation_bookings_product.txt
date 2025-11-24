@@ -1,0 +1,141 @@
+## Table Name: REPORTING_DEV.DBT_MAHMUDNABI_gtm_analytics.pipe_generation_bookings_product
+
+## Overview  
+This model produces a detailed, currency‑converted view of opportunity line items, enriched with product, account, and campaign metadata. It calculates revenue metrics (RSAC, booking value) and flags exclusions, providing a per‑line‑item snapshot for reporting and analysis.
+
+## Tables Involved  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_opti_salesforce.stg_opti_salesforce_opportunity_line` – source opportunity line items.  
+- `REPORTING_DEV.DBT_MAHMUDNABI_sku_management.skus_master_report` – SKU master data.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_opti_salesforce.stg_opti_salesforce_products` – product master data.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_gtm_analytics.pipeline_product_group_categories` – product group category mapping.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_opti_salesforce.stg_opti_salesforce_quote_line` – quote line items.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_opti_salesforce.stg_opti_salesforce_subscription` – subscription details.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_opti_salesforce.stg_opti_salesforce_currency_type` – currency conversion rates.  
+- `REPORTING_DEV.DBT_MAHMUDNABI_gtm_analytics.pipe_generation_bookings_opportunity` – opportunity‑level booking data.
+
+## Columns Used  
+
+### `TRANSFORM_DEV.DBT_MAHMUDNABI_opti_salesforce.stg_opti_salesforce_opportunity_line`  
+- `opportunity_id` – ID of the opportunity.  
+- `id` – ID of the opportunity line item.  
+- `product_id` – ID of the product.  
+- `created_date` – creation timestamp.  
+- `created_by_id` – creator ID.  
+- `product_of_interest` – product category flag.  
+- `historical_current_subscription_software` – historical subscription amount.  
+- `subscription_term_calculated` – calculated subscription term.  
+- `annual_price` – derived annual price (see CTE logic).  
+
+### `REPORTING_DEV.DBT_MAHMUDNABI_sku_management.skus_master_report`  
+- `product_code_sku` – SKU code.  
+- `product_group` – product group name.  
+
+### `TRANSFORM_DEV.DBT_MAHMUDNABI_opti_salesforce.stg_opti_salesforce_products`  
+- `id` – product ID.  
+- `product_solution` – product solution (or 'Other' if null).  
+- `product_line` – product line.  
+- `product_group_id` – product group ID.  
+- `product_category_id` – product category ID.  
+- `sku_name` – SKU name.  
+- `product_code` – product code.  
+- `product_search_groups` – search groups.  
+
+### `TRANSFORM_DEV.DBT_MAHMUDNABI_gtm_analytics.pipeline_product_group_categories`  
+- `product_group_category` – product group category (or 'Non-ICP' if null).  
+
+### `TRANSFORM_DEV.DBT_MAHMUDNABI_opti_salesforce.stg_opti_salesforce_quote_line`  
+- `quote_line_id` – quote line ID.  
+- `renewed_subscription` – renewal flag.  
+- `net_unit_price` – net unit price (default 0).  
+
+### `TRANSFORM_DEV.DBT_MAHMUDNABI_opti_salesforce.stg_opti_salesforce_subscription`  
+- `cpi_adjustments` – CPI adjustment factor.  
+- `original_price_renewal` – original renewal price.  
+
+### `TRANSFORM_DEV.DBT_MAHMUDNABI_opti_salesforce.stg_opti_salesforce_currency_type`  
+- `iso_code` – currency ISO code.  
+- `conversion_rate_to_usd` – conversion rate to USD.  
+
+### `REPORTING_DEV.DBT_MAHMUDNABI_gtm_analytics.pipe_generation_bookings_opportunity`  
+- `mcid` – marketing campaign ID.  
+- `account_name` – account name.  
+- `icp_account` – ICP account flag.  
+- `icp_account_or_not` – ICP account indicator.  
+- `primary_csm` – primary CSM.  
+- `primary_account_executive` – primary account executive.  
+- `targeted_plays` – targeted plays.  
+- `primary_contact_id` – primary contact ID.  
+- `primary_contact_name` – primary contact name.  
+- `primary_contact_persona` – primary contact persona.  
+- `number_of_employees` – employee count.  
+- `marketing_employees_counts` – marketing employee count.  
+- `account_type` – account type.  
+- `sub_industry` – sub‑industry.  
+- `industry` – industry.  
+- `opportunity_id` – opportunity ID.  
+- `opportunity_id_link` – opportunity link ID.  
+- `opportunity_name` – opportunity name.  
+- `account_id` – account ID.  
+- `customer_type` – customer type.  
+- `stage_name` – opportunity stage.  
+- `close_date` – close date.  
+- `close_date_year` – close year.  
+- `close_date_quarter` – close quarter.  
+- `close_date_week_of_quarter` – close week of quarter.  
+- `close_date_week` – close week.  
+- `discovery_date` – discovery date.  
+- `discovery_date_quarter` – discovery quarter.  
+- `discovery_date_week_of_quarter` – discovery week of quarter.  
+- `discovery_date_week` – discovery week.  
+- `exclude_from_sales_pipeline` – exclusion flag.  
+- `currency_iso_code` – currency code.  
+- `opportunity_rsac` – opportunity RSAC.  
+- `opportunity_rsac_converted` – converted RSAC.  
+- `owner_id` – owner ID.  
+- `opportunity_owner_name` – owner name.  
+- `opportunity_owner_role_name` – owner role.  
+- `generated_by_name` – creator name.  
+- `generated_by_role_name` – creator role.  
+- `primary_competitor_id` – competitor ID.  
+- `primary_competitor_name` – competitor name.  
+- `meeting_booked_via` – meeting booking channel.  
+- `opportunity_type_category` – opportunity type category.  
+- `opportunity_source_category` – source category.  
+- `opportunity_source_category_grouping` – source grouping.  
+- `legacy_renewal_opportunity_new` – legacy renewal flag.  
+- `date_entered_stage_*` – timestamps for various stages (discovery, closed won, etc.).  
+
+### Derived / Calculated Columns (across CTEs)  
+- `annual_price` – annualized price based on subscription term and exclusion flag.  
+- `annual_price_increase` – CPI‑adjusted increase factor.  
+- `original_annual_price_renewal` – original renewal price adjusted for term.  
+- `opportunity_product_rsac` – RSAC per product line, derived from annual price and historical data.  
+- `icp_label` – label indicating ICP status and product group category.  
+- `google_optimize` – flag for Google‑related opportunities.  
+- `single_or_multi_product_opportunity` – classification of product count per opportunity.  
+- `opportunity_product_rsac_converted_dynamic` – currency‑converted RSAC using historical rates per year.  
+- `opportunity_product_rsac_converted` – static conversion using latest rate.  
+- `opt_expcol_exclusion` – exclusion flag for specific product codes.  
+- `booking_value` – booking value for closed‑won opportunities.
+
+## Logic Explanation  
+1. **`opportunity_line`** – Filters out deleted line items and calculates `annual_price` based on subscription term and `exclude_from_1st_year_mrr`.  
+2. **`skus_report`** – Retrieves the latest SKU record per `product_code_sku` (using `QUALIFY ROW_NUMBER() = 1`).  
+3. **`product`** – Joins product master with SKU data, mapping `product_solution` and `product_group_category` (defaulting to 'Other' or 'Non‑ICP' when null).  
+4. **`quote_line`** – Filters deleted quote lines and sets a default `net_unit_price`.  
+5. **`quote_line`** – Joins with `opportunity_line` on `quote_line_id` to bring in renewal flags.  
+6. **`subscription`** – Joins with `quote_line` on `quote_line_id` to bring CPI adjustments and original renewal prices.  
+7. **`recent_currency_rates`** – Loads current currency conversion rates.  
+8. **`joined_tables`** – Combines opportunity booking data (`pipe_generation_bookings_opportunity`) with enriched product data (`product`, `skus_report`) and subscription metrics (`annual_price_increase`, `original_annual_price_renewal`).  
+   - Calculates `opportunity_product_rsac` per line item, applying historical subscription data when available.  
+   - Generates `icp_label`, `google_optimize`, and other flags.  
+   - Classifies opportunities as single or multi‑product.  
+   - Determines `opt_expcol_exclusion` to filter out specific product codes.  
+9. **`converted_rates`** – Left‑joins `joined_tables` with `recent_currency_rates` to obtain the latest conversion rate.  
+   - Applies a large CASE expression to convert `opportunity_product_rsac` to USD using year‑specific historical rates (GBP, SGD, etc.) or the latest rate if the year is 2025 or later.  
+   - Computes both dynamic (`opportunity_product_rsac_converted_dynamic`) and static (`opportunity_product_rsac_converted`) conversions.  
+   - Filters out excluded product codes (`opt_expcol_exclusion = 'Include'`) and ensures `mcid` is present.  
+10. **Final SELECT** – Concatenates `opportunity_id` and `opportunity_line_id` to form a unique identifier, selects all columns from `converted_rates`, and calculates `booking_value` only for closed‑won stages.
+
+## Grain of Data  
+The final result is one row per **opportunity line item** (identified by the combination of `opportunity_id` and `opportunity_line_id`). Each row contains enriched product, account, and campaign information along with currency‑converted revenue metrics.

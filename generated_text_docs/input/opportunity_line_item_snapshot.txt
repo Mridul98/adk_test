@@ -1,0 +1,105 @@
+## Table Name: REPORTING_DEV.DBT_MAHMUDNABI_gtm_analytics.opportunity_line_item_snapshot
+
+## Overview  
+This query retrieves a full snapshot of Salesforce opportunity line items from the `sfdc_opportunity_line_item_snapshot` table, exposing all raw fields for downstream analytics or reporting.
+
+## Tables Involved  
+- **TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_snapshot**: Snapshot of Salesforce opportunity line items.
+
+## Columns Used  
+**TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_snapshot**  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_snapshot.ID` – Unique identifier of the opportunity line item.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_snapshot.OPPORTUNITY_ID` – Identifier of the parent opportunity.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_snapshot.SORT_ORDER` – Order of the line item within the opportunity.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_snapshot.PRICEBOOK_ENTRY_ID` – Identifier of the pricebook entry.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_snapshot.PRODUCT_2_ID` – Identifier of the product.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_snapshot.PRODUCT_CODE` – Product code.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_snapshot.NAME` – Name of the line item.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_snapshot.CURRENCY_ISO_CODE` – Currency code.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_snapshot.QUANTITY` – Quantity of the product.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_snapshot.DISCOUNT` – Discount applied.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_snapshot.TOTAL_PRICE` – Total price after discount.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_snapshot.UNIT_PRICE` – Unit price.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_snapshot.LIST_PRICE` – List price.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_snapshot.SERVICE_DATE` – Service start date.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_snapshot.DESCRIPTION` – Description of the line item.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_snapshot.CREATED_DATE` – Record creation timestamp.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_snapshot.CREATED_BY_ID` – User who created the record.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_snapshot.LAST_MODIFIED_DATE` – Last modification timestamp.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_snapshot.LAST_MODIFIED_BY_ID` – User who last modified the record.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_snapshot.SYSTEM_MODSTAMP` – System modification stamp.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_snapshot.IS_DELETED` – Flag indicating logical deletion.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_snapshot.LAST_VIEWED_DATE` – Last viewed timestamp.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_snapshot.LAST_REFERENCED_DATE` – Last referenced timestamp.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_snapshot.SBQQ_PARENT_ID_C` – Custom field: parent ID.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_snapshot.SBQQ_QUOTE_LINE_C` – Custom field: quote line.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_snapshot.SBQQ_SUBSCRIPTION_TYPE_C` – Custom field: subscription type.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_snapshot.LEGACY_EXISTING_PRODUCT_C` – Custom field: legacy product flag.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_snapshot.LEGACY_LIST_PRICE_C` – Custom field: legacy list price.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_snapshot.DYNAMICS_ID_C` – Custom field: Dynamics ID.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_snapshot.LEGACY_DEVELOPMENT_PERIOD_C` – Custom field: legacy development period.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_snapshot.LEGACY_DEV_PERIOD_C` – Custom field: legacy dev period.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_snapshot.LEGACY_TERMS_C` – Custom field: legacy terms.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_snapshot.LEGACY_SERVICE_START_DATE_C` – Custom field: legacy service start date.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_snapshot.PRODUCT_OF_INTEREST_C` – Custom field: product of interest.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_snapshot.MRR_C` – Custom field: monthly recurring revenue.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_snapshot.ARR_C` – Custom field: annual recurring revenue.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_snapshot.SUBSCRIPTION_TERM_CALCULATED_C` – Custom field: calculated subscription term.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_snapshot.DEVELOPMENT_PHASE_MONTHS_C` – Custom field: development phase months.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_snapshot.DEV_PERIOD_RATE_ADJUSTMENT_C` – Custom field: dev period rate adjustment.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_snapshot.SBAA_APPROVAL_STATUS_C` – Custom field: SBAA approval status.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_snapshot.BUNDLE_REFERENCE_NUMBER_C` – Custom field: bundle reference number.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_snapshot.QUANTITY_REF_C` – Custom field: quantity reference.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_snapshot.QUANTITY_THIS_QUOTE_C` – Custom field: quantity in this quote.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_snapshot.DISCRETIONARY_DISCOUNT_C` – Custom field: discretionary discount.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_snapshot.CELIGO_SFNSIO_CONTRACT_ITEM_ID_C` – Custom field: Celigo contract item ID.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_snapshot.CELIGO_SFNSIO_CONTRACT_TERM_C` – Custom field: Celigo contract term.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_snapshot.CELIGO_SFNSIO_END_DATE_C` – Custom field: Celigo end date.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_snapshot.CELIGO_SFNSIO_LIST_RATE_C` – Custom field: Celigo list rate.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_snapshot.CELIGO_SFNSIO_NET_SUITE_LINE_ID_C` – Custom field: Celigo NetSuite line ID.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_snapshot.CELIGO_SFNSIO_START_DATE_C` – Custom field: Celigo start date.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_snapshot.CELIGO_AT_BILLING_MODE_C` – Custom field: Celigo billing mode.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_snapshot.CELIGO_AT_CHARGE_FREQUENCY_C` – Custom field: Celigo charge frequency.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_snapshot.CELIGO_AT_LINE_TYPE_C` – Custom field: Celigo line type.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_snapshot.CELIGO_AT_NET_SUITE_ITEM_TYPE_C` – Custom field: Celigo NetSuite item type.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_snapshot.CELIGO_AT_REPEAT_EVERY_C` – Custom field: Celigo repeat interval.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_snapshot.CELIGO_AT_START_DATE_C` – Custom field: Celigo start date.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_snapshot.CELIGO_AT_STATUS_C` – Custom field: Celigo status.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_snapshot.CUSTOMER_UNIT_PRICE_C` – Custom field: customer unit price.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_snapshot.IS_SLA_PRODUCT_C` – Custom field: SLA product flag.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_snapshot.MIGRATION_ID_C` – Custom field: migration ID.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_snapshot.SUBSCRIPTION_C` – Custom field: subscription flag.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_snapshot.HISTORICAL_CURRENT_SUBSCRIPTION_SOFTWARE_C` – Custom field: historical subscription software.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_snapshot.OPPORTUNITY_BILLING_CYCLE_STATUS_C` – Custom field: opportunity billing cycle status.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_snapshot.PRORATE_BY_C` – Custom field: prorate by.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_snapshot.PRICE_PLAN_TYPE_C` – Custom field: price plan type.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_snapshot.PRODUCT_REGION_C` – Custom field: product region.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_snapshot._FIVETRAN_SYNCED` – Indicator of Fivetran sync status.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_snapshot.WL_MIGRATION_ID_C` – Custom field: WL migration ID.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_snapshot.EXCLUDE_FROM_1_ST_YEAR_MRR_C` – Custom field: exclusion flag for first year MRR.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_snapshot._FIVETRAN_DELETED` – Indicator of Fivetran deletion status.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_snapshot.TOTAL_USAGE_VOLUME_C` – Custom field: total usage volume.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_snapshot.NETSUITE_PRODUCT_FAMILY_C` – Custom field: NetSuite product family.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_snapshot.PRODUCT_CATEGORY_C` – Custom field: product category.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_snapshot.NET_SUITE_PRICE_C` – Custom field: NetSuite price.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_snapshot.RSACAT_CLOSED_DATE_C` – Custom field: RSACAT closed date.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_snapshot.RECURRING_SOFTWARE_AMOUNT_CHANGE_C` – Custom field: recurring software amount change.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_snapshot.DBT_SCD_ID` – Change data capture identifier.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_snapshot.DBT_UPDATED_AT` – Timestamp of last update.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_snapshot.DBT_VALID_FROM` – Validity start timestamp.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_snapshot.DBT_VALID_TO` – Validity end timestamp.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_snapshot.PRODUCT_REGION_SET_C` – Custom field: product region set.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_snapshot.PROVISIONING_LANGUAGE_C` – Custom field: provisioning language.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_snapshot.KANTATA_TRIGGER_C` – Custom field: Kantata trigger flag.
+
+## Logic Explanation  
+The query performs a straightforward projection of all columns from the `sfdc_opportunity_line_item_snapshot` table.  
+- **Data source**: `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_line_item_snapshot`.  
+- **No joins**: The query references only this single table.  
+- **No filters**: All rows in the snapshot are returned.  
+- **No calculations or aggregations**: All columns are selected as stored.  
+- **Ordering/limiting**: None specified; the result set preserves the table’s inherent order.  
+- **CTE flow**: Not applicable; the query contains no CTEs.
+
+## Grain of Data  
+Each row represents a single opportunity line item snapshot, providing a point-in-time view of all attributes for that line item.

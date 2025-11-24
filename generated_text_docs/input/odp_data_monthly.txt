@@ -1,0 +1,54 @@
+## Table Name: REPORTING_DEV.DBT_MAHMUDNABI_gtm_analytics.odp_data_monthly
+
+## Overview  
+This model aggregates monthly ODP usage metrics and health indicator counts for each month starting from August 2022, excluding organizations whose names contain “ODP”. It joins the aggregated usage data with the corresponding segment and real‑time segment counts to produce a consolidated monthly view.
+
+## Tables Involved  
+- **TRANSFORM_DEV.DBT_MAHMUDNABI_odp_v2.stg_odp_v2_metric_usage** – staging table containing raw ODP usage metrics.  
+- **REPORTING_DEV.DBT_MAHMUDNABI_odp.health_indicators_report** – reporting table with health indicator metrics per organization and period.
+
+## Columns Used  
+
+**TRANSFORM_DEV.DBT_MAHMUDNABI_odp_v2.stg_odp_v2_metric_usage**  
+  - `period_start` – start date of the metric period.  
+  - `master_customer_id` – unique identifier for a customer.  
+  - `uvs` – unique views count.  
+  - `maus` – monthly active users count.  
+  - `organization_name` – name of the organization.  
+  - `organization_id` – identifier of the organization.  
+  - `year_month` – formatted month string (`YYYY-MM`) derived from `period_start`.  
+  - `mcid` – count of distinct `master_customer_id` per month.  
+  - `unique_views` – sum of `uvs` per month.  
+  - `monthly_active_users` – sum of `maus` per month.  
+
+**REPORTING_DEV.DBT_MAHMUDNABI_odp.health_indicators_report**  
+  - `organization_id` – identifier of the organization.  
+  - `organization_name` – name of the organization.  
+  - `crm_id` – CRM identifier.  
+  - `period_start` – start date of the health indicator period.  
+  - `period_end` – end date of the health indicator period.  
+  - `segment_count` – number of segments for the period.  
+  - `real_time_segment_count` – number of real‑time segments for the period.  
+
+**Derived columns from subq2**  
+  - `segments` – sum of the maximum `segment_count` for each organization that covers the metric period.  
+  - `real_time_segments` – sum of the maximum `real_time_segment_count` for each organization that covers the metric period.
+
+## Logic Explanation  
+1. **subq1** – Aggregates usage metrics by month:  
+   - Filters records where `period_start` ≥ 2022‑08‑01 and `organization_name` does not contain “ODP”.  
+   - Groups by formatted month (`year_month`).  
+   - Calculates `mcid`, `unique_views`, and `monthly_active_users`.  
+
+2. **subq2** – Aggregates health indicator metrics by month:  
+   - For each metric record, performs two correlated subqueries:  
+     - Finds the maximum `segment_count` from `health_indicators_report` where the report period envelopes the metric `period_start` and the organization matches.  
+     - Finds the maximum `real_time_segment_count` under the same conditions.  
+   - Sums these maxima across all records for the month to produce `segments` and `real_time_segments`.  
+   - Groups by formatted month (`year_month`).  
+
+3. **Final SELECT** – Left‑joins `subq1` and `subq2` on `year_month` to combine usage and health indicator aggregates.  
+   - Orders the result by `year_month` descending.
+
+## Grain of Data  
+Monthly aggregated metrics per organization, with one row per month.

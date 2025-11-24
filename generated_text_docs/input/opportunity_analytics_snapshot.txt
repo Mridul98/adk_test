@@ -1,0 +1,136 @@
+## Table Name: REPORTING_DEV.DBT_MAHMUDNABI_gtm_analytics.opportunity_analytics_snapshot
+
+## Overview  
+This query retrieves a comprehensive snapshot of Salesforce opportunity analytics, including opportunity identifiers, stage information, financial metrics, partner and account details, and various status flags, for use in reporting and analysis.
+
+## Tables Involved  
+- **TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_analytics_snapshot**: Snapshot of Salesforce opportunity analytics data.
+
+## Columns Used  
+**TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_analytics_snapshot**  
+- `OPPORTUNITY_ID` – Unique identifier for the opportunity.  
+- `STAGE_NAME` – Current stage of the opportunity.  
+- `INVOICING_ENTITY` – Entity responsible for invoicing.  
+- `OPPORTUNITY_NAME` – Name of the opportunity.  
+- `OPPORTUNITY_TYPE` – Type/category of the opportunity.  
+- `BILLING_CYCLE_STATUS` – Status of the billing cycle.  
+- `OPPORTUNITY_OWNER` – Name of the opportunity owner.  
+- `OPPORTUNITY_OWNER_ROLE_NAME` – Role of the opportunity owner.  
+- `CREATED_BY` – Name of the user who created the record.  
+- `OPPORTUNITY_OWNER_MANAGER` – Manager of the opportunity owner.  
+- `OPPORTUNITY_OWNER_MANGER_ROLE_NAME` – Role of the opportunity owner’s manager.  
+- `GENERATED_BY_NAME` – Name of the user who generated the record.  
+- `GENERATED_BY_ROLE_NAME` – Role of the user who generated the record.  
+- `DATE_ENTERED_STAGE_DISCOVERY` – Date the opportunity entered the Discovery stage.  
+- `DATE_ENTERED_STAGE_CLOSED_WON` – Date the opportunity entered the Closed Won stage.  
+- `CLOSE_DATE` – Date the opportunity was closed.  
+- `BUNDLE` – Indicator of bundled products.  
+- `MIGRATION` – Indicator of migration status.  
+- `MIGRATION_TYPE` – Type of migration.  
+- `PARTNER_ROLE` – Role of the partner in the opportunity.  
+- `PRIMARY_SALES_PARTNER` – Primary sales partner.  
+- `OPPORTUNITY_CURRENCY` – Currency used for the opportunity.  
+- `ACTUAL_FX_RATE` – Actual foreign‑exchange rate applied.  
+- `DCX_NEW_VS_ADD` – Indicator of new vs. add‑on opportunity.  
+- `AMOUNT` – Monetary amount of the opportunity.  
+- `CLOSED_WITH_ISSUES` – Flag indicating if the opportunity closed with issues.  
+- `EXCLUDE_FROM_SALES_PIPELINE` – Flag to exclude from sales pipeline.  
+- `GOVERNING_AGREEMENT_START_DATE` – Start date of the governing agreement.  
+- `CELIGO_AT_NETSUITE_SUBSCRIPTION_ID` – Subscription ID in Celigo/NetSuite.  
+- `PRICE_INCREASE_SOFTWARE` – Indicator of price increase for software.  
+- `HISTORICAL_CURRENT_CONTRACT_SOFTWARE` – Historical/current contract software status.  
+- `RECURRING_SOFTWARE_AMOUNT_NEW_ROLLUP` – Recurring software amount rolled up.  
+- `CURRENT_CONTRACT_SOFTWARE` – Current contract software status.  
+- `IN_MANAGER_CALL` – Indicator of manager call involvement.  
+- `LEGACY_PARTNER_ROLE` – Legacy partner role.  
+- `PRIMARY_COMPETITOR` – Primary competitor.  
+- `LEGACY_PARTNER_INVOLVED` – Indicator of legacy partner involvement.  
+- `REASON_CLOSED_WON_DETAIL` – Detailed reason for closing won.  
+- `REASON_CLOSED_WON` – Reason for closing won.  
+- `REASON_LOST_DETAIL` – Detailed reason for loss.  
+- `LEAD_SOURCE` – Source of the lead.  
+- `SOURCE` – General source field.  
+- `OPPORTUNITY_SOURCE` – Source of the opportunity.  
+- `OPPORTUNITY_SOURCE_CATEGORY` – Category of the opportunity source.  
+- `OWNER_ID` – Identifier of the opportunity owner.  
+- `CREATED_DATE` – Date the record was created.  
+- `CREATED_BY_ID` – Identifier of the creator.  
+- `CONTACT_ID` – Identifier of the associated contact.  
+- `LOSS_REASON` – Reason for loss.  
+- `OPPORTUNITY_PRODUCT_OF_INTEREST` – Primary product of interest.  
+- `OPPORTUNITY_PRODUCT_OF_INTEREST2` – Secondary product of interest.  
+- `CURRENCY_CODE` – Currency code.  
+- `CUSTOMER_TYPE` – Type of customer.  
+- `LEGACY_ORIGINATING_LEAD` – Indicator of legacy originating lead.  
+- `LEGACY_RENEWAL_OPPORTUNITY_NEW` – Indicator of legacy renewal opportunity.  
+- `SALES_DEFINED_FORECAST` – Sales‑defined forecast value.  
+- `YEAR_QUARTER_CLOSE_DATE` – Year and quarter of close date.  
+- `CLOSE_YEAR` – Year the opportunity closed.  
+- `CLOSE_NEXT_QUARTER` – Next quarter relative to close.  
+- `CLOSE_PREVIOUS_QUARTER` – Previous quarter relative to close.  
+- `CLOSE_CURRENT_QUARTER` – Current quarter relative to close.  
+- `RECENT_QUARTER_FILTER` – Recent quarter filter flag.  
+- `DATE_ENTERED_SAL` – Date entered SAL stage.  
+- `DATE_ENTERED_SQL` – Date entered SQL stage.  
+- `DATE_ENTERED_DISCOVERY` – Date entered Discovery stage.  
+- `QUARTER_MONTH_DISCOVERY` – Quarter and month of discovery.  
+- `DATE_ENTERED_PROOF_OF_VALUE` – Date entered Proof of Value stage.  
+- `DATE_ENTERED_PROPOSAL` – Date entered Proposal stage.  
+- `DATE_ENTERED_CONTRACTS` – Date entered Contracts stage.  
+- `DATE_ENTERED_CLOSED_WON` – Date entered Closed Won stage.  
+- `DATE_ENTERED_CLOSED_WON_FINANCE` – Date entered Closed Won Finance stage.  
+- `DATE_ENTERED_PROSPECTING` – Date entered Prospecting stage.  
+- `CLOSE_WON_YEAR` – Year the opportunity closed won.  
+- `RSAC` – RSAC indicator.  
+- `RSAC_CONVERTED` – RSAC converted flag.  
+- `RSAC_ALL` – RSAC all flag.  
+- `RSAC_CLOSED_WON_WON_FINANCE` – RSAC closed won finance flag.  
+- `RSAC_PIPELINE` – RSAC pipeline flag.  
+- `RSAC_PIPELINE_NEXT_QUARTER` – RSAC pipeline next quarter flag.  
+- `IS_DELETED` – Flag indicating if the record is deleted.  
+- `PRODUCT_FAMILY` – Product family.  
+- `OPP_PRODUCT_RSAC_CONVERTED` – Opportunity product RSAC converted flag.  
+- `ACCOUNT_ID` – Identifier of the associated account.  
+- `MASTER_CUSTOMER_ID` – Master customer identifier.  
+- `UNIVERSAL_ID` – Universal identifier.  
+- `ACCOUNT_NAME` – Name of the account.  
+- `TERRITORY_ID` – Identifier of the territory.  
+- `TERRITORY` – Territory name.  
+- `TERRITORY2` – Secondary territory.  
+- `BILLING_COUNTRY` – Billing country.  
+- `SEGMENT` – Market segment.  
+- `ANNUAL_REVENUE` – Annual revenue of the account.  
+- `MARKET_TIERS` – Market tier classification.  
+- `MARKET_TIER_GROUP` – Market tier group.  
+- `SIC_CODE` – Standard Industrial Classification code.  
+- `ACCOUNT_INDUSTRY` – Industry of the account.  
+- `ACCOUNT_SUB_INDUSTRY` – Sub‑industry of the account.  
+- `VERTICAL` – Business vertical.  
+- `TYPE_OF_BUSINESS` – Type of business.  
+- `ICP_SOLUTION` – ICP solution indicator.  
+- `ICP_ACCOUNT` – ICP account indicator.  
+- `ICP_ACCOUNT_ARCHIVE` – ICP account archive flag.  
+- `IS_GOOGLE_OPTIMIZE` – Google Optimize flag.  
+- `ABM_ACCOUNT` – ABM account flag.  
+- `EMPLOYEE_COUNT` – Number of employees.  
+- `ACCOUNT_TYPE` – Type of account.  
+- `PRIMARY_ACCOUNT_EXECUTIVE_ID` – Identifier of the primary account executive.  
+- `ICP_TRUE_FALSE` – ICP true/false flag.  
+- `PRODUCT_FAMILY_SUMMARIZE` – Summarized product family.  
+- `DBT_SCD_ID` – DBT slowly changing dimension identifier.  
+- `DBT_UPDATED_AT` – Timestamp of last update.  
+- `DBT_VALID_FROM` – Validity start timestamp.  
+- `DBT_VALID_TO` – Validity end timestamp.
+
+## Logic Explanation  
+The query performs a straightforward projection of selected columns from the `TRANSFORM_DEV.DBT_MAHMUDNABI_snapshots.sfdc_opportunity_analytics_snapshot` table.  
+- **Data source**: Single source table containing a snapshot of Salesforce opportunity analytics.  
+- **Joins**: None.  
+- **Filters**: None; all rows are returned.  
+- **Calculated fields**: None; all columns are directly retrieved from the source.  
+- **Aggregations**: None.  
+- **Ordering / Limiting**: None.  
+- **CTE flow**: No CTEs are used; the query directly selects from the base table.
+
+## Grain of Data  
+Each row represents a single opportunity snapshot record, providing a point‑in‑time view of opportunity, financial, partner, and account attributes.

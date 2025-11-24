@@ -1,0 +1,82 @@
+## Table Name: REPORTING_DEV.DBT_MAHMUDNABI_gtm_analytics.cmp_data_quarterly
+
+## Overview  
+This model aggregates key activity metrics—tasks started, work requests, campaigns launched, active users, and time on site—by master customer and quarter (year‑quarter). It pulls data from multiple source tables, filters for production‑state organizations and dates from 2020 onward, and combines the results using full outer joins to ensure all quarters and customers are represented even if some metrics are missing.
+
+## Tables Involved  
+- `REPORTING_DEV.DBT_MAHMUDNABI_welcome.tasks`: task records with start dates and organization references.  
+- `REPORTING_DEV.DBT_MAHMUDNABI_welcome.organizations`: master customer mapping and state flag.  
+- `REPORTING_DEV.DBT_MAHMUDNABI_welcome.monthly_work_requests`: monthly counts of work requests per organization.  
+- `REPORTING_DEV.DBT_MAHMUDNABI_welcome.campaigns`: campaign records with start dates and organization references.  
+- `REPORTING_DEV.DBT_MAHMUDNABI_welcome.monthly_active_user`: monthly active user counts per organization and role.  
+- `REPORTING_DEV.DBT_MAHMUDNABI_welcome.weekly_time_on_site`: weekly time‑on‑site metrics per organization.
+
+## Columns Used  
+
+- `REPORTING_DEV.DBT_MAHMUDNABI_welcome.tasks._id` – unique task identifier (used for counting).  
+- `REPORTING_DEV.DBT_MAHMUDNABI_welcome.tasks.startdate` – task start date (used for filtering and quarter calculation).  
+- `REPORTING_DEV.DBT_MAHMUDNABI_welcome.tasks.organization` – foreign key to organizations.  
+
+- `REPORTING_DEV.DBT_MAHMUDNABI_welcome.organizations._id` – organization primary key.  
+- `REPORTING_DEV.DBT_MAHMUDNABI_welcome.organizations.ssoid` – SSO identifier (joined to work requests and active users).  
+- `REPORTING_DEV.DBT_MAHMUDNABI_welcome.organizations.master_customer_id` – master customer identifier (grouping key).  
+- `REPORTING_DEV.DBT_MAHMUDNABI_welcome.organizations.state` – production flag (filter).  
+
+- `REPORTING_DEV.DBT_MAHMUDNABI_welcome.monthly_work_requests.month` – month of work requests (used for filtering and quarter calculation).  
+- `REPORTING_DEV.DBT_MAHMUDNABI_welcome.monthly_work_requests.work_request_count` – count of work requests (aggregated).  
+- `REPORTING_DEV.DBT_MAHMUDNABI_welcome.monthly_work_requests.sso_id` – SSO identifier (joined to organizations).  
+
+- `REPORTING_DEV.DBT_MAHMUDNABI_welcome.campaigns._id` – unique campaign identifier (used for counting).  
+- `REPORTING_DEV.DBT_MAHMUDNABI_welcome.campaigns.startdate` – campaign start date (used for filtering and quarter calculation).  
+- `REPORTING_DEV.DBT_MAHMUDNABI_welcome.campaigns.organization` – foreign key to organizations.  
+
+- `REPORTING_DEV.DBT_MAHMUDNABI_welcome.monthly_active_user.month` – month of active user data (used for filtering and quarter calculation).  
+- `REPORTING_DEV.DBT_MAHMUDNABI_welcome.monthly_active_user.sso_id` – SSO identifier (joined to organizations).  
+- `REPORTING_DEV.DBT_MAHMUDNABI_welcome.monthly_active_user.user_role` – role of the user (grouping key in sub‑CTE).  
+- `REPORTING_DEV.DBT_MAHMUDNABI_welcome.monthly_active_user.unique_active_user_count` – count of unique active users (aggregated).  
+
+- `REPORTING_DEV.DBT_MAHMUDNABI_welcome.weekly_time_on_site.week` – week of time‑on‑site data (used for filtering and quarter calculation).  
+- `REPORTING_DEV.DBT_MAHMUDNABI_welcome.weekly_time_on_site.duration_in_minutes` – duration in minutes (aggregated and converted to hours).  
+- `REPORTING_DEV.DBT_MAHMUDNABI_welcome.weekly_time_on_site.organization_sso_id` – SSO identifier (joined to organizations).  
+
+- Derived columns:  
+  - `year_quarter` – concatenation of year and quarter (e.g., `2023-q2`).  
+  - `year_month` – year‑month string (e.g., `2023-04`).  
+
+## Logic Explanation  
+1. **__tasks CTE** – Counts tasks per master customer per quarter.  
+   - Joins `tasks` to `organizations` on organization ID.  
+   - Filters for dates ≥ 2020 and ≤ current date, and organizations in production state.  
+   - Groups by quarter and master customer ID.  
+
+2. **workreq CTE** – Sums work requests per master customer per quarter.  
+   - Joins `monthly_work_requests` to `organizations` on SSO ID.  
+   - Filters for dates ≥ 2020 and ≤ current date, production state.  
+   - Groups by quarter and master customer ID.  
+
+3. **campaigns CTE** – Counts campaigns per master customer per quarter.  
+   - Joins `campaigns` to `organizations` on organization ID.  
+   - Filters for dates ≥ 2020 and ≤ current date, production state.  
+   - Groups by quarter and master customer ID.  
+
+4. **activeusers_sub CTE** – Aggregates active users per SSO ID, role, and month.  
+   - Filters for dates ≥ 2020 and ≤ current date.  
+   - Groups by month, quarter, SSO ID, and role.  
+
+5. **activeusers CTE** – Sums active users per master customer per quarter.  
+   - Joins `activeusers_sub` to `organizations` on SSO ID.  
+   - Filters for production state.  
+   - Groups by quarter and master customer ID.  
+
+6. **timeonsite CTE** – Sums time‑on‑site (in hours) per master customer per quarter.  
+   - Joins `weekly_time_on_site` to `organizations` on organization SSO ID.  
+   - Filters for dates ≥ 2020 and ≤ current date, production state.  
+   - Groups by quarter and master customer ID.  
+
+7. **Final SELECT** – Combines all metrics using a series of `FULL OUTER JOIN`s.  
+   - Joins are performed on the quarter and master customer ID, using `COALESCE` to propagate non‑null values across the chain.  
+   - Each metric column is wrapped in `COALESCE(..., 0)` to replace missing values with zero.  
+   - The result is limited to 500 rows.  
+
+## Grain of Data  
+The output is aggregated at the **master customer per quarter** level, providing a single row for each combination of `master_customer_id` and `year_quarter`.

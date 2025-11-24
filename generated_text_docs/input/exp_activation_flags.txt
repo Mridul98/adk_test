@@ -1,0 +1,72 @@
+## Table Name: REPORTING_DEV.DBT_MAHMUDNABI_gtm_analytics.exp_activation_flags
+
+## Overview  
+This query aggregates experiment participation, ARR, and feature‑flag activity for each customer, categorizes engagement status, and flags customers for potential engagement issues based on recent experiment activity and statistical significance.
+
+## Tables Involved  
+- `REPORTING_DEV.DBT_MAHMUDNABI_opti_application.experiment_metrics`: experiment event data.  
+- `REPORTING_DEV.DBT_MAHMUDNABI_opti_application.oa_customer_detail`: customer‑to‑Salesforce mapping.  
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_opti_salesforce.stg_opti_salesforce_account`: Salesforce account details.  
+- `REPORTING_DEV.DBT_MAHMUDNABI_arr_sst.arr_report`: ARR snapshots for experimentation products.  
+- `REPORTING_DEV.DBT_MAHMUDNABI_gtm_analytics.exp_total_experiments_started_flags`: flags indicating experiment start status.  
+- `REPORTING_DEV.DBT_MAHMUDNABI_opti_application.feature_flags_metrics_historical`: historical feature‑flag activation data.  
+- `REPORTING_DEV.DBT_MAHMUDNABI_gtm_analytics.exp_customer_category`: customer segmentation by experiment category.
+
+## Columns Used  
+
+- `REPORTING_DEV.DBT_MAHMUDNABI_opti_application.experiment_metrics`:  
+  - `customer_id` – identifier for the customer.  
+  - `experiment_id` – unique experiment identifier.  
+  - `experiment_start_time_impressions_reached` – timestamp when experiment started.  
+  - `experiment_outcome` – outcome label (e.g., 'significant increase').  
+
+- `REPORTING_DEV.DBT_MAHMUDNABI_opti_application.oa_customer_detail`:  
+  - `customer_id` – customer identifier.  
+  - `salesforce_account_id` – Salesforce account key.  
+  - `master_customer_id` – master customer key (used as `mcid`).  
+
+- `TRANSFORM_DEV.DBT_MAHMUDNABI_opti_salesforce.stg_opti_salesforce_account`:  
+  - `account_id` – Salesforce account key.  
+  - `master_customer_id` – master customer key.  
+  - `account_name` – name of the account.  
+  - `customer_stage` – sales stage of the customer.  
+
+- `REPORTING_DEV.DBT_MAHMUDNABI_arr_sst.arr_report`:  
+  - `mcid` – master customer key.  
+  - `snapshot_date` – date of the ARR snapshot.  
+  - `updated_product_group` – product group label.  
+  - `arr_usd_ccfx` – ARR value in USD.  
+
+- `REPORTING_DEV.DBT_MAHMUDNABI_gtm_analytics.exp_total_experiments_started_flags`:  
+  - `mcid` – master customer key.  
+
+- `REPORTING_DEV.DBT_MAHMUDNABI_opti_application.feature_flags_metrics_historical`:  
+  - `master_customer_id` – master customer key.  
+  - `feature_flag_id` – identifier of the feature flag.  
+  - `flag_activate` – activation timestamp.  
+  - `feature_flag_status` – boolean status flag.  
+  - `flag_created` – creation timestamp.  
+
+- `REPORTING_DEV.DBT_MAHMUDNABI_gtm_analytics.exp_customer_category`:  
+  - `mcid` – master customer key.  
+  - `customer_breakdown` – segmentation label (e.g., 'Experiment', 'p13n').  
+
+## Logic Explanation  
+1. **exp_metrics_all_time** – Counts distinct experiments started by each customer where a start timestamp exists.  
+2. **exp_metrics_last_30** – Same count but limited to experiments started within the last 30 days.  
+3. **exp_metrics_last_90** – Same count but limited to experiments started within the last 90 days.  
+4. **experiments_started_all_time** – Joins customer detail with the all‑time metrics and Salesforce account data to produce per‑customer totals and a flag indicating whether fewer than 10 experiments have been started.  
+5. **experiments_started_last_30_days** – Similar to step 4 but uses the 30‑day metrics and flags customers with no experiments in the last 30 days.  
+6. **experiments_started_last_90_days** – Similar to step 4 but uses the 90‑day metrics and flags customers with no experiments in the last 90 days.  
+7. **first_arr** – Retrieves the earliest snapshot date for each customer where the product group is either 'Web Experimentation' or 'Feature Experimentation'.  
+8. **current_arr** – Sums ARR values for each customer on the most recent snapshot date for the same product groups.  
+9. **stat_sig** – Counts distinct experiments with significant outcomes started in the last 12 months for each customer, joining through customer detail to map to master customer IDs.  
+10. **flag_enabled** – Determines the number of feature flags activated or created in the last 30 days for each customer, using a derived `date_created` field that prefers `flag_activate` when present, otherwise `flag_created` if the flag status is true.  
+11. **final_dataset** – Left‑joins all the above CTEs on `mcid` to assemble a comprehensive per‑customer record. It calculates:  
+    - `months_since_first_exp_product_identified_in_tat` as the month difference between the earliest snapshot date and the current date.  
+    - `customer_breakdown_parent` by mapping specific breakdown values to broader categories.  
+    - `experiment_flag` and `feature_management_flag` using nested CASE logic that considers experiment counts, statistical significance, and feature‑flag activity.  
+12. **Final SELECT** – Filters out rows where `mcid` or `salesforce_account_id` is null, then derives `customer_engagement` as 'Bad Engagement' if either flag is 'Yes', otherwise 'Good Engagement', and outputs all relevant columns.
+
+## Grain of Data  
+The result set is at the **customer level** (one row per `master_customer_id` / `mcid`), enriched with Salesforce account details and aggregated metrics.
